@@ -1,0 +1,134 @@
+/* base.css - colours, text, page layout, header and menus.
+   Change the look of the whole site by editing the variables in :root. */
+
+:root, [data-theme="dark"] {
+  --bg: #0a1428;
+  --surface: #101f3c;
+  --surface-2: #162a4d;
+  --border: #243b66;
+  --text: #e8eefc;
+  --muted: #a3b3d2;
+  --accent: #4d8dff;       /* electric blue from the logo */
+  --accent-strong: #2f6bff;
+  --on-accent: #ffffff;
+  --cyan: #2ad4f0;
+  --ok: #3ddc97;
+  --warn: #ffb547;
+  --idle: #5b6b8c;
+  --shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+[data-theme="light"] {
+  --bg: #f3f6fb;
+  --surface: #ffffff;
+  --surface-2: #eaf0fb;
+  --border: #cfd9ec;
+  --text: #0d1b36;
+  --muted: #4a5c7e;
+  --accent: #1c58d6;
+  --accent-strong: #1747b0;
+  --on-accent: #ffffff;
+  --cyan: #0a8fa8;
+  --ok: #138a56;
+  --warn: #b36b00;
+  --idle: #8091b0;
+  --shadow: 0 1px 2px rgba(13,27,54,.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 4.5rem; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 .5rem; letter-spacing: -.01em; }
+h1 { font-size: 1.9rem; font-weight: 750; }
+h2 { font-size: 1.3rem; margin-top: 2rem; }
+h3 { font-size: 1.1rem; margin-top: 1.75rem; color: var(--cyan); }
+h4 { font-size: 1rem; }
+p { margin: 0 0 .75rem; max-width: 70ch; }
+a { color: var(--accent); }
+img { max-width: 100%; height: auto; }
+.muted { color: var(--muted); }
+.lead { font-size: 1.15rem; max-width: 60ch; }
+
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; border-radius: 4px; }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--accent-strong); color: #fff; padding: .5rem 1rem; z-index: 100; }
+.skip-link:focus { left: 0; }
+
+/* ----- header ----- */
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+  padding: .5rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; color: var(--text); min-width: 0; }
+.brand-logo { background: #fff; border-radius: 10px; padding: 3px 6px; display: flex; flex: none; }
+.brand-logo img { display: block; height: 36px; width: auto; }
+.brand-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+.brand-text strong { font-size: 1rem; }
+.brand-text small { color: var(--muted); font-size: .72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.icon-btn {
+  flex: none; width: 44px; height: 44px; font-size: 1.2rem;
+  background: var(--surface-2); color: var(--text);
+  border: 1px solid var(--border); border-radius: 12px; cursor: pointer;
+}
+
+/* ----- main area ----- */
+main { padding: 1.25rem 1rem 6rem; max-width: 60rem; margin: 0 auto; outline: none; }
+
+/* ----- phone bottom bar ----- */
+.tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  background: var(--surface); border-top: 1px solid var(--border);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+.tabbar a, .tabbar button {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  min-height: 56px; font: inherit; font-size: .72rem;
+  color: var(--muted); background: none; border: 0; text-decoration: none; cursor: pointer;
+}
+.tabbar span { font-size: 1.25rem; line-height: 1; }
+.tabbar [aria-current="page"] { color: var(--accent); font-weight: 650; }
+
+/* ----- side menu: slide-up sheet on phone, fixed column on desktop ----- */
+.sidenav {
+  position: fixed; left: 0; right: 0; bottom: 56px; z-index: 40;
+  max-height: 65vh; overflow-y: auto;
+  background: var(--surface); border-top: 1px solid var(--border);
+  border-radius: 16px 16px 0 0; padding: .75rem;
+  transform: translateY(110%); visibility: hidden;
+  transition: transform .2s ease, visibility .2s;
+}
+.sidenav.open { transform: none; visibility: visible; }
+.sidenav ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .25rem; }
+.sidenav a {
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+  min-height: 44px; padding: .5rem .75rem; border-radius: 10px;
+  color: var(--text); text-decoration: none; font-size: .95rem;
+}
+.sidenav a:hover { background: var(--surface-2); }
+.sidenav a[aria-current="page"] { background: var(--surface-2); color: var(--accent); font-weight: 650; }
+.soon { width: 8px; height: 8px; border-radius: 50%; background: var(--idle); flex: none; }
+.scrim { position: fixed; inset: 0; z-index: 35; background: rgba(0,0,0,.5); }
+.scrim[hidden] { display: none; }
+
+@media (min-width: 900px) {
+  body { display: grid; grid-template-columns: 15rem 1fr; grid-template-rows: auto 1fr; }
+  .topbar { grid-column: 1 / -1; }
+  .brand-text small { font-size: .8rem; }
+  .sidenav {
+    position: sticky; top: 3.75rem; align-self: start; grid-row: 2;
+    height: calc(100vh - 3.75rem); max-height: none; border: 0; border-right: 1px solid var(--border);
+    border-radius: 0; transform: none; visibility: visible; padding: 1rem .75rem;
+  }
+  .sidenav ul { display: block; }
+  .tabbar, .scrim { display: none; }
+  main { grid-row: 2; width: 100%; padding-bottom: 3rem; }
+  h1 { font-size: 2.3rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

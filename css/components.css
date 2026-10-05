@@ -1,0 +1,77 @@
+/* components.css - reusable pieces: buttons, cards, status LEDs, roadmap. */
+
+.hero { padding: 1rem 0 .5rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.1rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 46px; padding: .55rem 1.1rem; border-radius: 12px;
+  font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
+  color: var(--text); background: var(--surface-2); border: 1px solid var(--border);
+}
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--on-accent); }
+.btn.primary:hover { filter: brightness(1.1); }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.1rem; box-shadow: var(--shadow);
+}
+.card h2 { margin-top: 0; }
+.note {
+  border-left: 3px solid var(--warn); padding: .4rem .75rem;
+  background: var(--surface-2); border-radius: 0 8px 8px 0; font-size: .9rem; color: var(--muted);
+}
+.split { display: grid; gap: 1rem; margin-top: 2rem; }
+.split .card .btn { margin-top: .5rem; }
+
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.stat {
+  display: flex; flex-direction: column; gap: .15rem; padding: .8rem .9rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+}
+.stat-label { font-size: .8rem; color: var(--muted); }
+.stat strong { font-size: 1.05rem; line-height: 1.3; }
+
+/* learning ladder: a real sequence, so numbered steps make sense */
+.ladder { list-style: none; counter-reset: step; margin: .75rem 0 0; padding: 0; display: grid; gap: .4rem; }
+.ladder li {
+  counter-increment: step; display: flex; align-items: center; gap: .75rem;
+  padding: .6rem .8rem; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--surface); color: var(--muted);
+}
+.ladder li::before {
+  content: counter(step); flex: none; width: 1.7rem; height: 1.7rem; border-radius: 50%;
+  display: grid; place-items: center; font-size: .85rem; font-weight: 700;
+  background: var(--surface-2); color: var(--muted);
+}
+.ladder li[aria-current="step"] { color: var(--text); border-color: var(--accent); font-weight: 650; }
+.ladder li[aria-current="step"]::before { background: var(--accent-strong); color: var(--on-accent); }
+
+/* roadmap phases with relay-style status LEDs */
+.phases { list-style: none; margin: .5rem 0 0; padding: 0; display: grid; gap: .6rem; }
+.phase {
+  display: flex; gap: .8rem; padding: .9rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+}
+.phase h4 { margin-bottom: .25rem; }
+.phase p { margin-bottom: .4rem; font-size: .92rem; color: var(--muted); }
+.led {
+  flex: none; width: 14px; height: 14px; margin-top: .3rem; border-radius: 50%;
+  background: var(--idle); border: 1px solid var(--border);
+}
+.led.in-progress { background: var(--warn); box-shadow: 0 0 8px var(--warn); }
+.led.completed { background: var(--ok); box-shadow: 0 0 8px var(--ok); }
+.tags { display: flex; flex-wrap: wrap; gap: .35rem; margin: 0; }
+.tag {
+  font-size: .75rem; padding: .15rem .55rem; border-radius: 999px;
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--muted);
+}
+.tag.phone { color: var(--ok); }
+.tag.laptop { color: var(--warn); }
+
+@media (min-width: 700px) {
+  .stat-grid { grid-template-columns: repeat(4, 1fr); }
+  .split { grid-template-columns: 1fr 1fr; }
+  .ladder { grid-template-columns: repeat(5, 1fr); }
+  .ladder li { flex-direction: column; text-align: center; }
+}
