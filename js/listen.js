@@ -99,7 +99,7 @@ function finish(message = 'Finished.') { state = 'idle'; index = 0; paint(messag
 
 function paint(message = '') {
   if (!ui) return;
-  const label = { idle: '▶ Listen', playing: '⏸ Pause', paused: '▶ Resume' }[state];
+  const label = { idle: 'Listen', playing: 'Pause', paused: 'Resume' }[state];
   ui.main.textContent = label;
   ui.stop.hidden = state === 'idle';
   ui.status.textContent = message || (state === 'playing' ? 'Reading…' : state === 'paused' ? 'Paused.' : '');
@@ -120,7 +120,7 @@ export function mountListenBar(view) {
   bar.setAttribute('aria-label', 'Listen to this page');
   bar.innerHTML = supported
     ? `<button type="button" class="btn primary" data-act="main"></button>
-       <button type="button" class="btn" data-act="stop" hidden>⏹ Stop</button>
+       <button type="button" class="btn" data-act="stop" hidden>Stop</button>
        <label class="speed">Speed
          <select data-act="rate">${RATES.map((r) => `<option value="${r}"${r === rate ? ' selected' : ''}>${r}x</option>`).join('')}</select>
        </label>
