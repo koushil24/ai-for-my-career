@@ -1,0 +1,119 @@
+{
+  "phase": "p1",
+  "lessons": [
+    {
+      "id": "p1-l1",
+      "phase": "p1",
+      "number": 1,
+      "title": "What is AI?",
+      "difficulty": "Beginner",
+      "minutes": 10,
+      "objectives": [
+        "Explain AI in simple words",
+        "Tell the difference between a rule and a learned pattern",
+        "Name three limits of AI"
+      ],
+      "analogy": "A fixed protection relay is like a rulebook: 'If current is above the setting for this long, trip.' Someone wrote every rule. AI is more like a new apprentice who has seen thousands of past cases and learns what usually happens, without anyone writing each rule.",
+      "simple": [
+        "Artificial intelligence (AI) is a computer system that does tasks that normally need human thinking: recognising pictures, understanding language, predicting what will happen next.",
+        "Most modern AI does not follow a long list of rules written by a person. It looks at a large amount of data, finds patterns, and uses those patterns on new cases."
+      ],
+      "technical": [
+        "AI is a broad field. Today most useful AI is machine learning (ML): the computer adjusts the numbers inside a mathematical model (called parameters) until the model's outputs match the examples it was shown. This step is called training.",
+        "After training, using the model on new input is called inference. Training is slow and expensive. Inference is fast. When you chat with an AI assistant, you are doing inference.",
+        "A model gives the most likely answer based on its training. It can be wrong, and it does not know when it is wrong. That is why a person must check important results."
+      ],
+      "electrical": [
+        "Rule-based: an overcurrent relay compares measured current with a pickup setting and trips after a time set by its curve. The behaviour is fixed and fully explained by its settings.",
+        "Learning-based: imagine a model trained on thousands of recorded fault events, each labelled with what happened. It could learn to flag a recording that looks unusual and suggest it for human review.",
+        "The two are different tools. Protection must stay predictable, so the relay keeps its rule. AI can help around it: reading reports, spotting odd records, drafting documents."
+      ],
+      "safety": "Educational example only. AI must never change protection settings by itself. Any setting or commissioning decision must be checked by a qualified engineer against approved procedures, the manufacturer's manual and the applicable standards.",
+      "realWorld": [
+        "Spam filter in your email: learns from messages people marked as spam.",
+        "Voice typing on your phone: turns your speech into text.",
+        "Map apps: predict travel time from past traffic patterns."
+      ],
+      "exercise": "Write down three tasks from your work. Mark each one as RULE (a fixed procedure someone can write step by step) or PATTERN (needs experience and looking at many past cases). Example: 'Check CT ratio against the drawing' is a rule. 'Notice that a test result looks unusual' is closer to a pattern.",
+      "challenge": "Explain AI to a colleague in three sentences, using a relay as your example. Say it out loud, then write it in your notes.",
+      "quickCheck": [
+        {
+          "q": "A relay trips when current is above its setting. Is this AI?",
+          "a": "No. It follows a fixed rule written by a person."
+        },
+        {
+          "q": "What do we call using a trained model on new input?",
+          "a": "Inference."
+        },
+        {
+          "q": "Can an AI answer be wrong even if it sounds confident?",
+          "a": "Yes. AI predicts likely answers and can be wrong, so important results must be checked."
+        }
+      ],
+      "mistakes": [
+        "Thinking AI is always right.",
+        "Thinking AI means robots.",
+        "Thinking AI understands things the way a person does. It finds patterns."
+      ],
+      "career": "In relay testing and service, AI is most useful as an assistant: summarising long manuals, drafting test reports, and highlighting results that look unusual. You stay responsible for every decision.",
+      "next": "p1-l2"
+    },
+    {
+      "id": "p1-l2",
+      "phase": "p1",
+      "number": 2,
+      "title": "AI, Machine Learning and Deep Learning",
+      "difficulty": "Beginner",
+      "minutes": 10,
+      "objectives": [
+        "Place AI, machine learning and deep learning in the right order",
+        "Say what makes deep learning different",
+        "Sort examples into the right group"
+      ],
+      "analogy": "Think of three circles, one inside the other. The biggest circle is AI. Inside it is machine learning. Inside that is deep learning. Everything in the small circle also belongs to the bigger ones.",
+      "simple": [
+        "AI is the big idea: computers doing smart tasks.",
+        "Machine learning (ML) is one way to build AI: the computer learns from examples instead of being given rules.",
+        "Deep learning (DL) is one kind of ML. It uses neural networks with many layers. It is very good with pictures, sound and language, but needs a lot of data and computing power."
+      ],
+      "technical": [
+        "Classic ML models (decision trees, random forests, linear regression) often work well on tables of numbers and need less data. You usually choose the useful input columns (features) yourself.",
+        "Deep learning models learn useful features by themselves across many layers. This is why they handle raw images, audio and text well.",
+        "Generative AI, such as chatbots that write text, is built with deep learning. Large language models (LLMs) are one example. We study them in Phase 2."
+      ],
+      "electrical": [
+        "Table of numbers: a model that predicts transformer failure risk from oil gas readings, load and temperature is classic ML.",
+        "Pictures: reading a relay nameplate from a photo, or checking a panel photo, is usually deep learning (computer vision).",
+        "Language: a chatbot that answers questions about a relay manual uses an LLM, which is deep learning."
+      ],
+      "safety": "Educational example only. A model that predicts failure risk supports maintenance planning. It does not replace inspection, testing or an engineer's judgement.",
+      "realWorld": [
+        "Machine learning: a bank flags unusual card payments.",
+        "Deep learning: your phone unlocks with your face.",
+        "Generative AI: a chatbot writes a draft email."
+      ],
+      "exercise": "Sort these into AI only, ML, or DL: (1) a fixed alarm filter written as if-then rules, (2) a model predicting oil temperature from past load numbers, (3) software reading a meter display from a photo, (4) a chatbot summarising a manual.",
+      "challenge": "Draw the three circles in your notebook and write one electrical example inside each circle.",
+      "quickCheck": [
+        {
+          "q": "Which circle is the biggest: AI, ML or DL?",
+          "a": "AI. ML is inside AI, and DL is inside ML."
+        },
+        {
+          "q": "What is deep learning built on?",
+          "a": "Neural networks with many layers."
+        },
+        {
+          "q": "Is a chatbot that writes text deep learning?",
+          "a": "Yes. Large language models are built with deep learning."
+        }
+      ],
+      "mistakes": [
+        "Using AI, ML and deep learning as if they mean the same thing.",
+        "Thinking deep learning is always the best choice. For small tables of numbers, simpler ML is often better."
+      ],
+      "career": "When you read a job description or a tool's website, knowing these three words helps you see what is really being offered, and what skills you need to learn first.",
+      "next": null
+    }
+  ]
+}
