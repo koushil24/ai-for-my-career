@@ -2,6 +2,7 @@
 import { BRAND, ROUTES, TABS } from './config.js';
 import { registerPage, startRouter, currentRoute } from './router.js';
 import { touchStreak, getStats, getState } from './store.js';
+import { mountListenBar } from './listen.js';
 
 /* ---------- small helpers ---------- */
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -177,6 +178,9 @@ function comingSoon(id) {
 }
 ROUTES.forEach((r) => { if (!['home', 'roadmap'].includes(r.id)) registerPage(r.id, comingSoon); });
 registerPage('__notfound', () => `<h1>Page not found</h1><p>That address does not exist.</p><a class="btn" href="#/">Go home</a>`);
+
+/* Add the Listen bar to every page after it loads */
+registerPage('__after', (id, view) => mountListenBar(view));
 
 /* ---------- start ---------- */
 setupBranding();
