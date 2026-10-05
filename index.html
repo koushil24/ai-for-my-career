@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI for My Career</title>
+  <meta name="description" content="From Zero to Advanced AI for Electrical Engineering">
+  <meta name="theme-color" content="#0a1428">
+  <link rel="icon" href="assets/images/favicon.png">
+  <!-- Apply saved theme before first paint so the page does not flash -->
+  <script>
+    try {
+      var t = localStorage.getItem('afmc.theme');
+      if (!t && window.matchMedia('(prefers-color-scheme: light)').matches) t = 'light';
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#view">Skip to content</a>
+
+  <header class="topbar">
+    <a class="brand" href="#/" aria-label="AI for My Career, home">
+      <span class="brand-logo"><img id="brand-logo" alt="K24 Electrical logo" width="56" height="43"></span>
+      <span class="brand-text">
+        <strong id="brand-title"></strong>
+        <small id="brand-sub"></small>
+      </span>
+    </a>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch theme"></button>
+  </header>
+
+  <nav id="sidenav" class="sidenav" aria-label="All sections"></nav>
+  <div id="scrim" class="scrim" hidden></div>
+
+  <main id="view" tabindex="-1"></main>
+
+  <nav id="tabbar" class="tabbar" aria-label="Quick navigation"></nav>
+
+  <noscript><p style="padding:1rem">This site needs JavaScript turned on to work.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
