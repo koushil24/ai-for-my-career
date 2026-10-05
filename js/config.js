@@ -4,7 +4,7 @@ export const BRAND = {
   title: 'AI for My Career',
   subtitle: 'From Zero to Advanced AI for Electrical Engineering',
   tagline: 'Learn AI. Build Skills. Engineer the Future.',
-  logo: 'assets/images/logo.png',
+  logo: 'assets/images/logo1.jpg',
 };
 
 /* Every section of the site.
