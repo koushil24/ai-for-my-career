@@ -39,7 +39,18 @@
       "title": "Orientation",
       "description": "How this platform works and how to study without feeling overwhelmed.",
       "level": "user",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "How this platform works",
+        "Phone Learning Mode",
+        "A simple weekly study routine",
+        "The safety rule: AI assists, engineers decide"
+      ],
+      "skills": [
+        "Study planning"
+      ],
+      "projects": [],
+      "prerequisites": []
     },
     {
       "id": "p1",
@@ -47,7 +58,30 @@
       "title": "AI Fundamentals",
       "description": "What AI, machine learning and deep learning are, and what AI cannot do.",
       "level": "user",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "What is AI?",
+        "A short history of AI",
+        "AI vs machine learning vs deep learning",
+        "Narrow AI and AGI",
+        "Models, training and inference",
+        "Parameters, tokens and context windows",
+        "Hallucinations",
+        "Reasoning models and multimodal AI",
+        "Limits of AI",
+        "Responsible AI"
+      ],
+      "skills": [
+        "AI concepts",
+        "AI vocabulary",
+        "Spotting AI limits"
+      ],
+      "projects": [
+        "Explain AI to a colleague using a relay example"
+      ],
+      "prerequisites": [
+        "p0"
+      ]
     },
     {
       "id": "p2",
@@ -55,7 +89,28 @@
       "title": "Generative AI",
       "description": "How language, image and audio models generate content.",
       "level": "user",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Generative AI",
+        "Large language models (LLMs)",
+        "Transformers and attention",
+        "Pretraining",
+        "Fine-tuning and instruction tuning",
+        "RLHF and RLAIF (concepts)",
+        "Multimodal models",
+        "Text, image, audio and video generation",
+        "AI search"
+      ],
+      "skills": [
+        "How LLMs work",
+        "Choosing AI tools"
+      ],
+      "projects": [
+        "Compare three AI tools on one engineering question"
+      ],
+      "prerequisites": [
+        "p1"
+      ]
     },
     {
       "id": "p3",
@@ -63,7 +118,30 @@
       "title": "Prompt Engineering",
       "description": "Ask AI clearly and get reliable, checkable answers.",
       "level": "user",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Basic prompting",
+        "Context and instructions",
+        "Roles and constraints",
+        "Few-shot prompting",
+        "Structured output",
+        "Decomposition and prompt chaining",
+        "Self-checking and critique",
+        "Refinement",
+        "Long-context prompting",
+        "Grounding",
+        "Prompt evaluation"
+      ],
+      "skills": [
+        "Prompt writing",
+        "Checking AI answers"
+      ],
+      "projects": [
+        "Prompt library for relay testing tasks"
+      ],
+      "prerequisites": [
+        "p2"
+      ]
     },
     {
       "id": "p4",
@@ -71,7 +149,28 @@
       "title": "AI Productivity",
       "description": "Use AI for reports, manuals, datasheets, Excel, email and interview preparation.",
       "level": "power",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Research with AI",
+        "Technical reports",
+        "PDFs and manuals",
+        "Datasheets",
+        "Excel and data analysis",
+        "Presentations",
+        "Email and documentation",
+        "Learning with AI",
+        "Career and interview preparation"
+      ],
+      "skills": [
+        "AI-assisted documentation",
+        "AI research workflow"
+      ],
+      "projects": [
+        "Summarize a public relay manual with AI and verify it"
+      ],
+      "prerequisites": [
+        "p3"
+      ]
     },
     {
       "id": "p5",
@@ -79,7 +178,27 @@
       "title": "Computer & Programming Foundations",
       "description": "Hardware, files, internet, APIs, JSON, Git and the command line.",
       "level": "power",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Hardware: CPU, RAM, storage",
+        "Operating systems, files and folders",
+        "Software",
+        "Internet, browsers, client and server",
+        "APIs and JSON",
+        "Databases",
+        "Git and GitHub",
+        "Command line"
+      ],
+      "skills": [
+        "Computer literacy",
+        "Git basics"
+      ],
+      "projects": [
+        "Your own GitHub repository (already started)"
+      ],
+      "prerequisites": [
+        "p1"
+      ]
     },
     {
       "id": "p6",
@@ -87,7 +206,33 @@
       "title": "Python From Zero",
       "description": "Write your first programs. Starts after your laptop arrives.",
       "level": "power",
-      "needsLaptop": true
+      "needsLaptop": true,
+      "topics": [
+        "What programming is",
+        "Installing and running Python",
+        "print(), variables and data types",
+        "Strings and numbers",
+        "Lists, tuples, sets and dictionaries",
+        "Conditions and loops",
+        "Functions, modules and packages",
+        "Files and exceptions",
+        "Object-oriented programming",
+        "Virtual environments and pip",
+        "APIs and JSON",
+        "Debugging and testing",
+        "Git and GitHub"
+      ],
+      "skills": [
+        "Python basics",
+        "Debugging"
+      ],
+      "projects": [
+        "Fault current calculator",
+        "Relay test log reader"
+      ],
+      "prerequisites": [
+        "p5"
+      ]
     },
     {
       "id": "p7",
@@ -95,7 +240,27 @@
       "title": "Python for Data",
       "description": "NumPy, Pandas and charts using electrical datasets.",
       "level": "power",
-      "needsLaptop": true
+      "needsLaptop": true,
+      "topics": [
+        "NumPy",
+        "Pandas",
+        "Matplotlib",
+        "CSV, Excel and JSON",
+        "Data cleaning",
+        "Data transformation",
+        "Data visualization",
+        "Statistics"
+      ],
+      "skills": [
+        "Data handling",
+        "Charts"
+      ],
+      "projects": [
+        "Analyze simulated trip-time data"
+      ],
+      "prerequisites": [
+        "p6"
+      ]
     },
     {
       "id": "p8",
@@ -103,7 +268,27 @@
       "title": "Mathematics for AI",
       "description": "Ratios, algebra, statistics, vectors and gradients, taught visually.",
       "level": "power",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Arithmetic, ratios and percentages",
+        "Algebra and equations",
+        "Functions",
+        "Probability",
+        "Mean, median, variance, standard deviation",
+        "Correlation",
+        "Vectors and matrices",
+        "Derivatives and gradients",
+        "Optimization"
+      ],
+      "skills": [
+        "Math for AI"
+      ],
+      "projects": [
+        "Visual math notebook"
+      ],
+      "prerequisites": [
+        "p1"
+      ]
     },
     {
       "id": "p9",
@@ -111,7 +296,33 @@
       "title": "Machine Learning",
       "description": "Regression, classification, clustering and how to judge a model.",
       "level": "assisted",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "What machine learning is",
+        "Supervised and unsupervised learning",
+        "Regression",
+        "Classification",
+        "Clustering",
+        "Decision trees, random forests, gradient boosting",
+        "SVM and KNN",
+        "Feature engineering",
+        "Training, validation, testing",
+        "Overfitting and underfitting",
+        "Bias and variance",
+        "Cross-validation",
+        "Evaluation metrics"
+      ],
+      "skills": [
+        "Machine learning",
+        "Model evaluation"
+      ],
+      "projects": [
+        "Predict a simulated transformer temperature"
+      ],
+      "prerequisites": [
+        "p7",
+        "p8"
+      ]
     },
     {
       "id": "p10",
@@ -119,7 +330,25 @@
       "title": "AI + Electrical Machine Learning",
       "description": "Fault prediction and anomaly detection on simulated data.",
       "level": "assisted",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Transformer fault prediction",
+        "Relay anomaly detection",
+        "Predictive maintenance",
+        "Equipment failure prediction",
+        "Electrical test-data analysis"
+      ],
+      "skills": [
+        "Electrical ML",
+        "Simulated datasets"
+      ],
+      "projects": [
+        "Transformer fault prediction (simulated data)",
+        "Relay anomaly detection (simulated data)"
+      ],
+      "prerequisites": [
+        "p9"
+      ]
     },
     {
       "id": "p11",
@@ -127,7 +356,27 @@
       "title": "Deep Learning",
       "description": "Neural networks, training and the main architectures.",
       "level": "assisted",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Neurons and layers",
+        "Activation functions",
+        "Loss functions",
+        "Backpropagation",
+        "Optimizers",
+        "Epochs, batches and learning rate",
+        "CNN",
+        "RNN and LSTM",
+        "Transformers"
+      ],
+      "skills": [
+        "Neural networks"
+      ],
+      "projects": [
+        "Train a tiny neural network"
+      ],
+      "prerequisites": [
+        "p9"
+      ]
     },
     {
       "id": "p12",
@@ -135,7 +384,28 @@
       "title": "Computer Vision",
       "description": "Image tasks such as nameplate OCR and panel inspection.",
       "level": "assisted",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Image classification",
+        "Object detection",
+        "OCR",
+        "Image segmentation",
+        "Document vision",
+        "PCB inspection",
+        "Relay front-panel recognition",
+        "Meter reading",
+        "Nameplate OCR",
+        "Panel inspection"
+      ],
+      "skills": [
+        "Computer vision"
+      ],
+      "projects": [
+        "Nameplate reader"
+      ],
+      "prerequisites": [
+        "p11"
+      ]
     },
     {
       "id": "p13",
@@ -143,7 +413,24 @@
       "title": "NLP",
       "description": "Text classification, search, summarization and information extraction.",
       "level": "assisted",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Text classification",
+        "Entity extraction",
+        "Text similarity",
+        "Semantic search",
+        "Summarization",
+        "Information extraction"
+      ],
+      "skills": [
+        "NLP basics"
+      ],
+      "projects": [
+        "Classify service notes"
+      ],
+      "prerequisites": [
+        "p11"
+      ]
     },
     {
       "id": "p14",
@@ -151,7 +438,28 @@
       "title": "LLM Engineering",
       "description": "Use current LLM APIs, tool calling and structured outputs.",
       "level": "builder",
-      "needsLaptop": true
+      "needsLaptop": true,
+      "topics": [
+        "LLM APIs",
+        "Model selection",
+        "Context management",
+        "Structured outputs",
+        "Tool and function calling",
+        "Streaming",
+        "Token management, cost and latency",
+        "Evaluation"
+      ],
+      "skills": [
+        "LLM APIs",
+        "Current API practice"
+      ],
+      "projects": [
+        "Test report summarizer"
+      ],
+      "prerequisites": [
+        "p3",
+        "p6"
+      ]
     },
     {
       "id": "p15",
@@ -159,7 +467,26 @@
       "title": "Embeddings",
       "description": "Turn text into vectors and search by meaning.",
       "level": "builder",
-      "needsLaptop": true
+      "needsLaptop": true,
+      "topics": [
+        "Embeddings",
+        "Vector representations",
+        "Semantic similarity",
+        "Vector databases",
+        "Similarity search",
+        "Chunking",
+        "Metadata"
+      ],
+      "skills": [
+        "Embeddings",
+        "Semantic search"
+      ],
+      "projects": [
+        "Semantic search over public relay notes"
+      ],
+      "prerequisites": [
+        "p14"
+      ]
     },
     {
       "id": "p16",
@@ -167,7 +494,30 @@
       "title": "RAG",
       "description": "AI that answers from your own documents, with citations.",
       "level": "builder",
-      "needsLaptop": true
+      "needsLaptop": true,
+      "topics": [
+        "Retrieval-Augmented Generation",
+        "Document ingestion",
+        "Chunking",
+        "Embeddings",
+        "Retrieval",
+        "Reranking",
+        "Grounding",
+        "Citations",
+        "Evaluation",
+        "Advanced RAG",
+        "Agentic RAG"
+      ],
+      "skills": [
+        "RAG design",
+        "Grounded answers"
+      ],
+      "projects": [
+        "Relay Knowledge Assistant (public documents only)"
+      ],
+      "prerequisites": [
+        "p15"
+      ]
     },
     {
       "id": "p17",
@@ -175,7 +525,28 @@
       "title": "AI Agents",
       "description": "Planning, tools, memory and human-in-the-loop workflows.",
       "level": "builder",
-      "needsLaptop": true
+      "needsLaptop": true,
+      "topics": [
+        "What agents are",
+        "Agent architecture",
+        "Planning",
+        "Tools",
+        "Memory",
+        "Workflows",
+        "Multi-agent systems",
+        "Human-in-the-loop",
+        "Agent evaluation",
+        "Agent security"
+      ],
+      "skills": [
+        "Agent design"
+      ],
+      "projects": [
+        "Troubleshooting agent with human approval"
+      ],
+      "prerequisites": [
+        "p16"
+      ]
     },
     {
       "id": "p18",
@@ -183,7 +554,26 @@
       "title": "MCP",
       "description": "Model Context Protocol: connect AI to tools and data safely.",
       "level": "builder",
-      "needsLaptop": true
+      "needsLaptop": true,
+      "topics": [
+        "Model Context Protocol",
+        "MCP clients",
+        "MCP servers",
+        "Tools",
+        "Resources",
+        "Prompts",
+        "Security",
+        "External integrations"
+      ],
+      "skills": [
+        "MCP"
+      ],
+      "projects": [
+        "A small MCP tool server"
+      ],
+      "prerequisites": [
+        "p17"
+      ]
     },
     {
       "id": "p19",
@@ -191,7 +581,26 @@
       "title": "AI Automation",
       "description": "Workflows, webhooks and approval steps, such as relay test report checks.",
       "level": "builder",
-      "needsLaptop": true
+      "needsLaptop": true,
+      "topics": [
+        "APIs",
+        "Webhooks",
+        "JSON",
+        "Workflow automation",
+        "Scheduled workflows",
+        "Data pipelines",
+        "Notifications",
+        "Human approval systems"
+      ],
+      "skills": [
+        "Automation"
+      ],
+      "projects": [
+        "Relay test report review workflow"
+      ],
+      "prerequisites": [
+        "p14"
+      ]
     },
     {
       "id": "p20",
@@ -199,7 +608,27 @@
       "title": "AI Security",
       "description": "Prompt injection, data leakage, secrets and guardrails.",
       "level": "builder",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Prompt injection",
+        "Data leakage",
+        "Privacy",
+        "Authentication and authorization",
+        "API keys and secrets",
+        "Malicious documents",
+        "Tool abuse",
+        "Guardrails",
+        "Audit logs"
+      ],
+      "skills": [
+        "AI security"
+      ],
+      "projects": [
+        "Security review of your own project"
+      ],
+      "prerequisites": [
+        "p14"
+      ]
     },
     {
       "id": "p21",
@@ -207,7 +636,27 @@
       "title": "AI Evaluation",
       "description": "Measure accuracy, groundedness and hallucinations.",
       "level": "builder",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Accuracy",
+        "Precision, recall and F1",
+        "Groundedness",
+        "Hallucination testing",
+        "Evaluation datasets",
+        "Regression testing",
+        "Human evaluation",
+        "LLM-as-judge (concepts)",
+        "Monitoring"
+      ],
+      "skills": [
+        "AI evaluation"
+      ],
+      "projects": [
+        "Evaluation set for the Relay Knowledge Assistant"
+      ],
+      "prerequisites": [
+        "p16"
+      ]
     },
     {
       "id": "p22",
@@ -215,7 +664,26 @@
       "title": "Cloud AI",
       "description": "One cloud platform in depth: storage, compute, deployment.",
       "level": "builder",
-      "needsLaptop": true
+      "needsLaptop": true,
+      "topics": [
+        "Cloud fundamentals",
+        "Storage",
+        "Compute",
+        "Databases",
+        "AI services",
+        "Deployment",
+        "Security",
+        "Monitoring"
+      ],
+      "skills": [
+        "One cloud in depth"
+      ],
+      "projects": [
+        "Deploy a small AI app"
+      ],
+      "prerequisites": [
+        "p14"
+      ]
     },
     {
       "id": "p23",
@@ -223,7 +691,28 @@
       "title": "AI Application Development",
       "description": "Frontend, backend, databases and AI integration.",
       "level": "builder",
-      "needsLaptop": true
+      "needsLaptop": true,
+      "topics": [
+        "Frontend",
+        "Backend",
+        "APIs",
+        "Databases",
+        "Authentication",
+        "AI integration",
+        "RAG and agents in an app",
+        "Deployment",
+        "Monitoring"
+      ],
+      "skills": [
+        "Full AI app"
+      ],
+      "projects": [
+        "Electrical AI assistant app"
+      ],
+      "prerequisites": [
+        "p16",
+        "p22"
+      ]
     },
     {
       "id": "p24",
@@ -231,7 +720,39 @@
       "title": "AI + Electrical Engineering Specialization",
       "description": "Protection, testing, SCADA and IEC 61850 combined with AI.",
       "level": "specialist",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Protection relays",
+        "Power systems",
+        "Testing",
+        "Commissioning",
+        "Service",
+        "SCADA",
+        "IEC 61850",
+        "Automation",
+        "AI applied to each area"
+      ],
+      "skills": [
+        "Electrical AI specialization"
+      ],
+      "projects": [
+        "Relay Testing AI Assistant",
+        "Protection Relay Manual Assistant",
+        "Relay Test Report Analyzer",
+        "Transformer Protection Assistant",
+        "Fault Analysis Assistant",
+        "Electrical Calculation Assistant",
+        "SCADA Alarm Analysis Assistant",
+        "Predictive Maintenance System",
+        "Electrical Troubleshooting Assistant",
+        "IEC 61850 Learning Assistant",
+        "Protection Documentation Assistant",
+        "Electrical Engineering AI Learning Platform"
+      ],
+      "prerequisites": [
+        "p10",
+        "p16"
+      ]
     },
     {
       "id": "p25",
@@ -239,7 +760,22 @@
       "title": "Portfolio",
       "description": "Package your best projects for employers.",
       "level": "specialist",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "Choosing your best projects",
+        "Writing project descriptions",
+        "Simulated data only",
+        "Presenting your work"
+      ],
+      "skills": [
+        "Portfolio"
+      ],
+      "projects": [
+        "Public portfolio on GitHub Pages"
+      ],
+      "prerequisites": [
+        "p24"
+      ]
     },
     {
       "id": "p26",
@@ -247,7 +783,26 @@
       "title": "Career Integration",
       "description": "Connect your skills to real roles.",
       "level": "specialist",
-      "needsLaptop": false
+      "needsLaptop": false,
+      "topics": [
+        "AI-enabled Electrical Engineer",
+        "AI/ML Engineer",
+        "AI Automation Engineer",
+        "AI Application Developer",
+        "Data/ML Engineer",
+        "AI Solutions Engineer",
+        "Industrial AI Engineer",
+        "Electrical AI Specialist"
+      ],
+      "skills": [
+        "Career planning"
+      ],
+      "projects": [
+        "Career plan"
+      ],
+      "prerequisites": [
+        "p25"
+      ]
     }
   ]
 }
