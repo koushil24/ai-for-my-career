@@ -67,7 +67,7 @@ img { max-width: 100%; height: auto; }
 }
 .brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; color: var(--text); min-width: 0; }
 .brand-logo { background: #fff; border-radius: 10px; padding: 3px 6px; display: flex; flex: none; }
-.brand-logo img { display: block; height: 36px; width: auto; }
+.brand-logo img { display: block; height: 30px; width: auto; }
 .brand-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
 .brand-text strong { font-size: 1rem; }
 .brand-text small { color: var(--muted); font-size: .72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
