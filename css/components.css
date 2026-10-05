@@ -75,3 +75,20 @@
   .ladder { grid-template-columns: repeat(5, 1fr); }
   .ladder li { flex-direction: column; text-align: center; }
 }
+
+/* Listen bar (text-to-speech) */
+.listen {
+  position: sticky; top: 61px; z-index: 10;
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
+  margin: -1.25rem -1rem 1rem; padding: .6rem 1rem;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+}
+.listen .btn { min-height: 44px; }
+.speed { display: flex; align-items: center; gap: .4rem; font-size: .9rem; color: var(--muted); }
+.speed select {
+  min-height: 44px; padding: 0 .5rem; font: inherit;
+  background: var(--surface-2); color: var(--text);
+  border: 1px solid var(--border); border-radius: 10px;
+}
+.listen-status { font-size: .85rem; color: var(--muted); }
+@media (min-width: 900px) { .listen { margin: -1.25rem 0 1rem; padding-left: 0; padding-right: 0; } }
