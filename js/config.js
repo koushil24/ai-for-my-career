@@ -36,11 +36,24 @@ export const ROUTES = [
   { id: 'about',      label: 'About',         stage: 13, blurb: 'Why this project exists and how it is built.' },
 ];
 
+/* Simple line icons (no emoji). Each one is a small SVG that takes the text colour. */
+const svg = (inner) => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${inner}</svg>`;
+
+export const ICONS = {
+  home:    svg('<path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/>'),
+  roadmap: svg('<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/>'),
+  lessons: svg('<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5z"/><path d="M4 19a2 2 0 0 1 2-2h13"/>'),
+  notes:   svg('<path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/>'),
+  more:    svg('<path d="M4 7h16M4 12h16M4 17h16"/>'),
+  sun:     svg('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'),
+  moon:    svg('<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/>'),
+};
+
 /* The 5 buttons in the phone bottom bar. 'more' opens the full menu. */
 export const TABS = [
-  { id: 'home',    icon: '🏠', label: 'Home' },
-  { id: 'roadmap', icon: '🗺️', label: 'Roadmap' },
-  { id: 'lessons', icon: '📘', label: 'Lessons' },
-  { id: 'notes',   icon: '📝', label: 'Notes' },
-  { id: 'more',    icon: '☰',  label: 'More' },
+  { id: 'home',    icon: ICONS.home,    label: 'Home' },
+  { id: 'roadmap', icon: ICONS.roadmap, label: 'Roadmap' },
+  { id: 'lessons', icon: ICONS.lessons, label: 'Lessons' },
+  { id: 'notes',   icon: ICONS.notes,   label: 'Notes' },
+  { id: 'more',    icon: ICONS.more,    label: 'More' },
 ];
