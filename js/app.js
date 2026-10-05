@@ -1,5 +1,5 @@
 /* app.js - starts the site: branding, menu, theme, and the pages. */
-import { BRAND, ROUTES, TABS } from './config.js';
+import { BRAND, ROUTES, TABS, ICONS } from './config.js';
 import { registerPage, startRouter, currentRoute } from './router.js';
 import { touchStreak, getStats, getState } from './store.js';
 import { mountListenBar } from './listen.js';
@@ -29,7 +29,7 @@ function setupTheme() {
   const btn = document.getElementById('theme-toggle');
   const paint = () => {
     const dark = document.documentElement.getAttribute('data-theme') === 'dark';
-    btn.textContent = dark ? '☀️' : '🌙';
+    btn.innerHTML = dark ? ICONS.sun : ICONS.moon;
     btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
   };
   btn.addEventListener('click', () => {
