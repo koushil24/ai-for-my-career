@@ -13,11 +13,12 @@ export function currentRoute() {
 export function startRouter(onChange) {
   const go = async () => {
     const id = currentRoute();
+    const param = location.hash.replace(/^#\/?/, '').split('/')[1] || '';
     const render = pages[id] || pages.__notfound;
     const view = document.getElementById('view');
     view.innerHTML = '<p class="muted">Loading…</p>';
     try {
-      view.innerHTML = await render(id);
+      view.innerHTML = await render(id, param);
       if (pages.__after) pages.__after(id, view);
     } catch (err) {
       console.error(err);
