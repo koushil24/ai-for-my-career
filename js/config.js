@@ -36,6 +36,9 @@ export const ROUTES = [
   { id: 'about',      label: 'About',         stage: 13, blurb: 'Why this project exists and how it is built.' },
 ];
 
+/* Pages that are already built. Everything else shows a "coming soon" card. */
+export const BUILT = new Set(['home', 'roadmap', 'syllabus', 'lessons']);
+
 /* Simple line icons (no emoji). Each one is a small SVG that takes the text colour. */
 const svg = (inner) => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${inner}</svg>`;
 
