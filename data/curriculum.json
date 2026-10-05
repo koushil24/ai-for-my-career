@@ -1,0 +1,253 @@
+{
+  "levels": [
+    {
+      "id": "user",
+      "name": "AI User",
+      "from": 0,
+      "to": 3
+    },
+    {
+      "id": "power",
+      "name": "AI Power User",
+      "from": 4,
+      "to": 8
+    },
+    {
+      "id": "assisted",
+      "name": "AI-Assisted Engineer",
+      "from": 9,
+      "to": 13
+    },
+    {
+      "id": "builder",
+      "name": "AI Builder",
+      "from": 14,
+      "to": 23
+    },
+    {
+      "id": "specialist",
+      "name": "AI + Electrical Specialist",
+      "from": 24,
+      "to": 26
+    }
+  ],
+  "totalLessons": 0,
+  "phases": [
+    {
+      "id": "p0",
+      "number": 0,
+      "title": "Orientation",
+      "description": "How this platform works and how to study without feeling overwhelmed.",
+      "level": "user",
+      "needsLaptop": false
+    },
+    {
+      "id": "p1",
+      "number": 1,
+      "title": "AI Fundamentals",
+      "description": "What AI, machine learning and deep learning are, and what AI cannot do.",
+      "level": "user",
+      "needsLaptop": false
+    },
+    {
+      "id": "p2",
+      "number": 2,
+      "title": "Generative AI",
+      "description": "How language, image and audio models generate content.",
+      "level": "user",
+      "needsLaptop": false
+    },
+    {
+      "id": "p3",
+      "number": 3,
+      "title": "Prompt Engineering",
+      "description": "Ask AI clearly and get reliable, checkable answers.",
+      "level": "user",
+      "needsLaptop": false
+    },
+    {
+      "id": "p4",
+      "number": 4,
+      "title": "AI Productivity",
+      "description": "Use AI for reports, manuals, datasheets, Excel, email and interview preparation.",
+      "level": "power",
+      "needsLaptop": false
+    },
+    {
+      "id": "p5",
+      "number": 5,
+      "title": "Computer & Programming Foundations",
+      "description": "Hardware, files, internet, APIs, JSON, Git and the command line.",
+      "level": "power",
+      "needsLaptop": false
+    },
+    {
+      "id": "p6",
+      "number": 6,
+      "title": "Python From Zero",
+      "description": "Write your first programs. Starts after your laptop arrives.",
+      "level": "power",
+      "needsLaptop": true
+    },
+    {
+      "id": "p7",
+      "number": 7,
+      "title": "Python for Data",
+      "description": "NumPy, Pandas and charts using electrical datasets.",
+      "level": "power",
+      "needsLaptop": true
+    },
+    {
+      "id": "p8",
+      "number": 8,
+      "title": "Mathematics for AI",
+      "description": "Ratios, algebra, statistics, vectors and gradients, taught visually.",
+      "level": "power",
+      "needsLaptop": false
+    },
+    {
+      "id": "p9",
+      "number": 9,
+      "title": "Machine Learning",
+      "description": "Regression, classification, clustering and how to judge a model.",
+      "level": "assisted",
+      "needsLaptop": false
+    },
+    {
+      "id": "p10",
+      "number": 10,
+      "title": "AI + Electrical Machine Learning",
+      "description": "Fault prediction and anomaly detection on simulated data.",
+      "level": "assisted",
+      "needsLaptop": false
+    },
+    {
+      "id": "p11",
+      "number": 11,
+      "title": "Deep Learning",
+      "description": "Neural networks, training and the main architectures.",
+      "level": "assisted",
+      "needsLaptop": false
+    },
+    {
+      "id": "p12",
+      "number": 12,
+      "title": "Computer Vision",
+      "description": "Image tasks such as nameplate OCR and panel inspection.",
+      "level": "assisted",
+      "needsLaptop": false
+    },
+    {
+      "id": "p13",
+      "number": 13,
+      "title": "NLP",
+      "description": "Text classification, search, summarization and information extraction.",
+      "level": "assisted",
+      "needsLaptop": false
+    },
+    {
+      "id": "p14",
+      "number": 14,
+      "title": "LLM Engineering",
+      "description": "Use current LLM APIs, tool calling and structured outputs.",
+      "level": "builder",
+      "needsLaptop": true
+    },
+    {
+      "id": "p15",
+      "number": 15,
+      "title": "Embeddings",
+      "description": "Turn text into vectors and search by meaning.",
+      "level": "builder",
+      "needsLaptop": true
+    },
+    {
+      "id": "p16",
+      "number": 16,
+      "title": "RAG",
+      "description": "AI that answers from your own documents, with citations.",
+      "level": "builder",
+      "needsLaptop": true
+    },
+    {
+      "id": "p17",
+      "number": 17,
+      "title": "AI Agents",
+      "description": "Planning, tools, memory and human-in-the-loop workflows.",
+      "level": "builder",
+      "needsLaptop": true
+    },
+    {
+      "id": "p18",
+      "number": 18,
+      "title": "MCP",
+      "description": "Model Context Protocol: connect AI to tools and data safely.",
+      "level": "builder",
+      "needsLaptop": true
+    },
+    {
+      "id": "p19",
+      "number": 19,
+      "title": "AI Automation",
+      "description": "Workflows, webhooks and approval steps, such as relay test report checks.",
+      "level": "builder",
+      "needsLaptop": true
+    },
+    {
+      "id": "p20",
+      "number": 20,
+      "title": "AI Security",
+      "description": "Prompt injection, data leakage, secrets and guardrails.",
+      "level": "builder",
+      "needsLaptop": false
+    },
+    {
+      "id": "p21",
+      "number": 21,
+      "title": "AI Evaluation",
+      "description": "Measure accuracy, groundedness and hallucinations.",
+      "level": "builder",
+      "needsLaptop": false
+    },
+    {
+      "id": "p22",
+      "number": 22,
+      "title": "Cloud AI",
+      "description": "One cloud platform in depth: storage, compute, deployment.",
+      "level": "builder",
+      "needsLaptop": true
+    },
+    {
+      "id": "p23",
+      "number": 23,
+      "title": "AI Application Development",
+      "description": "Frontend, backend, databases and AI integration.",
+      "level": "builder",
+      "needsLaptop": true
+    },
+    {
+      "id": "p24",
+      "number": 24,
+      "title": "AI + Electrical Engineering Specialization",
+      "description": "Protection, testing, SCADA and IEC 61850 combined with AI.",
+      "level": "specialist",
+      "needsLaptop": false
+    },
+    {
+      "id": "p25",
+      "number": 25,
+      "title": "Portfolio",
+      "description": "Package your best projects for employers.",
+      "level": "specialist",
+      "needsLaptop": false
+    },
+    {
+      "id": "p26",
+      "number": 26,
+      "title": "Career Integration",
+      "description": "Connect your skills to real roles.",
+      "level": "specialist",
+      "needsLaptop": false
+    }
+  ]
+}
