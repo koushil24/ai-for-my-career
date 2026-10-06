@@ -1,0 +1,183 @@
+/* depth.css - version 2 look: control-room grid, 3D depth, lesson cards.
+   Loaded AFTER components.css, so it can refine anything above.
+   Change the whole mood by editing the colour variables in the first two blocks. */
+
+:root, [data-theme="dark"] {
+  --bg: #070d1a; --surface: #0e1a32; --surface-2: #14264a; --border: #22396b;
+  --text: #e9f0ff; --muted: #9db0d3;
+  --accent: #5b9bff; --accent-strong: #2f6bff; --cyan: #35d8f2;
+  --live: #ffc93c;                         /* "energised" amber */
+  --grid: rgba(91,155,255,.07); --glow: rgba(47,107,255,.28);
+  --lift: 0 1px 0 rgba(255,255,255,.06) inset, 0 14px 28px -14px rgba(0,0,0,.75);
+}
+[data-theme="light"] {
+  --bg: #eef2f9; --surface: #ffffff; --surface-2: #e6edf9; --border: #c5d3ec;
+  --text: #0b1a36; --muted: #475a7c;
+  --accent: #1c58d6; --accent-strong: #1747b0; --cyan: #0a8fa8;
+  --live: #d98a00;
+  --grid: rgba(28,88,214,.08); --glow: rgba(28,88,214,.14);
+  --lift: 0 1px 0 #fff inset, 0 12px 24px -14px rgba(13,27,54,.35);
+}
+
+/* ----- blueprint grid background ----- */
+body {
+  background-image:
+    radial-gradient(900px 420px at 75% -8%, var(--glow), transparent 65%),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: auto, 36px 36px, 36px 36px;
+}
+.topbar { background: var(--surface); background: color-mix(in srgb, var(--surface) 88%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+
+/* ----- small label style used across the site ----- */
+.eyebrow {
+  font: 700 .72rem/1.2 ui-monospace, "SF Mono", Consolas, monospace;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--k, var(--cyan)); margin: 0 0 .45rem;
+}
+
+/* ----- buttons with a pressed-down feel ----- */
+.btn { box-shadow: 0 2px 0 rgba(0,0,0,.35); transition: transform .08s, box-shadow .08s, border-color .15s; }
+.btn:active:not([disabled]) { transform: translateY(2px); box-shadow: none; }
+.btn.primary { background: linear-gradient(180deg, #4d89ff, var(--accent-strong)); }
+
+/* ----- cards get depth ----- */
+.card, .stat, .lesson-link, .phase-card {
+  background: linear-gradient(160deg, var(--surface-2), var(--surface));
+  box-shadow: var(--lift);
+}
+
+/* ----- 3D tilt: mouse follows, phones get a press-in ----- */
+[data-tilt] {
+  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .18s ease, box-shadow .18s ease;
+  will-change: transform;
+}
+[data-tilt]:active { transform: perspective(800px) translateZ(-6px) scale(.985); }
+
+/* ----- hero ----- */
+.hero { padding: 1.5rem 0 .5rem; }
+.hero h1 {
+  font-size: clamp(2.3rem, 9vw, 3.8rem); line-height: 1.04; letter-spacing: -.02em; margin-bottom: .75rem;
+  background: linear-gradient(95deg, var(--text) 30%, var(--accent));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+
+/* ----- the 3D level stack ----- */
+.path-grid { display: grid; gap: 1rem; align-items: center; }
+.iso { height: 270px; display: grid; place-items: center; perspective: 1000px; overflow: visible; }
+.iso-inner {
+  position: relative; width: 150px; height: 150px; margin-top: 100px;
+  transform-style: preserve-3d;
+  transform: rotateX(58deg) rotateZ(-38deg);
+  animation: sway 9s ease-in-out infinite alternate;
+}
+@keyframes sway {
+  from { transform: rotateX(58deg) rotateZ(-46deg); }
+  to   { transform: rotateX(58deg) rotateZ(-30deg); }
+}
+.plate {
+  position: absolute; inset: 0; border-radius: 16px;
+  transform: translateZ(calc(var(--i) * 30px));
+  background: linear-gradient(135deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--border); opacity: .7;
+  box-shadow: 10px 10px 22px -10px rgba(0,0,0,.6);
+}
+.plate.done { border-color: var(--accent); background: linear-gradient(135deg, var(--accent-strong), var(--surface-2)); opacity: .95; }
+.plate.current { border: 2px solid var(--live); background: linear-gradient(135deg, var(--live), var(--surface-2)); opacity: 1; box-shadow: 0 0 26px var(--live); }
+
+.path-grid .ladder { grid-template-columns: 1fr; }
+.path-grid .ladder li { flex-direction: row; text-align: left; box-shadow: var(--lift); }
+.path-grid .ladder li[aria-current="step"] { border-color: var(--live); }
+.path-grid .ladder li[aria-current="step"]::before { background: var(--live); color: #1a1200; }
+
+@media (min-width: 700px) { .path-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ----- how it works ----- */
+.how-grid { display: grid; gap: .8rem; margin-top: .6rem; }
+.how {
+  padding: 1.1rem; border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--lift);
+  background: linear-gradient(160deg, var(--surface-2), var(--surface));
+}
+.how h3 { margin: .6rem 0 .3rem; color: var(--text); }
+.how p { margin: 0; color: var(--muted); }
+.how-num {
+  display: inline-block; font: 700 .8rem ui-monospace, Consolas, monospace;
+  color: var(--live); border: 1px solid var(--live); border-radius: 6px; padding: .1rem .5rem;
+}
+@media (min-width: 700px) { .how-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ----- roadmap as a single-line diagram: the line lights up as you progress ----- */
+.gridline { gap: .8rem; margin-left: 14px; }
+.gridline .phase-card { position: relative; margin-left: 18px; }
+.gridline .phase-card::before {
+  content: ""; position: absolute; left: -18px; top: -.8rem; bottom: 0; width: 3px;
+  background: var(--border); border-radius: 2px;
+}
+.gridline .phase-card:first-child::before { top: 28px; }
+.gridline .phase-card.live::before { background: var(--live); box-shadow: 0 0 8px var(--live); }
+.gridline .phase-card .led {
+  position: absolute; left: -27px; top: 19px; width: 20px; height: 20px; margin: 0;
+  border-radius: 6px; background: var(--surface-2); border: 2px solid var(--border);
+}
+.gridline .phase-card .led.in-progress { background: var(--live); border-color: var(--live); box-shadow: 0 0 10px var(--live); }
+.gridline .phase-card .led.completed { background: var(--ok); border-color: var(--ok); box-shadow: 0 0 10px var(--ok); }
+
+/* ----- lesson deck ----- */
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin: .4rem 0; }
+.seg button { min-height: 40px; padding: 0 1rem; font: inherit; background: transparent; color: var(--muted); border: 0; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent-strong); color: #fff; font-weight: 650; }
+
+.deck-bar { height: 6px; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin: .6rem 0 0; }
+.deck-bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent-strong), var(--live)); transition: width .25s; }
+
+.lcard {
+  --k: var(--accent);
+  margin-top: 1rem; padding: 1.25rem; border-radius: 18px;
+  background: linear-gradient(160deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--border); border-top: 3px solid var(--k); box-shadow: var(--lift);
+}
+.lcard.kind-analogy { --k: var(--live); }
+.lcard.kind-electrical { --k: var(--cyan); }
+.lcard.kind-try, .lcard.kind-finish { --k: var(--ok); }
+.lcard.kind-safety { --k: var(--warn); }
+.lcard.kind-check { --k: #b48cff; }
+.lcard h2 { font-size: 1.55rem; margin: 0 0 .8rem; }
+.lcard .big { font-size: 1.15rem; line-height: 1.55; }
+.lesson[data-mode="cards"] .lcard:not(.active) { display: none; }
+.lesson[data-mode="scroll"] .deck-nav, .lesson[data-mode="scroll"] .deck-bar { display: none; }
+
+.deck-nav {
+  position: sticky; bottom: calc(64px + env(safe-area-inset-bottom, 0px)); z-index: 5;
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+  margin-top: 1rem; padding: .6rem; border: 1px solid var(--border); border-radius: 16px;
+  background: var(--surface); background: color-mix(in srgb, var(--surface) 92%, transparent);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.deck-nav .btn { min-width: 92px; }
+.deck-count { color: var(--muted); font-size: .9rem; }
+@media (min-width: 900px) { .deck-nav { bottom: 1rem; } }
+
+/* ----- diagrams inside cards ----- */
+.diagram { margin: 0 0 1rem; padding: .75rem; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; }
+.diagram-svg { display: block; width: 100%; max-width: 440px; height: auto; margin: 0 auto; }
+.d-box { fill: var(--surface-2); stroke: var(--accent); stroke-width: 1.5; }
+.d-text { fill: var(--text); font: 600 11px system-ui, sans-serif; }
+.d-label { fill: var(--cyan); font: 700 9.5px ui-monospace, Consolas, monospace; letter-spacing: .12em; }
+.d-arrow { stroke: var(--muted); stroke-width: 2; }
+.d-head-fill { fill: var(--muted); }
+.d-ring { stroke-width: 2; fill-opacity: .1; }
+.d-ring.r1 { stroke: var(--accent); fill: var(--accent); }
+.d-ring.r2 { stroke: var(--cyan); fill: var(--cyan); }
+.d-ring.r3 { stroke: var(--live); fill: var(--live); }
+
+/* ----- word chips (glossary) ----- */
+.terms { display: flex; flex-wrap: wrap; align-items: flex-start; gap: .4rem; margin-top: 1rem; }
+.term { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+.term[open] { flex-basis: 100%; }
+.term summary { display: flex; align-items: center; min-height: 40px; padding: .3rem .75rem; cursor: pointer; color: var(--accent); font-weight: 600; }
+.term p { margin: 0; padding: 0 .75rem .7rem; color: var(--muted); font-size: .92rem; }
+
+.site-foot { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+.site-foot p { margin: 0; }
