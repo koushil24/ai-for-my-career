@@ -8,6 +8,8 @@ import { esc } from './util.js';
 import * as roadmap from './roadmap.js';
 import * as lessons from './lessons.js';
 
+lessons.attachDeckControls();
+
 /* ---------- branding, theme, menu ---------- */
 function setupBranding() {
   document.getElementById('brand-logo').src = BRAND.logo;
@@ -80,6 +82,21 @@ document.addEventListener('change', (e) => {
 });
 document.addEventListener('input', (e) => { if (e.target.matches('[data-filter]')) roadmap.filters.apply(); });
 
+/* ---------- 3D tilt for cards (mouse and pen only; phones get a press effect in CSS) ---------- */
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.addEventListener('pointermove', (e) => {
+    const el = e.target.closest('[data-tilt]');
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--ry', `${(((e.clientX - r.left) / r.width - 0.5) * 10).toFixed(2)}deg`);
+    el.style.setProperty('--rx', `${(-((e.clientY - r.top) / r.height - 0.5) * 10).toFixed(2)}deg`);
+  });
+  document.addEventListener('pointerout', (e) => {
+    const el = e.target.closest && e.target.closest('[data-tilt]');
+    if (el && !el.contains(e.relatedTarget)) { el.style.removeProperty('--rx'); el.style.removeProperty('--ry'); }
+  });
+}
+
 /* ---------- pages ---------- */
 const LEVEL_NAMES = ['AI User', 'AI Power User', 'AI-Assisted Engineer', 'AI Builder', 'AI + Electrical Specialist'];
 
@@ -98,10 +115,16 @@ registerPage('home', async () => {
     ['Skills learned', s.skillsLearned],
     ['Learning streak', `${s.streak} day${s.streak === 1 ? '' : 's'}`],
   ];
+  const how = [
+    ['1', 'Learn in small cards', 'One idea at a time. Plain words first, technical words second. Tap a word to see what it means.'],
+    ['2', 'Check yourself', 'Every lesson has a quick check, so you know the idea has stuck before you move on.'],
+    ['3', 'Apply it to real work', 'Examples come from protection relays, testing and power systems. Safety rules come first.'],
+  ];
   return `
   <section class="hero">
-    <h1>${esc(BRAND.title)}</h1>
-    <p class="lead">${esc(BRAND.subtitle)}</p>
+    <p class="eyebrow">Free learning platform</p>
+    <h1>Learn AI the simple way.</h1>
+    <p class="lead">From zero to advanced. Made for electrical engineers, open to everyone.</p>
     <p class="muted">${esc(BRAND.tagline)}</p>
     <div class="actions">
       <a class="btn primary" href="#/lesson/p1-l1">Start learning</a>
@@ -110,34 +133,51 @@ registerPage('home', async () => {
     </div>
   </section>
 
-  <section aria-labelledby="h-status">
-    <h2 id="h-status">Your status</h2>
-    <div class="stat-grid">
-      ${cards.map(([k, v]) => `<div class="stat"><span class="stat-label">${esc(k)}</span><strong>${esc(v)}</strong></div>`).join('')}
+  <section class="path3d" aria-labelledby="h-path">
+    <h2 id="h-path">Your path</h2>
+    <div class="path-grid">
+      <div class="iso" aria-hidden="true"><div class="iso-inner">
+        ${LEVEL_NAMES.map((_, i) => `<span class="plate${i < level ? ' done' : ''}${i === level ? ' current' : ''}" style="--i:${i}"></span>`).join('')}
+      </div></div>
+      <ol class="ladder">
+        ${[...LEVEL_NAMES].map((n, i) => ({ n, i })).reverse().map(({ n, i }) => `<li${i === level ? ' aria-current="step"' : ''}>${esc(n)}</li>`).join('')}
+      </ol>
+    </div>
+    <p class="muted small">Level 1 is at the bottom. Each level builds on the one below it.</p>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works</h2>
+    <div class="how-grid">
+      ${how.map(([n, t, d]) => `<div class="how" data-tilt><span class="how-num">${n}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}
     </div>
   </section>
 
-  <section aria-labelledby="h-path">
-    <h2 id="h-path">Your path</h2>
-    <p class="muted">Each step builds on the one before it.</p>
-    <ol class="ladder">
-      ${LEVEL_NAMES.map((n, i) => `<li${i === level ? ' aria-current="step"' : ''}>${esc(n)}</li>`).join('')}
-    </ol>
+  <section aria-labelledby="h-status">
+    <h2 id="h-status">Your progress</h2>
+    <p class="muted small">Saved privately on this device only.</p>
+    <div class="stat-grid">
+      ${cards.map(([k, v]) => `<div class="stat" data-tilt><span class="stat-label">${esc(k)}</span><strong>${esc(v)}</strong></div>`).join('')}
+    </div>
   </section>
 
   <section class="split">
-    <div class="card">
+    <div class="card" data-tilt>
       <h2>AI + Electrical Engineering</h2>
       <p>Protection relays, relay testing, commissioning, SCADA and IEC 61850 are the core of this platform. Every phase connects back to them.</p>
       <p class="note">Educational examples are not real engineering decisions. For protection settings and commissioning, always follow approved procedures, manufacturer documents and applicable standards.</p>
       <a class="btn" href="#/electrical">Open AI + Electrical</a>
     </div>
-    <div class="card">
+    <div class="card" data-tilt>
       <h2>Current AI trends</h2>
       <p>AI changes fast. This section will list what changed, why it matters and how to learn it, using reliable sources and a clear update date.</p>
       <a class="btn" href="#/trends">Open AI trends</a>
     </div>
-  </section>`;
+  </section>
+
+  <footer class="site-foot">
+    <p>Created by K24 Electrical. Content is for learning only and is not engineering advice.</p>
+  </footer>`;
 });
 
 registerPage('roadmap', () => roadmap.renderRoadmap());
