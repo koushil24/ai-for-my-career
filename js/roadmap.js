@@ -42,8 +42,10 @@ function card(phase, c, lessons, state, mode) {
        <h5>Projects</h5>${phase.projects.length ? `<ul class="plain">${phase.projects.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>` : '<p class="muted">None in this phase.</p>'}
        <h5>Lessons, exercises and quiz</h5>${lessonLinks}`;
 
+  const lastLive = Math.max(-1, ...c.phases.filter((x) => (state.phaseStatus[x.id] || 'not-started') !== 'not-started').map((x) => x.number));
+  const live = phase.number <= lastLive;
   const search = [phase.title, phase.description, ...phase.topics].join(' ').toLowerCase();
-  return `<details class="phase-card" data-level="${phase.level}" data-search="${esc(search)}">
+  return `<details class="phase-card${live ? ' live' : ''}" data-number="${phase.number}" data-level="${phase.level}" data-search="${esc(search)}">
     <summary>
       <span class="led ${status}" role="img" aria-label="${STATUS_LABEL[status]}"></span>
       <span class="phase-title">Phase ${phase.number}: ${esc(phase.title)}</span>
@@ -57,7 +59,7 @@ export async function renderRoadmap() {
   const [c, lessons] = await Promise.all([loadCurriculum(), loadLessons()]);
   const state = getState();
   const groups = c.levels.map((lv) => `<section><h3>${esc(lv.name)}</h3>
-    <div class="phase-list">${c.phases.filter((p) => p.level === lv.id).map((p) => card(p, c, lessons, state, 'roadmap')).join('')}</div></section>`).join('');
+    <div class="phase-list gridline">${c.phases.filter((p) => p.level === lv.id).map((p) => card(p, c, lessons, state, 'roadmap')).join('')}</div></section>`).join('');
   return `<h1>AI Roadmap</h1>
     <p class="lead">27 phases, from zero to AI + Electrical specialist.</p>
     <p class="muted">Tap a phase to open it. Set its status as you go.</p>${groups}`;
@@ -93,6 +95,15 @@ function applyFilter() {
   document.getElementById('syl-count').textContent = `${shown} of ${list.children.length} phases shown`;
 }
 
+/* Light up the grid line from the first phase to the last phase that has been started. */
+function paintLive() {
+  const st = getState().phaseStatus;
+  const cards = [...document.querySelectorAll('.phase-card[data-number]')];
+  const started = cards.map((el) => ({ el, n: Number(el.dataset.number), on: (st[`p${el.dataset.number}`] || 'not-started') !== 'not-started' }));
+  const last = Math.max(-1, ...started.filter((x) => x.on).map((x) => x.n));
+  started.forEach((x) => x.el.classList.toggle('live', x.n <= last));
+}
+
 export const actions = {
   'set-status': (el) => {
     const val = el.value;
@@ -105,6 +116,7 @@ export const actions = {
     led.className = `led ${val}`;
     led.setAttribute('aria-label', STATUS_LABEL[val]);
     cardEl.querySelector('.status-tag').textContent = STATUS_LABEL[val];
+    paintLive();
   },
 };
 export const filters = { apply: applyFilter };
