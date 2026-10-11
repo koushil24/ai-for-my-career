@@ -17,6 +17,9 @@ const DEFAULTS = {
   streak: 0,
   lastActiveDate: null,    // "YYYY-MM-DD" in local time
   lastLesson: null,
+  bookmarks: [],           // lesson ids saved for later
+  completedAt: {},         // lessonId -> ISO date, used for the weekly goal
+  weeklyGoal: 3,           // lessons per week
 };
 
 function read() {
@@ -65,6 +68,8 @@ export function getStats(totalLessons = 0) {
     projectsDone: s.completedProjects.length,
     skillsLearned: Object.values(s.skills).filter((v) => v > 0).length,
     overallPercent: totalLessons ? Math.round((done / totalLessons) * 100) : 0,
+    weekCount: s.completedLessons.filter((id) => Date.parse((s.completedAt || {})[id]) >= Date.now() - 7 * 864e5).length,
+    weeklyGoal: s.weeklyGoal || 3,
     streak: s.streak,
     currentPhase: s.currentPhase,
     lastLesson: s.lastLesson,

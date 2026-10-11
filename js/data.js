@@ -3,6 +3,7 @@
 let curriculum = null;
 let lessons = null;
 let glossary = {};
+let pathway = null;
 
 async function getJson(path) {
   const res = await fetch(path);
@@ -31,3 +32,8 @@ export const phaseNumber = (phaseId) => Number(String(phaseId).replace('p', ''))
 
 /* Word meanings collected from all lesson files (available after loadLessons). */
 export const getGlossary = () => glossary;
+
+export async function loadPathway() {
+  if (!pathway) pathway = await getJson('data/pathway.json');
+  return pathway;
+}

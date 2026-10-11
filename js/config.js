@@ -14,6 +14,7 @@ export const ROUTES = [
   { id: 'home',       label: 'Home',          stage: 1,  blurb: '' },
   { id: 'dashboard',  label: 'Dashboard',     stage: 6,  blurb: 'Your overall progress, quiz scores, streak and the next lesson to study.' },
   { id: 'roadmap',    label: 'AI Roadmap',    stage: 1,  blurb: '' },
+  { id: 'pathway',    label: 'Learning Pathway', stage: 1, blurb: '' },
   { id: 'syllabus',   label: 'Syllabus',      stage: 3,  blurb: 'Every phase broken into modules, topics, objectives, exercises and quizzes.' },
   { id: 'courses',    label: 'Courses',       stage: 4,  blurb: 'Phases grouped as courses you can open and study in order.' },
   { id: 'lessons',    label: 'Lessons',       stage: 4,  blurb: 'Short lessons: simple explanation, technical explanation, electrical example, exercise and quiz.' },
@@ -37,7 +38,7 @@ export const ROUTES = [
 ];
 
 /* Pages that are already built. Everything else shows a "coming soon" card. */
-export const BUILT = new Set(['home', 'roadmap', 'syllabus', 'lessons']);
+export const BUILT = new Set(['home', 'roadmap', 'pathway', 'syllabus', 'lessons']);
 
 /* Simple line icons (no emoji). Each one is a small SVG that takes the text colour. */
 const svg = (inner) => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${inner}</svg>`;

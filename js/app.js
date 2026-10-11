@@ -7,6 +7,7 @@ import { loadCurriculum, loadLessons } from './data.js';
 import { esc } from './util.js';
 import * as roadmap from './roadmap.js';
 import * as lessons from './lessons.js';
+import { renderPathway } from './pathway.js';
 
 lessons.attachDeckControls();
 
@@ -79,8 +80,12 @@ document.addEventListener('change', (e) => {
   const el = e.target;
   if (el.matches('select[data-action]') && ACTIONS[el.dataset.action]) ACTIONS[el.dataset.action](el);
   if (el.matches('[data-filter]')) roadmap.filters.apply();
+  if (el.matches('[data-lfilter]')) lessons.filters.apply();
 });
-document.addEventListener('input', (e) => { if (e.target.matches('[data-filter]')) roadmap.filters.apply(); });
+document.addEventListener('input', (e) => {
+  if (e.target.matches('[data-filter]')) roadmap.filters.apply();
+  if (e.target.matches('[data-lfilter]')) lessons.filters.apply();
+});
 
 /* ---------- 3D tilt for cards (mouse and pen only; phones get a press effect in CSS) ---------- */
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -104,7 +109,7 @@ registerPage('home', async () => {
   const [c, all] = await Promise.all([loadCurriculum(), loadLessons()]);
   const s = getStats(all.length);
   const phase = c.phases[s.currentPhase] || c.phases[0];
-  const level = Math.max(0, c.levels.findIndex((l) => phase.number >= l.from && phase.number <= l.to));
+  const level = Math.max(0, c.levels.findIndex((l) => l.id === phase.level));
   const cards = [
     ['Current level', LEVEL_NAMES[level]],
     ['Current phase', `${phase.number}. ${phase.title}`],
@@ -114,6 +119,7 @@ registerPage('home', async () => {
     ['Projects completed', s.projectsDone],
     ['Skills learned', s.skillsLearned],
     ['Learning streak', `${s.streak} day${s.streak === 1 ? '' : 's'}`],
+    ['This week', `${s.weekCount} of ${s.weeklyGoal} lessons`],
   ];
   const how = [
     ['1', 'Learn in small cards', 'One idea at a time. Plain words first, technical words second. Tap a word to see what it means.'],
@@ -144,6 +150,7 @@ registerPage('home', async () => {
       </ol>
     </div>
     <p class="muted small">Level 1 is at the bottom. Each level builds on the one below it.</p>
+    <p><a class="btn" href="#/pathway">Open the learning pathway</a></p>
   </section>
 
   <section aria-labelledby="h-how">
@@ -186,7 +193,12 @@ registerPage('syllabus', async () => {
   setTimeout(() => roadmap.filters.apply(), 0);   // fill in the "x of 27 phases" line
   return html;
 });
-registerPage('lessons', () => lessons.renderLessonList());
+registerPage('lessons', (id, param) => {
+  const html = lessons.renderLessonList(id, param);
+  html.then(() => setTimeout(() => lessons.filters.apply(), 0));
+  return html;
+});
+registerPage('pathway', () => renderPathway());
 registerPage('lesson', (id, param) => lessons.renderLesson(id, param));
 
 /* Pages that are planned but not built yet */
