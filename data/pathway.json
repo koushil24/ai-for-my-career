@@ -1,0 +1,399 @@
+{
+  "modules": [
+    {
+      "id": "m1",
+      "number": 1,
+      "title": "AI, ML and Data Science Fundamentals",
+      "level": "Beginner",
+      "mode": "phone",
+      "summary": "Understand AI, machine learning, deep learning, generative AI and data science, and how they fit together.",
+      "phases": [
+        "p1",
+        "p2"
+      ],
+      "after": [],
+      "projects": [],
+      "lessons": [
+        {
+          "title": "What is AI?",
+          "id": "p1-l1"
+        },
+        {
+          "title": "AI, Machine Learning and Deep Learning",
+          "id": "p1-l2"
+        },
+        {
+          "title": "Generative AI and Large Language Models",
+          "id": "p1-l3"
+        },
+        {
+          "title": "Data Science, Analytics and Data Engineering",
+          "id": "p1-l4"
+        },
+        {
+          "title": "How the Fields Fit Together",
+          "id": "p1-l5"
+        },
+        {
+          "title": "Your Skills and Your Path",
+          "id": "p1-l6"
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "number": 2,
+      "title": "AI User and AI Power User",
+      "level": "Beginner",
+      "mode": "phone",
+      "summary": "Use ChatGPT and Claude well and safely for engineering work.",
+      "phases": [
+        "p3",
+        "p4"
+      ],
+      "after": [
+        "m1"
+      ],
+      "projects": [
+        "AI-assisted relay testing checklist and report template (fictional data)"
+      ],
+      "lessons": [
+        {
+          "title": "Using ChatGPT and Claude"
+        },
+        {
+          "title": "Writing structured prompts"
+        },
+        {
+          "title": "Research and fact-checking"
+        },
+        {
+          "title": "Reading manuals and datasheets with AI"
+        },
+        {
+          "title": "Summarising a protection relay manual"
+        },
+        {
+          "title": "Checklists and report templates"
+        },
+        {
+          "title": "Troubleshooting with AI safely"
+        },
+        {
+          "title": "Hallucinations, privacy and confidential data"
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "number": 3,
+      "title": "Data Analysis for Electrical Engineers",
+      "level": "Beginner",
+      "mode": "mixed",
+      "summary": "Excel or Google Sheets, statistics, data cleaning and dashboards using relay test data.",
+      "phases": [],
+      "after": [
+        "m1"
+      ],
+      "projects": [
+        "Relay test-results analysis dashboard (synthetic data)"
+      ],
+      "lessons": [
+        {
+          "title": "Spreadsheet basics and formulas"
+        },
+        {
+          "title": "Tables, filters and sorting"
+        },
+        {
+          "title": "Conditional formatting and charts"
+        },
+        {
+          "title": "Pivot tables"
+        },
+        {
+          "title": "Mean, median, percentage and variation"
+        },
+        {
+          "title": "Standard deviation and basic statistics"
+        },
+        {
+          "title": "Data cleaning and validation"
+        },
+        {
+          "title": "Power BI basics and dashboards"
+        },
+        {
+          "title": "CSV files and test-result data"
+        },
+        {
+          "title": "Reading relay results: pickup, operating time, tolerance"
+        },
+        {
+          "title": "Comparing with specifications and criteria"
+        }
+      ]
+    },
+    {
+      "id": "m4",
+      "number": 4,
+      "title": "Python for Engineers",
+      "level": "Intermediate",
+      "mode": "mixed",
+      "summary": "Programming from zero. Concept lessons work on a phone. Practice needs a computer.",
+      "phases": [
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "after": [
+        "m3"
+      ],
+      "projects": [
+        "Python program that reads fictional relay test data, checks limits and writes a summary"
+      ],
+      "lessons": [
+        {
+          "title": "What programming is"
+        },
+        {
+          "title": "Variables, data types and operators"
+        },
+        {
+          "title": "Conditions and loops"
+        },
+        {
+          "title": "Functions, lists and dictionaries"
+        },
+        {
+          "title": "Reading CSV and Excel files"
+        },
+        {
+          "title": "Pandas for tables"
+        },
+        {
+          "title": "Matplotlib for charts"
+        },
+        {
+          "title": "Errors and debugging"
+        },
+        {
+          "title": "Writing clean scripts"
+        }
+      ]
+    },
+    {
+      "id": "m5",
+      "number": 5,
+      "title": "Machine Learning",
+      "level": "Intermediate",
+      "mode": "mixed",
+      "summary": "How machine learning works, how to judge a model, and its limits.",
+      "phases": [
+        "p8",
+        "p9"
+      ],
+      "after": [
+        "m3",
+        "m4"
+      ],
+      "projects": [
+        "Anomaly detection or equipment-condition model on synthetic data (educational prototype)"
+      ],
+      "lessons": [
+        {
+          "title": "Rules versus machine learning"
+        },
+        {
+          "title": "Supervised, unsupervised and reinforcement learning"
+        },
+        {
+          "title": "Regression and classification"
+        },
+        {
+          "title": "Features, labels, training and test sets"
+        },
+        {
+          "title": "Overfitting and underfitting"
+        },
+        {
+          "title": "Accuracy, precision, recall and confusion matrices"
+        },
+        {
+          "title": "Clustering and anomaly detection"
+        },
+        {
+          "title": "A basic scikit-learn workflow"
+        },
+        {
+          "title": "Data quality, bias and reliability"
+        }
+      ]
+    },
+    {
+      "id": "m6",
+      "number": 6,
+      "title": "AI + Electrical Engineering Specialisation",
+      "level": "Advanced",
+      "mode": "mixed",
+      "summary": "Connect AI and data skills to protection, testing, SCADA and substation automation.",
+      "phases": [
+        "p10",
+        "p24"
+      ],
+      "after": [
+        "m2",
+        "m3"
+      ],
+      "projects": [
+        "Relay test report analyser (synthetic)",
+        "Fault-event log summariser",
+        "Equipment maintenance dashboard",
+        "Electrical anomaly detection prototype",
+        "Engineering knowledge assistant (non-confidential samples)"
+      ],
+      "lessons": [
+        {
+          "title": "AI in relay testing and commissioning"
+        },
+        {
+          "title": "Overcurrent and earth-fault protection"
+        },
+        {
+          "title": "Transformer differential protection (87T)"
+        },
+        {
+          "title": "Distance protection (21)"
+        },
+        {
+          "title": "Restricted earth fault (64REF)"
+        },
+        {
+          "title": "Directional overcurrent and earth fault (67/67N)"
+        },
+        {
+          "title": "Trip circuit supervision"
+        },
+        {
+          "title": "CT and VT testing, secondary injection"
+        },
+        {
+          "title": "Disturbance records and event logs"
+        },
+        {
+          "title": "Condition monitoring and predictive maintenance"
+        },
+        {
+          "title": "SCADA, IEC 61850 and GOOSE"
+        },
+        {
+          "title": "Test equipment data and automated reports"
+        },
+        {
+          "title": "AI-assisted technical documentation"
+        }
+      ]
+    },
+    {
+      "id": "m7",
+      "number": 7,
+      "title": "Advanced AI and Future Skills",
+      "level": "Advanced",
+      "mode": "computer",
+      "summary": "Neural networks, language, vision, RAG, agents and deployment. Needs the earlier modules first.",
+      "phases": [
+        "p11",
+        "p12",
+        "p13",
+        "p14",
+        "p15",
+        "p16",
+        "p17",
+        "p18",
+        "p19",
+        "p20",
+        "p21",
+        "p22",
+        "p23"
+      ],
+      "after": [
+        "m4",
+        "m5"
+      ],
+      "projects": [],
+      "lessons": [
+        {
+          "title": "Neural networks and deep learning"
+        },
+        {
+          "title": "Natural language processing"
+        },
+        {
+          "title": "Computer vision"
+        },
+        {
+          "title": "Embeddings and vector search"
+        },
+        {
+          "title": "Retrieval-Augmented Generation (RAG)"
+        },
+        {
+          "title": "AI agents and workflow automation"
+        },
+        {
+          "title": "APIs and application integration"
+        },
+        {
+          "title": "Evaluation, security, privacy and responsible AI"
+        },
+        {
+          "title": "Deploying useful AI applications"
+        },
+        {
+          "title": "Digital twins and industrial maintenance"
+        },
+        {
+          "title": "Emerging trends in power systems"
+        }
+      ]
+    }
+  ],
+  "sequence": [
+    {
+      "label": "AI Fundamentals",
+      "module": "m1"
+    },
+    {
+      "label": "AI Power User",
+      "module": "m2"
+    },
+    {
+      "label": "Excel and Data Analysis",
+      "module": "m3"
+    },
+    {
+      "label": "Python",
+      "module": "m4"
+    },
+    {
+      "label": "Statistics",
+      "module": "m3"
+    },
+    {
+      "label": "Machine Learning",
+      "module": "m5"
+    },
+    {
+      "label": "Applied AI Projects",
+      "module": "m5"
+    },
+    {
+      "label": "Electrical Specialisation",
+      "module": "m6"
+    },
+    {
+      "label": "Advanced AI",
+      "module": "m7"
+    }
+  ]
+}
