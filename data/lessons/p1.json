@@ -32,6 +32,38 @@
     "llm": {
       "name": "LLM",
       "def": "Large language model: a deep learning model trained on huge amounts of text, used by chatbots."
+    },
+    "generative-ai": {
+      "name": "Generative AI",
+      "def": "AI that creates new content, such as text, pictures, sound or code."
+    },
+    "prompt": {
+      "name": "Prompt",
+      "def": "The question or instruction you give to an AI."
+    },
+    "token": {
+      "name": "Token",
+      "def": "A small piece of text, like a word or part of a word, that an LLM reads and writes."
+    },
+    "data-science": {
+      "name": "Data science",
+      "def": "Using data, statistics and often machine learning to find answers and make predictions."
+    },
+    "data-analytics": {
+      "name": "Data analytics",
+      "def": "Looking at data to answer questions about what happened and why. Often done with tables and charts."
+    },
+    "data-engineering": {
+      "name": "Data engineering",
+      "def": "Building the systems that collect, move, store and clean data so others can use it."
+    },
+    "pipeline": {
+      "name": "Pipeline",
+      "def": "A series of steps that moves data from where it starts to where it is used."
+    },
+    "synthetic-data": {
+      "name": "Synthetic data",
+      "def": "Made-up data created for learning or testing. It is not real measurements."
     }
   },
   "lessons": [
@@ -40,8 +72,15 @@
       "phase": "p1",
       "number": 1,
       "title": "What is AI?",
-      "difficulty": "Beginner",
+      "level": "Beginner",
+      "module": "m1",
+      "mode": "phone",
       "minutes": 8,
+      "prereq": [],
+      "skills": [
+        "AI concepts",
+        "AI vocabulary"
+      ],
       "cards": [
         {
           "kind": "idea",
@@ -125,38 +164,18 @@
         },
         {
           "kind": "try",
-          "title": "Try it: rule or pattern?",
+          "title": "Practice: rule or pattern?",
           "lines": [
             "Write down 3 tasks from your work.",
             "Mark each one RULE (fixed steps) or PATTERN (needs experience).",
             "Example of a rule: check the CT ratio against the drawing.",
             "Example of a pattern: notice that a test result looks odd."
-          ]
-        },
-        {
-          "kind": "check",
-          "title": "Quick check",
-          "lines": [
-            "Think of your answer first. Then tap the question."
           ],
-          "qa": [
-            {
-              "q": "A relay trips when current is above its setting. Is this AI?",
-              "a": "No. It follows a fixed rule written by a person."
-            },
-            {
-              "q": "What do we call using a trained model on new input?",
-              "a": "Inference."
-            },
-            {
-              "q": "Can an AI answer be wrong even if it sounds sure?",
-              "a": "Yes. So important results must always be checked."
-            }
-          ]
+          "badge": "Phone friendly"
         },
         {
           "kind": "finish",
-          "title": "Lesson complete",
+          "title": "Recap",
           "lines": [
             "AI learns patterns from examples.",
             "A relay follows rules. AI learns from data.",
@@ -164,6 +183,80 @@
           ]
         }
       ],
+      "quiz": [
+        {
+          "q": "A relay trips when current is above its setting. Is this AI?",
+          "options": [
+            "Yes, all relays are AI",
+            "No, it follows a fixed rule",
+            "Yes, because it is electronic",
+            "Only if it is numerical"
+          ],
+          "answer": 1,
+          "why": "The relay applies a rule written by a person. AI learns patterns from examples."
+        },
+        {
+          "q": "What is 'inference'?",
+          "options": [
+            "Training a model for hours",
+            "Using a trained model on new input",
+            "Deleting old data",
+            "Writing the rules by hand"
+          ],
+          "answer": 1,
+          "why": "Training teaches the model. Inference is using it afterwards."
+        },
+        {
+          "q": "Which is the best description of AI today?",
+          "options": [
+            "A thinking robot",
+            "Software that learns patterns from data",
+            "A list of fixed if-then rules",
+            "A type of relay"
+          ],
+          "answer": 1,
+          "why": "Most useful AI is software that learns patterns from examples."
+        },
+        {
+          "q": "An AI gives a confident answer. What should you do for an important result?",
+          "options": [
+            "Trust it fully",
+            "Check it with a reliable source",
+            "Ignore it",
+            "Ask the AI again only"
+          ],
+          "answer": 1,
+          "why": "AI can be wrong while sounding sure. Always verify important answers."
+        },
+        {
+          "q": "Who must approve protection settings?",
+          "options": [
+            "The AI tool",
+            "A qualified engineer using approved procedures",
+            "Any colleague",
+            "Nobody"
+          ],
+          "answer": 1,
+          "why": "AI may assist, but a qualified engineer decides, using manuals, procedures and standards."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Elements of AI (Introduction to AI)",
+          "url": "https://www.elementsofai.com/",
+          "type": "Course",
+          "free": true,
+          "verified": "opened"
+        },
+        {
+          "title": "Google Machine Learning Crash Course",
+          "url": "https://developers.google.com/machine-learning/crash-course",
+          "type": "Course",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-10-09",
       "career": "AI is most useful to a relay engineer as an assistant: summarising manuals, drafting test reports and flagging unusual results. You stay responsible for every decision.",
       "next": "p1-l2"
     },
@@ -172,8 +265,17 @@
       "phase": "p1",
       "number": 2,
       "title": "AI, Machine Learning and Deep Learning",
-      "difficulty": "Beginner",
+      "level": "Beginner",
+      "module": "m1",
+      "mode": "phone",
       "minutes": 8,
+      "prereq": [
+        "p1-l1"
+      ],
+      "skills": [
+        "AI concepts",
+        "Machine learning basics"
+      ],
       "cards": [
         {
           "kind": "idea",
@@ -240,18 +342,6 @@
           ]
         },
         {
-          "kind": "idea",
-          "title": "Chatbots",
-          "lines": [
-            "Chatbots that write text use deep learning.",
-            "They are called large language models, or LLMs.",
-            "We learn them in Phase 2."
-          ],
-          "terms": [
-            "llm"
-          ]
-        },
-        {
           "kind": "safety",
           "title": "A risk score is a helper",
           "lines": [
@@ -262,39 +352,20 @@
         },
         {
           "kind": "try",
-          "title": "Try it: sort these",
+          "title": "Practice: sort these",
           "lines": [
             "Is each one AI only, machine learning, or deep learning?",
             "1. Alarm filter written as if-then rules.",
             "2. Model that predicts oil temperature from past load numbers.",
             "3. Software that reads a meter display from a photo.",
-            "4. Chatbot that summarises a manual."
-          ]
-        },
-        {
-          "kind": "check",
-          "title": "Quick check",
-          "lines": [
-            "Tap a question to see the answer."
+            "4. Chatbot that summarises a manual.",
+            "Answers: 1 AI only, 2 machine learning, 3 deep learning, 4 deep learning."
           ],
-          "qa": [
-            {
-              "q": "Which is the biggest circle: AI, ML or DL?",
-              "a": "AI. ML is inside AI, and DL is inside ML."
-            },
-            {
-              "q": "What is deep learning built on?",
-              "a": "Neural networks with many layers."
-            },
-            {
-              "q": "Sort the four items from the Try it card.",
-              "a": "1 AI only (fixed rules). 2 Machine learning. 3 Deep learning. 4 Deep learning (an LLM)."
-            }
-          ]
+          "badge": "Phone friendly"
         },
         {
           "kind": "finish",
-          "title": "Lesson complete",
+          "title": "Recap",
           "lines": [
             "AI is the big idea. ML learns from data.",
             "Deep learning is ML with many layers.",
@@ -302,7 +373,918 @@
           ]
         }
       ],
+      "quiz": [
+        {
+          "q": "Which circle is the biggest?",
+          "options": [
+            "Deep learning",
+            "Machine learning",
+            "AI",
+            "Data science"
+          ],
+          "answer": 2,
+          "why": "AI is the widest idea. ML is inside AI, and deep learning is inside ML."
+        },
+        {
+          "q": "Deep learning is built on...",
+          "options": [
+            "Fixed if-then rules",
+            "Neural networks with many layers",
+            "Spreadsheets",
+            "Relay curves"
+          ],
+          "answer": 1,
+          "why": "Deep learning uses neural networks with many layers."
+        },
+        {
+          "q": "Which task most likely needs deep learning?",
+          "options": [
+            "Adding two numbers",
+            "Reading a nameplate from a photo",
+            "Sorting a list A to Z",
+            "Converting kA to A"
+          ],
+          "answer": 1,
+          "why": "Pictures, sound and language are where deep learning is strongest."
+        },
+        {
+          "q": "For a small table of numbers, which is often a good first choice?",
+          "options": [
+            "Classic machine learning",
+            "A huge deep network",
+            "Nothing at all",
+            "A chatbot"
+          ],
+          "answer": 0,
+          "why": "Simple ML often works well on tables and needs less data."
+        },
+        {
+          "q": "A transformer risk score should be used to...",
+          "options": [
+            "Replace inspection",
+            "Help plan maintenance",
+            "Change relay settings",
+            "Skip testing"
+          ],
+          "answer": 1,
+          "why": "A risk score supports planning. Inspection, testing and engineers still decide."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Elements of AI (Introduction to AI)",
+          "url": "https://www.elementsofai.com/",
+          "type": "Course",
+          "free": true,
+          "verified": "opened"
+        },
+        {
+          "title": "Google Machine Learning Crash Course",
+          "url": "https://developers.google.com/machine-learning/crash-course",
+          "type": "Course",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-10-09",
       "career": "When you read a job advert or a tool's website, these three words help you see what is really offered and which skills to learn first.",
+      "next": "p1-l3"
+    },
+    {
+      "id": "p1-l3",
+      "phase": "p1",
+      "number": 3,
+      "title": "Generative AI and Large Language Models",
+      "level": "Beginner",
+      "module": "m1",
+      "mode": "phone",
+      "minutes": 9,
+      "prereq": [
+        "p1-l2"
+      ],
+      "skills": [
+        "Generative AI",
+        "Using LLMs safely"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Generative AI makes new things",
+          "lines": [
+            "Many AI tools sort or predict.",
+            "Generative AI creates: text, pictures, sound and code.",
+            "Chatbots and image tools are examples."
+          ],
+          "terms": [
+            "generative-ai"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "What is an LLM?",
+          "lines": [
+            "LLM means large language model.",
+            "It is trained on a huge amount of text.",
+            "It learns which words usually follow other words.",
+            "Then it writes new text one small piece at a time."
+          ],
+          "terms": [
+            "llm",
+            "token"
+          ]
+        },
+        {
+          "kind": "analogy",
+          "title": "Autocomplete, but much bigger",
+          "lines": [
+            "Your phone suggests the next word as you type.",
+            "An LLM does the same, with far more reading behind it.",
+            "That is why it sounds fluent.",
+            "It does not know things the way a person does."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Prompts",
+          "lines": [
+            "You give an LLM a prompt: your question or instruction.",
+            "A clear prompt gives a better answer.",
+            "We practise this in Module 2."
+          ],
+          "terms": [
+            "prompt"
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "What it can do for a relay engineer",
+          "lines": [
+            "Summarise a long relay manual.",
+            "Draft a test checklist.",
+            "Explain a protection term in simple words.",
+            "Turn rough notes into a neat report."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "What it cannot do",
+          "lines": [
+            "It can make up facts. This is called a hallucination.",
+            "It cannot see your relay or your test set.",
+            "It may not know a new firmware or a rare relay model.",
+            "It can get numbers wrong."
+          ],
+          "terms": [
+            "hallucination"
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Protect confidential data",
+          "lines": [
+            "Do not paste company documents or customer data into public AI tools without permission.",
+            "Check every number, setting and limit against the maker's manual.",
+            "AI output is a draft. It is not an approved procedure."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: test an AI",
+          "lines": [
+            "Open a free AI assistant on your phone.",
+            "Ask it to explain overcurrent protection in 5 simple lines.",
+            "Check the answer against a trusted textbook or manual.",
+            "Write one thing it got right and one thing you had to verify."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Generative AI creates new content.",
+            "An LLM predicts text, so it can sound right and be wrong.",
+            "Use it as a helper. Verify and protect confidential data."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does an LLM mainly do?",
+          "options": [
+            "Measures current",
+            "Predicts and writes text",
+            "Controls breakers",
+            "Stores data only"
+          ],
+          "answer": 1,
+          "why": "It is trained on text and writes new text piece by piece."
+        },
+        {
+          "q": "What is a hallucination?",
+          "options": [
+            "A slow answer",
+            "A confident answer that is wrong or made up",
+            "A picture",
+            "A prompt"
+          ],
+          "answer": 1,
+          "why": "Hallucinations sound sure but are false or invented."
+        },
+        {
+          "q": "What is a prompt?",
+          "options": [
+            "The AI's answer",
+            "Your question or instruction to the AI",
+            "A kind of chart",
+            "A file type"
+          ],
+          "answer": 1,
+          "why": "The prompt is what you type to the AI."
+        },
+        {
+          "q": "Which is safe to paste into a public AI tool?",
+          "options": [
+            "A customer's confidential report",
+            "Company drawings without permission",
+            "A general question about how overcurrent protection works",
+            "Login passwords"
+          ],
+          "answer": 2,
+          "why": "General learning questions are fine. Never share confidential data without permission."
+        },
+        {
+          "q": "An AI gives a pickup value for a relay. What do you do?",
+          "options": [
+            "Use it directly",
+            "Check it against the manual and approved settings",
+            "Post it online",
+            "Ignore all AI"
+          ],
+          "answer": 1,
+          "why": "Numbers must be verified against manufacturer documents and approved procedures."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Elements of AI (Introduction to AI)",
+          "url": "https://www.elementsofai.com/",
+          "type": "Course",
+          "free": true,
+          "verified": "opened"
+        },
+        {
+          "title": "Google Machine Learning Crash Course",
+          "url": "https://developers.google.com/machine-learning/crash-course",
+          "type": "Course",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-10-09",
+      "career": "LLMs are the tool most engineers will meet first. Using them well and safely is a real workplace skill.",
+      "next": "p1-l4"
+    },
+    {
+      "id": "p1-l4",
+      "phase": "p1",
+      "number": 4,
+      "title": "Data Science, Analytics and Data Engineering",
+      "level": "Beginner",
+      "module": "m1",
+      "mode": "phone",
+      "minutes": 9,
+      "prereq": [
+        "p1-l2"
+      ],
+      "skills": [
+        "Data concepts",
+        "Data roles"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Data is the fuel",
+          "lines": [
+            "AI and machine learning need data.",
+            "Data science is the work of getting answers from data.",
+            "It has three main parts, and each is a different job."
+          ],
+          "terms": [
+            "data-science"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Three jobs with data",
+          "lines": [
+            "Data engineering: collect, move and clean the data.",
+            "Data analytics: look at the data and answer questions.",
+            "Data science: build models that predict what may happen next."
+          ],
+          "terms": [
+            "data-engineering",
+            "data-analytics",
+            "pipeline"
+          ]
+        },
+        {
+          "kind": "analogy",
+          "title": "A water supply",
+          "lines": [
+            "The data engineer builds the pipes and tanks.",
+            "The data analyst tests the water and reports what is in it.",
+            "The data scientist predicts how much water we need next month."
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example: relay test data",
+          "lines": [
+            "Engineer: gather test results from many relays into one clean table.",
+            "Analyst: chart operating time against the allowed limit.",
+            "Scientist: predict which relay may drift out of tolerance.",
+            "These are educational examples, not real procedures."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Analytics or science?",
+          "lines": [
+            "Analytics asks: what happened, and why?",
+            "Data science asks: what will probably happen next?",
+            "Both start with clean data."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Why clean data matters",
+          "lines": [
+            "Wrong units, missing values and typing mistakes give wrong answers.",
+            "Example: mixing milliseconds with seconds.",
+            "Clean first. Analyse second."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Real limits come from real documents",
+          "lines": [
+            "Data in this course is made up, called synthetic data.",
+            "Real acceptance limits come from the manufacturer's documents and your approved test procedure."
+          ],
+          "terms": [
+            "synthetic-data"
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: spot the data",
+          "lines": [
+            "List 5 things on a relay test sheet. Use names only, no real values.",
+            "Example: pickup current, operating time, tolerance, pass or fail, date.",
+            "Mark each as a number or a label."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Engineering moves data. Analytics explains it. Science predicts.",
+            "Clean data comes first.",
+            "Use made-up data for learning. Use approved documents for real limits."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who builds the systems that collect and clean data?",
+          "options": [
+            "Data engineer",
+            "Data analyst",
+            "Auditor",
+            "Operator"
+          ],
+          "answer": 0,
+          "why": "Data engineers build the pipelines and storage."
+        },
+        {
+          "q": "Which question is data analytics?",
+          "options": [
+            "What will happen next year?",
+            "What happened last month, and why?",
+            "How do I build a neural network?",
+            "Who trips the breaker?"
+          ],
+          "answer": 1,
+          "why": "Analytics explains what already happened."
+        },
+        {
+          "q": "Which job usually builds prediction models?",
+          "options": [
+            "Data scientist",
+            "Cleaner",
+            "Storekeeper",
+            "Painter"
+          ],
+          "answer": 0,
+          "why": "Data scientists build and test predictive models."
+        },
+        {
+          "q": "Why is clean data important?",
+          "options": [
+            "It looks tidy",
+            "Wrong or mixed data gives wrong answers",
+            "It makes files smaller",
+            "It is a rule from AI"
+          ],
+          "answer": 1,
+          "why": "Bad inputs give bad results, for example mixing seconds and milliseconds."
+        },
+        {
+          "q": "Where do real acceptance limits come from?",
+          "options": [
+            "The AI",
+            "Manufacturer documents and approved test procedures",
+            "A guess",
+            "A friend"
+          ],
+          "answer": 1,
+          "why": "Learning data is synthetic. Real limits come from approved documents."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Kaggle Learn (short free courses)",
+          "url": "https://www.kaggle.com/learn",
+          "type": "Courses",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "Elements of AI (Introduction to AI)",
+          "url": "https://www.elementsofai.com/",
+          "type": "Course",
+          "free": true,
+          "verified": "opened"
+        }
+      ],
+      "checked": "2026-10-09",
+      "career": "Most electrical engineers start with data analytics. It uses the test and log data you already produce.",
+      "next": "p1-l5"
+    },
+    {
+      "id": "p1-l5",
+      "phase": "p1",
+      "number": 5,
+      "title": "How AI, ML, Deep Learning and Data Science Fit Together",
+      "level": "Beginner",
+      "module": "m1",
+      "mode": "phone",
+      "minutes": 10,
+      "prereq": [
+        "p1-l2",
+        "p1-l4"
+      ],
+      "skills": [
+        "Comparing AI fields",
+        "Career awareness"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "One family, different jobs",
+          "lines": [
+            "AI, machine learning and deep learning are nested.",
+            "Data science overlaps with machine learning. It also uses statistics and charts.",
+            "Think of them as tools in one workshop."
+          ],
+          "diagram": "circles"
+        },
+        {
+          "kind": "idea",
+          "title": "Side by side",
+          "lines": [
+            "Slide the table sideways on a small screen.",
+            "Use it to compare the four ideas quickly."
+          ],
+          "table": {
+            "head": [
+              "Topic",
+              "AI",
+              "Machine learning",
+              "Deep learning",
+              "Data science"
+            ],
+            "rows": [
+              [
+                "In one line",
+                "Computers doing smart tasks",
+                "Learns patterns from examples",
+                "ML with many-layer networks",
+                "Gets answers from data"
+              ],
+              [
+                "Needs data?",
+                "Not always",
+                "Yes",
+                "Yes, a lot",
+                "Yes"
+              ],
+              [
+                "Typical output",
+                "Decisions, text, actions",
+                "Predictions, groups",
+                "Image, sound, text results",
+                "Reports, insights, models"
+              ],
+              [
+                "Relay example",
+                "Alarm filter rules",
+                "Predict transformer risk",
+                "Read a nameplate photo",
+                "Analyse test results for drift"
+              ],
+              [
+                "Main limit",
+                "Can be wrong or biased",
+                "Needs good data",
+                "Needs lots of data and power",
+                "Poor data gives poor answers"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "idea",
+          "title": "What they share",
+          "lines": [
+            "All of them use data.",
+            "All of them can be wrong.",
+            "All of them need a person to check the result."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Use cases for your field",
+          "lines": [
+            "Rules: simple alarms and checks.",
+            "Machine learning: predict equipment condition.",
+            "Deep learning: read photos and documents.",
+            "Data science: find patterns in test and event data."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Limits to remember",
+          "lines": [
+            "Bad data gives bad answers.",
+            "Models can be biased if the data is one-sided.",
+            "A model that works on test data may fail on real plants.",
+            "None of these replaces engineering judgement."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Careers (no promises)",
+          "lines": [
+            "Roles change often, so these are examples only.",
+            "The table shows what each role mainly does."
+          ],
+          "table": {
+            "head": [
+              "Role",
+              "Mainly does",
+              "Good first skill"
+            ],
+            "rows": [
+              [
+                "AI-enabled electrical engineer",
+                "Uses AI tools in protection, testing and service",
+                "Prompting and checking AI"
+              ],
+              [
+                "Data analyst",
+                "Analyses data and builds reports",
+                "Spreadsheets and charts"
+              ],
+              [
+                "Data engineer",
+                "Builds data pipelines",
+                "Databases and Python"
+              ],
+              [
+                "Machine learning engineer",
+                "Builds and runs models",
+                "Python and statistics"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "try",
+          "title": "Practice: pick the tool",
+          "lines": [
+            "For each task, name the best fit: rules, machine learning, deep learning or data analytics.",
+            "1. Flag a relay when current is above a set limit.",
+            "2. Read a meter display from a photo.",
+            "3. Chart this year's operating times in a table.",
+            "4. Predict which breaker may fail from past records.",
+            "Answers: 1 rules, 2 deep learning, 3 data analytics, 4 machine learning."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "AI is the big idea. ML and DL sit inside it.",
+            "Data science overlaps and relies on clean data.",
+            "Choose the simplest tool that solves the problem."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which statement is correct?",
+          "options": [
+            "Deep learning contains AI",
+            "Deep learning is inside machine learning",
+            "Data science is a type of deep learning",
+            "ML is bigger than AI"
+          ],
+          "answer": 1,
+          "why": "Deep learning is a part of machine learning, which is a part of AI."
+        },
+        {
+          "q": "Which tool fits 'chart operating times'?",
+          "options": [
+            "Deep learning",
+            "Data analytics",
+            "Computer vision",
+            "Robotics"
+          ],
+          "answer": 1,
+          "why": "Charting existing numbers is analytics."
+        },
+        {
+          "q": "What do all four fields have in common?",
+          "options": [
+            "They never fail",
+            "They use data and need checking",
+            "They need no data",
+            "They only work on phones"
+          ],
+          "answer": 1,
+          "why": "Data in, results out, and a person verifies."
+        },
+        {
+          "q": "Which is a real limit of ML models?",
+          "options": [
+            "They always work on every plant",
+            "Poor or biased data gives poor results",
+            "They need no data",
+            "They replace engineers"
+          ],
+          "answer": 1,
+          "why": "Data quality decides model quality."
+        },
+        {
+          "q": "Which is the best first move for a beginner engineer?",
+          "options": [
+            "Build a neural network",
+            "Learn to use AI tools and analyse data",
+            "Skip basics",
+            "Buy hardware"
+          ],
+          "answer": 1,
+          "why": "AI use and data analysis come first. ML comes later."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Elements of AI (Introduction to AI)",
+          "url": "https://www.elementsofai.com/",
+          "type": "Course",
+          "free": true,
+          "verified": "opened"
+        },
+        {
+          "title": "Kaggle Learn (short free courses)",
+          "url": "https://www.kaggle.com/learn",
+          "type": "Courses",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-10-09",
+      "career": "Knowing what each field does helps you choose which skill to learn next and understand what job adverts really ask for.",
+      "next": "p1-l6"
+    },
+    {
+      "id": "p1-l6",
+      "phase": "p1",
+      "number": 6,
+      "title": "Your Skills and Your Path",
+      "level": "Beginner",
+      "module": "m1",
+      "mode": "phone",
+      "minutes": 8,
+      "prereq": [
+        "p1-l5"
+      ],
+      "skills": [
+        "Learning plan",
+        "Skills for electrical engineers"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Why AI comes first",
+          "lines": [
+            "You can use AI today with no coding.",
+            "It helps your daily work: reading, writing and checking.",
+            "You learn how to use it safely."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Why data analysis is next",
+          "lines": [
+            "Your work already makes data: test results, readings and logs.",
+            "A spreadsheet can already analyse it.",
+            "It builds the skills that machine learning needs later."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Why machine learning comes later",
+          "lines": [
+            "ML needs clean data, some maths ideas and some coding.",
+            "Without them, models are easy to get wrong.",
+            "So ML follows data analysis and Python."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Skills that help electrical engineers",
+          "lines": [
+            "Open the table to see skill, reason and when to learn it."
+          ],
+          "table": {
+            "head": [
+              "Skill",
+              "Why it helps",
+              "When"
+            ],
+            "rows": [
+              [
+                "Prompt writing",
+                "Better, safer AI answers",
+                "Now"
+              ],
+              [
+                "Spreadsheets",
+                "Analyse test results",
+                "Next"
+              ],
+              [
+                "Basic statistics",
+                "Understand spread and tolerance",
+                "Next"
+              ],
+              [
+                "Python",
+                "Automate and analyse",
+                "With a laptop"
+              ],
+              [
+                "Protection knowledge",
+                "Know what the data means",
+                "Always"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "analogy",
+          "title": "Your edge is your field",
+          "lines": [
+            "Many people can write code.",
+            "Few understand why a relay trips.",
+            "AI plus protection knowledge is your edge."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Your road map",
+          "lines": [
+            "1. AI fundamentals.",
+            "2. AI power user.",
+            "3. Excel and data analysis.",
+            "4. Python.",
+            "5. Statistics.",
+            "6. Machine learning.",
+            "7. Applied AI projects.",
+            "8. Electrical specialisation.",
+            "9. Advanced AI."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: make your plan",
+          "lines": [
+            "Write which step you are on today.",
+            "Pick one small thing to do this week.",
+            "Write one question you want answered."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Start with AI use. Then data analysis. Then Python and ML.",
+            "Your protection knowledge is your edge.",
+            "You may revisit any lesson at any time."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why does data analysis come before machine learning?",
+          "options": [
+            "It is easier to spell",
+            "It builds skills ML needs, and uses data you already have",
+            "ML is useless",
+            "It is required by law"
+          ],
+          "answer": 1,
+          "why": "Data analysis builds data skills and gives value early."
+        },
+        {
+          "q": "Which skill can you start now with no laptop?",
+          "options": [
+            "Prompt writing",
+            "Writing a neural network",
+            "Installing Docker",
+            "Building a server"
+          ],
+          "answer": 0,
+          "why": "Using AI tools safely works on a phone."
+        },
+        {
+          "q": "What is your main edge as an electrical engineer?",
+          "options": [
+            "Knowing the domain, such as protection",
+            "Typing speed",
+            "Owning a laptop",
+            "Memorising code"
+          ],
+          "answer": 0,
+          "why": "Domain knowledge tells you what the data means."
+        },
+        {
+          "q": "When is Python best learned?",
+          "options": [
+            "Never",
+            "When you have a laptop for practice",
+            "Before reading anything",
+            "Only for experts"
+          ],
+          "answer": 1,
+          "why": "Python is best practised on a computer."
+        },
+        {
+          "q": "Do you have to follow the order strictly?",
+          "options": [
+            "Yes, no exceptions",
+            "No, you can revisit topics and skip what you do not need",
+            "Only on Mondays",
+            "Only if the AI says so"
+          ],
+          "answer": 1,
+          "why": "The order is a guide. Revisit any lesson when you need it."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Elements of AI (Introduction to AI)",
+          "url": "https://www.elementsofai.com/",
+          "type": "Course",
+          "free": true,
+          "verified": "opened"
+        },
+        {
+          "title": "Kaggle Learn (short free courses)",
+          "url": "https://www.kaggle.com/learn",
+          "type": "Courses",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-10-09",
+      "career": "A clear plan beats random learning. Come back to this lesson whenever you feel lost.",
       "next": null
     }
   ]
