@@ -5,32 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI for My Career</title>
   <meta name="description" content="From Zero to Advanced AI for Electrical Engineering">
-  <meta name="theme-color" content="#0a1428">
+  <meta name="theme-color" content="#030a18">
   <link rel="icon" href="assets/images/favicon.png">
   <!-- Apply saved theme before first paint so the page does not flash -->
   <script>
+    window.__t0 = performance.now();
     try {
       var t = localStorage.getItem('afmc.theme');
       if (!t && window.matchMedia('(prefers-color-scheme: light)').matches) t = 'light';
       if (t) document.documentElement.setAttribute('data-theme', t);
     } catch (e) {}
+    /* Loading screen: shown once per browser session. A different one each visit (1, 2 or 3).
+       Preview with ?loader=1, ?loader=2 or ?loader=3 */
+    try {
+      var forced = (location.search.match(/[?&]loader=([123])/) || [])[1];
+      var seen = sessionStorage.getItem('afmc.loaded');
+      var pick = '0';
+      if (forced) pick = forced;
+      else if (!seen) {
+        var n = parseInt(localStorage.getItem('afmc.loaderN') || '0', 10) % 3;
+        localStorage.setItem('afmc.loaderN', String(n + 1));
+        pick = String(n + 1);
+      }
+      document.documentElement.setAttribute('data-loader', pick);
+    } catch (e) { document.documentElement.setAttribute('data-loader', '1'); }
+    /* safety: never trap the visitor behind the loading screen */
+    setTimeout(function () { var l = document.getElementById('loader'); if (l) l.classList.add('done'); }, 9000);
   </script>
+  <link rel="stylesheet" href="css/loader.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/depth.css">
+  <link rel="stylesheet" href="css/neon.css">
 </head>
 <body>
+  <div id="loader" role="status" aria-live="polite">
+    <div class="ld-stage ld-1" aria-hidden="true">
+      <div class="g3d"><i class="ring r1"></i><i class="ring r2"></i><i class="ring r3"></i></div>
+      <img class="ld-logo" src="assets/images/logo-dark.png" alt="">
+    </div>
+    <div class="ld-stage ld-2" aria-hidden="true">
+      <div class="cube"><b class="f front"></b><b class="f back"></b><b class="f right"></b><b class="f left"></b><b class="f top"></b><b class="f bottom"></b>
+        <div class="core"><b class="f front"></b><b class="f back"></b><b class="f right"></b><b class="f left"></b><b class="f top"></b><b class="f bottom"></b></div></div>
+      <div class="orbit"><i></i><i></i></div>
+    </div>
+    <div class="ld-stage ld-3" aria-hidden="true">
+      <div class="stack"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i></div>
+      <svg class="ld-bolt" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L5 14h6l-1 8 8-12h-6z"/></svg>
+    </div>
+    <p class="ld-title">AI FOR MY CAREER</p>
+    <p class="ld-msg" aria-hidden="true"><span>Energising the grid</span><span>Loading the AI core</span><span>Building your path</span></p>
+    <div class="ld-bar" aria-hidden="true"><i></i></div>
+    <span class="sr-only">Loading AI for My Career</span>
+  </div>
+  <noscript><style>#loader { display: none !important; }</style></noscript>
+
   <a class="skip-link" href="#view">Skip to content</a>
 
   <header class="topbar">
     <a class="brand" href="#/" aria-label="AI for My Career, home">
-      <span class="brand-logo"><img id="brand-logo" alt="K24 Electrical logo" width="90" height="30"></span>
-      <span class="brand-text">
-        <strong id="brand-title"></strong>
-        <small id="brand-sub"></small>
-      </span>
+      <span class="brand-logo"><img id="brand-logo-dark" class="logo-for-dark" alt="K24 Electrical logo" width="100" height="31"><img id="brand-logo-light" class="logo-for-light" alt="" aria-hidden="true" width="100" height="31"></span>
+      <span class="brand-text"><strong id="brand-title"></strong><small id="brand-sub"></small></span>
     </a>
+    <nav class="topnav" id="topnav" aria-label="Main"></nav>
+    <form class="topsearch" id="topsearch" role="search">
+      <label class="sr-only" for="q">Search lessons, topics and tools</label>
+      <input id="q" type="search" placeholder="Search lessons, topics, tools..." autocomplete="off">
+    </form>
+    <a class="icon-btn search-link" href="#/search" aria-label="Search"></a>
     <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch theme"></button>
+    <button class="icon-btn more-toggle hdr-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidenav"></button>
+    <a class="avatar" href="#/progress" aria-label="Your progress">K</a>
   </header>
 
   <nav id="sidenav" class="sidenav" aria-label="All sections"></nav>

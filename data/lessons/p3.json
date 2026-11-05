@@ -1,0 +1,636 @@
+{
+  "phase": "p3",
+  "glossary": {},
+  "lessons": [
+    {
+      "id": "p3-l1",
+      "phase": "p3",
+      "number": 1,
+      "title": "Using ChatGPT and Claude",
+      "level": "Beginner",
+      "module": "m2",
+      "mode": "phone",
+      "minutes": 9,
+      "prereq": [
+        "p1-l3"
+      ],
+      "skills": [
+        "Using AI assistants",
+        "Basic prompting"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "What an AI assistant is",
+          "lines": [
+            "ChatGPT and Claude are AI assistants.",
+            "You type or speak. They answer in text.",
+            "They are built on large language models."
+          ],
+          "terms": [
+            "llm",
+            "prompt"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "What they do well",
+          "lines": [
+            "Explain ideas in simple words.",
+            "Summarise long text.",
+            "Draft emails and reports.",
+            "Make lists and checklists.",
+            "Turn rough notes into clear writing."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "What they do not do well",
+          "lines": [
+            "Know your exact relay and firmware.",
+            "Do exact calculations without a check.",
+            "Remember things you did not tell them.",
+            "Be right every time."
+          ]
+        },
+        {
+          "kind": "analogy",
+          "title": "A fast new assistant",
+          "lines": [
+            "Imagine a new assistant who reads fast and writes well.",
+            "He has never seen your site or your relay.",
+            "You give clear instructions.",
+            "You check his work."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Your first good chat",
+          "lines": [
+            "Say who you are and what you need.",
+            "Give the background in two or three lines.",
+            "Say how you want the answer.",
+            "Ask follow-up questions."
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example chat",
+          "lines": [
+            "Prompt: Explain overcurrent protection to a new technician in 5 short lines. Use a simple example.",
+            "Then check the answer against a trusted textbook or manual.",
+            "Ask a follow-up: Now explain pickup and time delay in simple words."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Free and paid versions",
+          "lines": [
+            "Both tools have free versions with limits.",
+            "Features and limits change often.",
+            "Check each tool's own page to see what is free today."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Before you type",
+          "lines": [
+            "Do not type company secrets, customer names or private settings.",
+            "Remove names and numbers you are not allowed to share.",
+            "The next lesson covers this fully."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: ask and check",
+          "lines": [
+            "Ask an AI to explain what trip circuit supervision does, in simple words.",
+            "Compare the answer with a manual or textbook.",
+            "Write one correct point and one point you need to check."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "AI assistants explain, summarise and draft well.",
+            "They do not know your relay. Give context and check the result.",
+            "Never type confidential data."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which task are AI assistants usually good at?",
+          "options": [
+            "Knowing your exact firmware",
+            "Summarising a long text",
+            "Measuring current",
+            "Being right every time"
+          ],
+          "answer": 1,
+          "why": "They are strong with language tasks such as summaries and drafts."
+        },
+        {
+          "q": "What does the 'fast new assistant' comparison tell you?",
+          "options": [
+            "Give clear instructions and check the work",
+            "He needs no instructions",
+            "He knows your site",
+            "Never use him"
+          ],
+          "answer": 0,
+          "why": "AI is capable but new to your situation, so guide it and verify."
+        },
+        {
+          "q": "A good first message includes...",
+          "options": [
+            "Only one word",
+            "Who you are, what you need and the format you want",
+            "Passwords",
+            "Customer data"
+          ],
+          "answer": 1,
+          "why": "Context and format lead to better answers."
+        },
+        {
+          "q": "What should you do with an AI's explanation of a protection function?",
+          "options": [
+            "Use it as an approved procedure",
+            "Check it against a trusted manual or textbook",
+            "Post it as fact",
+            "Ignore every answer"
+          ],
+          "answer": 1,
+          "why": "AI explanations are a starting point and must be verified."
+        },
+        {
+          "q": "Which is safe to type into a public AI tool?",
+          "options": [
+            "A customer's relay settings file",
+            "General question: how does overcurrent protection work?",
+            "Company passwords",
+            "Internal test reports"
+          ],
+          "answer": 1,
+          "why": "General learning questions are fine. Do not share confidential data."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Claude Academy (free courses from Anthropic)",
+          "url": "https://academy.claude.com/",
+          "type": "Courses",
+          "free": true,
+          "verified": "opened"
+        },
+        {
+          "title": "OpenAI: Prompt engineering guide",
+          "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+          "type": "Guide",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-11-04",
+      "career": "Using an AI assistant well, with context and checking, is already a useful workplace skill.",
+      "next": "p3-l2"
+    },
+    {
+      "id": "p3-l2",
+      "phase": "p3",
+      "number": 2,
+      "title": "Hallucinations, Privacy and Confidential Data",
+      "level": "Beginner",
+      "module": "m2",
+      "mode": "phone",
+      "minutes": 10,
+      "prereq": [
+        "p3-l1"
+      ],
+      "skills": [
+        "Verifying AI output",
+        "Protecting confidential data"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Hallucinations again",
+          "lines": [
+            "An AI can state false things with confidence.",
+            "It may invent a standard number, a setting or a source.",
+            "It does not know that it is wrong."
+          ],
+          "terms": [
+            "hallucination"
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "A realistic danger",
+          "lines": [
+            "It might quote a setting range that does not exist for your relay.",
+            "It might name an IEC clause that is wrong.",
+            "A wrong number in a test plan can cause real problems."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "How to catch mistakes",
+          "lines": [
+            "Ask: where does this come from?",
+            "Check every number in the manual.",
+            "Ask the same question in another way and compare.",
+            "Be extra careful with numbers, names and dates."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Match your care to the risk",
+          "lines": [
+            "The riskier the task, the more you must check."
+          ],
+          "table": {
+            "head": [
+              "Task",
+              "Risk",
+              "What to do"
+            ],
+            "rows": [
+              [
+                "Rewording an email",
+                "Low",
+                "Read it before sending"
+              ],
+              [
+                "Summarising a public article",
+                "Medium",
+                "Spot-check key facts"
+              ],
+              [
+                "Explaining a concept",
+                "Medium",
+                "Compare with a textbook"
+              ],
+              [
+                "Limits, settings, safety steps",
+                "High",
+                "Use only approved documents"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "idea",
+          "title": "Privacy: where your text goes",
+          "lines": [
+            "Many tools may keep what you type.",
+            "Some may use chats to improve their systems, depending on the tool and your settings.",
+            "Read the privacy settings before you use any tool for work."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "What counts as confidential",
+          "lines": [
+            "Customer names and site details.",
+            "Internal test reports and drawings.",
+            "Real relay settings files.",
+            "Company software, passwords and keys."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Safer habits",
+          "lines": [
+            "Remove names and numbers before you ask.",
+            "Practise with made-up (synthetic) data.",
+            "Ask your company which AI tools are approved.",
+            "Use approved tools for work files."
+          ],
+          "terms": [
+            "synthetic-data"
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Your rule",
+          "lines": [
+            "If you are not sure it is allowed, do not paste it.",
+            "Ask your manager or IT team first.",
+            "AI output is a draft. An engineer approves."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: clean a risky prompt",
+          "lines": [
+            "Risky: Summarise the settings of Relay R1 at Customer X's Plant Y.",
+            "Rewrite it with no real names or numbers.",
+            "Example: Explain in general what an overcurrent relay setting sheet usually contains."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "AI can be confidently wrong, so check numbers and sources.",
+            "Higher risk needs more checking.",
+            "Never paste confidential data. Ask first."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is a hallucination?",
+          "options": [
+            "A fast answer",
+            "A confident answer that is wrong or invented",
+            "A saved chat",
+            "A drawing"
+          ],
+          "answer": 1,
+          "why": "Hallucinations sound sure but are false."
+        },
+        {
+          "q": "Which task needs the MOST checking?",
+          "options": [
+            "Rewording an email",
+            "Settings and safety steps",
+            "Making a title",
+            "Fixing spelling"
+          ],
+          "answer": 1,
+          "why": "Limits, settings and safety steps are high risk."
+        },
+        {
+          "q": "What is a safe way to practise with AI?",
+          "options": [
+            "Paste real customer reports",
+            "Use made-up synthetic data",
+            "Use the real settings file",
+            "Copy company drawings"
+          ],
+          "answer": 1,
+          "why": "Synthetic data protects confidential information."
+        },
+        {
+          "q": "If you are unsure whether you may paste something, you should...",
+          "options": [
+            "Paste it anyway",
+            "Not paste it and ask first",
+            "Paste half",
+            "Post it publicly"
+          ],
+          "answer": 1,
+          "why": "When in doubt, do not paste it. Ask your manager or IT team."
+        },
+        {
+          "q": "Which is confidential?",
+          "options": [
+            "A general definition of a relay",
+            "A customer's internal test report",
+            "The word 'current'",
+            "A textbook title"
+          ],
+          "answer": 1,
+          "why": "Internal reports and customer details are confidential."
+        }
+      ],
+      "resources": [
+        {
+          "title": "AI capabilities and limitations (free course)",
+          "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+          "type": "Course",
+          "free": true,
+          "verified": "opened-listing"
+        },
+        {
+          "title": "AI Fluency: Framework and Foundations (free, about 4 hours)",
+          "url": "https://academy.claude.com/courses/ai-fluency-framework-foundations",
+          "type": "Course",
+          "free": true,
+          "verified": "opened-listing"
+        }
+      ],
+      "checked": "2026-11-04",
+      "career": "Engineers who check AI output and protect data are trusted with AI tools. Careless users are not.",
+      "next": "p3-l3"
+    },
+    {
+      "id": "p3-l3",
+      "phase": "p3",
+      "number": 3,
+      "title": "Writing Structured Prompts",
+      "level": "Beginner",
+      "module": "m2",
+      "mode": "phone",
+      "minutes": 10,
+      "prereq": [
+        "p3-l2"
+      ],
+      "skills": [
+        "Structured prompting",
+        "Writing clear instructions"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Why structure helps",
+          "lines": [
+            "A vague question gets a vague answer.",
+            "A clear prompt saves time.",
+            "Four parts work well: goal, context, format and boundaries."
+          ],
+          "terms": [
+            "prompt"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Goal",
+          "lines": [
+            "What do you want?",
+            "Example: Make a pre-test checklist."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Context",
+          "lines": [
+            "Who is it for, and what is the background?",
+            "Example: For a new technician. General secondary injection test."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Format",
+          "lines": [
+            "How should the answer look?",
+            "Example: A table with three columns and no more than 10 rows."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Boundaries",
+          "lines": [
+            "What should the AI avoid or limit?",
+            "Example: Do not give setting values. Say 'check the approved procedure' where a limit is needed. Use simple English."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Weak and strong prompts",
+          "lines": [
+            "See the difference side by side."
+          ],
+          "table": {
+            "head": [
+              "Weak prompt",
+              "Strong prompt"
+            ],
+            "rows": [
+              [
+                "Tell me about relays",
+                "Explain what a protection relay does to a new technician in 5 lines, with one simple example"
+              ],
+              [
+                "Make a checklist",
+                "Make a pre-test checklist for a general overcurrent relay. Table: Step, What to check, Tick box. No setting values"
+              ],
+              [
+                "Is this ok?",
+                "Review this test sheet layout for missing fields. List problems as bullets. Do not rewrite it"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "electrical",
+          "title": "A full example",
+          "lines": [
+            "Goal: Make a pre-test checklist for a general overcurrent relay secondary injection test.",
+            "Context: For a new technician. This is a fictional training example, no real site.",
+            "Format: A table with Step, What to check and Tick box.",
+            "Boundaries: Do not give setting values. Add 'check approved procedure' where a limit is needed."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Improve, do not restart",
+          "lines": [
+            "If the answer is not right, say what to change.",
+            "Examples: shorter, simpler, add a table.",
+            "Ask the AI to list what it is unsure about."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "A checklist from AI is a draft",
+          "lines": [
+            "Compare it with your company's approved test procedure before use.",
+            "Add missing steps yourself.",
+            "The engineer is responsible, not the AI."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: write a four-part prompt",
+          "lines": [
+            "Write a prompt that asks an AI to explain CT saturation simply.",
+            "Include goal, context, format and boundaries.",
+            "Run it, then check the answer against a textbook."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Goal, context, format, boundaries.",
+            "Improve by giving feedback, not by starting again.",
+            "Check AI drafts against approved documents."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What are the four parts of a structured prompt in this lesson?",
+          "options": [
+            "Goal, context, format, boundaries",
+            "Name, date, place, price",
+            "Input, output, error, log",
+            "Start, middle, end, stop"
+          ],
+          "answer": 0,
+          "why": "Goal, context, format and boundaries make prompts clear."
+        },
+        {
+          "q": "Which prompt is stronger?",
+          "options": [
+            "Tell me about relays",
+            "Explain relays to a new technician in 5 lines with one example",
+            "Relays?",
+            "Make it good"
+          ],
+          "answer": 1,
+          "why": "The strong prompt gives audience, length and format."
+        },
+        {
+          "q": "What is a boundary?",
+          "options": [
+            "Something the AI should avoid or limit",
+            "A fence",
+            "The goal",
+            "The format"
+          ],
+          "answer": 0,
+          "why": "For example: do not give setting values."
+        },
+        {
+          "q": "The AI's first answer is not quite right. What next?",
+          "options": [
+            "Start a new chat",
+            "Tell it what to change",
+            "Give up",
+            "Believe it anyway"
+          ],
+          "answer": 1,
+          "why": "Feedback improves the answer."
+        },
+        {
+          "q": "A checklist written by AI should be...",
+          "options": [
+            "Used without checking",
+            "Compared with the approved procedure",
+            "Posted publicly",
+            "Used instead of training"
+          ],
+          "answer": 1,
+          "why": "AI drafts must be checked against approved documents."
+        }
+      ],
+      "resources": [
+        {
+          "title": "OpenAI: Prompt engineering guide",
+          "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+          "type": "Guide",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "AI Fluency: Framework and Foundations (free, about 4 hours)",
+          "url": "https://academy.claude.com/courses/ai-fluency-framework-foundations",
+          "type": "Course",
+          "free": true,
+          "verified": "opened-listing"
+        }
+      ],
+      "checked": "2026-11-04",
+      "career": "Clear structured prompts save time and reduce mistakes in reports, checklists and learning.",
+      "next": "p4-l1"
+    }
+  ]
+}

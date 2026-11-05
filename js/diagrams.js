@@ -39,4 +39,15 @@ export const DIAGRAMS = {
     '<text class="d-text" x="160" y="30" text-anchor="middle">AI</text>' +
     '<text class="d-text" x="160" y="58" text-anchor="middle">Machine learning</text>' +
     '<text class="d-text" x="160" y="112" text-anchor="middle">Deep</text><text class="d-text" x="160" y="127" text-anchor="middle">learning</text>'),
+  'cloud-blocks': () => wrap(190, 'A cloud service is built from four blocks: compute, storage, database and network and access. Security, monitoring and billing surround all four.',
+    label(8, 16, 'A CLOUD SERVICE = 4 BLOCKS') +
+    box(8, 24, 148, 52, ['Compute', '(runs programs)']) + box(164, 24, 148, 52, ['Storage', '(keeps files)']) +
+    box(8, 88, 148, 52, ['Database', '(organised data)']) + box(164, 88, 148, 52, ['Network + access', '(who can reach what)']) +
+    '<text class="d-label" x="160" y="168" text-anchor="middle">SECURITY, MONITORING AND BILLING AROUND ALL FOUR</text>'),
+
+  'devops-loop': () => wrap(172, 'A loop of six steps: plan, code, test, release, monitor, learn, then back to plan.',
+    box(8, 16, 84, 44, ['1. Plan']) + arrow(92, 38, 122) + box(122, 16, 84, 44, ['2. Code']) + arrow(206, 38, 236) + box(236, 16, 76, 44, ['3. Test']) +
+    '<line class="d-arrow" x1="274" y1="60" x2="274" y2="106" marker-end="url(#ah)"/>' +
+    box(236, 108, 76, 44, ['4. Release']) + arrow(236, 130, 206) + box(122, 108, 84, 44, ['5. Monitor']) + arrow(122, 130, 92) + box(8, 108, 84, 44, ['6. Learn']) +
+    '<line class="d-arrow" x1="50" y1="108" x2="50" y2="62" marker-end="url(#ah)"/>'),
 };

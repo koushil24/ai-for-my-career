@@ -3,8 +3,9 @@
 export const BRAND = {
   title: 'AI for My Career',
   subtitle: 'From Zero to Advanced AI for Electrical Engineering',
-  tagline: 'Learn AI. Build Skills. Engineer the Future.',
-  logo: 'assets/images/logo1.jpg',
+  tagline: 'Learn AI. Apply It. Build Your Future.',
+  logoDark: 'assets/images/logo-dark.png',    // transparent logo for the dark theme
+  logoLight: 'assets/images/logo-light.png',  // transparent logo for the light theme
 };
 
 /* Every section of the site.
@@ -38,7 +39,19 @@ export const ROUTES = [
 ];
 
 /* Pages that are already built. Everything else shows a "coming soon" card. */
-export const BUILT = new Set(['home', 'roadmap', 'pathway', 'syllabus', 'lessons']);
+export const BUILT = new Set(['home', 'roadmap', 'pathway', 'syllabus', 'lessons', 'electrical', 'projects']);
+
+/* The links in the top bar on a large screen. */
+export const TOPNAV = [
+  { id: 'home', label: 'Home' },
+  { id: 'roadmap', label: 'Learning Roadmap' },
+  { id: 'pathway', label: 'AI Skills' },
+  { id: 'electrical', label: 'Electrical Engineering' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'resources', label: 'Resources' },
+  { id: 'career', label: 'Career' },
+  { id: 'progress', label: 'Progress' },
+];
 
 /* Simple line icons (no emoji). Each one is a small SVG that takes the text colour. */
 const svg = (inner) => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${inner}</svg>`;
@@ -58,6 +71,6 @@ export const TABS = [
   { id: 'home',    icon: ICONS.home,    label: 'Home' },
   { id: 'roadmap', icon: ICONS.roadmap, label: 'Roadmap' },
   { id: 'lessons', icon: ICONS.lessons, label: 'Lessons' },
-  { id: 'notes',   icon: ICONS.notes,   label: 'Notes' },
+  { id: 'pathway', icon: ICONS.notes,   label: 'Pathway' },
   { id: 'more',    icon: ICONS.more,    label: 'More' },
 ];

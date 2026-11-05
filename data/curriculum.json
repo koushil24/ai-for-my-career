@@ -661,28 +661,35 @@
     {
       "id": "p22",
       "number": 22,
-      "title": "Cloud AI",
-      "description": "One cloud platform in depth: storage, compute, deployment.",
+      "title": "Cloud and DevOps",
+      "description": "Cloud basics, plus the DevOps habits (Git, testing, automatic deployment, monitoring) that keep software changes safe.",
       "level": "builder",
       "needsLaptop": true,
       "topics": [
-        "Cloud fundamentals",
-        "Storage",
-        "Compute",
-        "Databases",
-        "AI services",
-        "Deployment",
-        "Security",
-        "Monitoring"
+        "What the cloud is",
+        "Compute, storage, databases and networking",
+        "Cloud security, access and cost",
+        "Choosing one cloud provider",
+        "AI services in the cloud",
+        "What DevOps is",
+        "Version control with Git and GitHub",
+        "CI/CD: automatic testing and deployment",
+        "Containers and Docker",
+        "Infrastructure as code",
+        "Monitoring and logging",
+        "Deploying a small AI application"
       ],
       "skills": [
-        "One cloud in depth"
+        "Cloud concepts",
+        "DevOps basics",
+        "Safe deployment"
       ],
       "projects": [
-        "Deploy a small AI app"
+        "Publish and update a small site with Git and GitHub Pages",
+        "Deploy a small AI app to a cloud service (later)"
       ],
       "prerequisites": [
-        "p14"
+        "p5"
       ]
     },
     {

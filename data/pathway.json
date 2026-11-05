@@ -59,13 +59,20 @@
       ],
       "lessons": [
         {
-          "title": "Using ChatGPT and Claude"
+          "title": "Using ChatGPT and Claude",
+          "id": "p3-l1"
         },
         {
-          "title": "Writing structured prompts"
+          "title": "Hallucinations, privacy and confidential data",
+          "id": "p3-l2"
         },
         {
-          "title": "Research and fact-checking"
+          "title": "Writing structured prompts",
+          "id": "p3-l3"
+        },
+        {
+          "title": "Research and fact-checking",
+          "id": "p4-l1"
         },
         {
           "title": "Reading manuals and datasheets with AI"
@@ -78,9 +85,6 @@
         },
         {
           "title": "Troubleshooting with AI safely"
-        },
-        {
-          "title": "Hallucinations, privacy and confidential data"
         }
       ]
     },
@@ -313,7 +317,6 @@
         "p19",
         "p20",
         "p21",
-        "p22",
         "p23"
       ],
       "after": [
@@ -356,6 +359,63 @@
           "title": "Emerging trends in power systems"
         }
       ]
+    },
+    {
+      "id": "m8",
+      "number": 8,
+      "title": "Cloud and DevOps",
+      "level": "Intermediate",
+      "mode": "mixed",
+      "summary": "Cloud basics and the DevOps habits that keep software changes safe. Concept lessons work on a phone. Hands-on practice needs a computer.",
+      "phases": [
+        "p22"
+      ],
+      "after": [
+        "m4"
+      ],
+      "projects": [
+        "Publish and update a small static site with Git and GitHub Pages",
+        "Deploy a small AI app to a cloud service (later)"
+      ],
+      "lessons": [
+        {
+          "title": "What is the Cloud?",
+          "id": "p22-l1"
+        },
+        {
+          "title": "Cloud Building Blocks",
+          "id": "p22-l2"
+        },
+        {
+          "title": "What is DevOps?",
+          "id": "p22-l3"
+        },
+        {
+          "title": "Your Own DevOps: GitHub and GitHub Pages",
+          "id": "p22-l4"
+        },
+        {
+          "title": "Cloud security, access and cost"
+        },
+        {
+          "title": "Choosing one cloud provider"
+        },
+        {
+          "title": "CI/CD: automatic testing and deployment"
+        },
+        {
+          "title": "Containers and Docker"
+        },
+        {
+          "title": "Infrastructure as code"
+        },
+        {
+          "title": "Monitoring and logging"
+        },
+        {
+          "title": "Deploying a small AI application"
+        }
+      ]
     }
   ],
   "sequence": [
@@ -390,6 +450,10 @@
     {
       "label": "Electrical Specialisation",
       "module": "m6"
+    },
+    {
+      "label": "Cloud and DevOps",
+      "module": "m8"
     },
     {
       "label": "Advanced AI",

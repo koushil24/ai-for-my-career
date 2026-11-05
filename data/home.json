@@ -1,0 +1,279 @@
+{
+  "hero": {
+    "title": "AI FOR MY CAREER",
+    "tagline": "Learn AI. Apply It. Build Your Future.",
+    "text": "From AI fundamentals to advanced AI-assisted engineering. Connecting artificial intelligence with Electrical Engineering, Power Systems, Protection, Testing, SCADA and Automation.",
+    "image": "assets/images/hero-substation-ai.jpg",
+    "slogan": "Smarter Engineers. Build a Brighter Future.",
+    "topics": [
+      {
+        "label": "AI",
+        "icon": "ai",
+        "href": "#/lessons/m1"
+      },
+      {
+        "label": "Power Systems",
+        "icon": "grid",
+        "href": "#/electrical"
+      },
+      {
+        "label": "Protection & Relays",
+        "icon": "relay",
+        "href": "#/electrical"
+      },
+      {
+        "label": "Testing",
+        "icon": "test",
+        "href": "#/electrical"
+      },
+      {
+        "label": "SCADA & Automation",
+        "icon": "scada",
+        "href": "#/electrical"
+      },
+      {
+        "label": "IEC 61850",
+        "icon": "net",
+        "href": "#/electrical"
+      },
+      {
+        "label": "Productivity",
+        "icon": "bolt",
+        "href": "#/lessons/m2"
+      },
+      {
+        "label": "Career Growth",
+        "icon": "growth",
+        "href": "#/career"
+      }
+    ]
+  },
+  "levels": [
+    {
+      "num": "01",
+      "name": "AI USER",
+      "text": "Understand AI fundamentals and use AI tools effectively.",
+      "icon": "user",
+      "modules": [
+        "m1"
+      ]
+    },
+    {
+      "num": "02",
+      "name": "AI POWER USER",
+      "text": "Advanced prompting, research, productivity and AI workflows.",
+      "icon": "bolt",
+      "modules": [
+        "m2"
+      ]
+    },
+    {
+      "num": "03",
+      "name": "AI-ASSISTED ENGINEER",
+      "text": "Use AI for electrical engineering, analysis, documentation and troubleshooting.",
+      "icon": "gear",
+      "modules": [
+        "m3"
+      ]
+    },
+    {
+      "num": "04",
+      "name": "AI BUILDER",
+      "text": "Learn automation, programming, APIs, data and AI development.",
+      "icon": "code",
+      "modules": [
+        "m4",
+        "m5",
+        "m8"
+      ]
+    },
+    {
+      "num": "05",
+      "name": "AI + ELECTRICAL ENGINEERING SPECIALIST",
+      "text": "Combine AI with power systems, protection, testing, SCADA and IEC 61850.",
+      "icon": "grid",
+      "modules": [
+        "m6",
+        "m7"
+      ]
+    }
+  ],
+  "knowledge": [
+    {
+      "label": "Electrical Engineering",
+      "icon": "circuit",
+      "image": "assets/images/k-electrical-engineering.jpg"
+    },
+    {
+      "label": "Power Systems",
+      "icon": "grid",
+      "image": "assets/images/k-power-systems.jpg"
+    },
+    {
+      "label": "Protection & Relays",
+      "icon": "relay",
+      "image": "assets/images/k-protection-relays.jpg"
+    },
+    {
+      "label": "Relay Testing",
+      "icon": "test",
+      "image": "assets/images/k-relay-testing.jpg"
+    },
+    {
+      "label": "Substations",
+      "icon": "shield",
+      "image": "assets/images/k-substations.jpg"
+    },
+    {
+      "label": "Transformers",
+      "icon": "power",
+      "image": "assets/images/k-transformers.jpg"
+    },
+    {
+      "label": "SCADA & Automation",
+      "icon": "scada",
+      "image": "assets/images/k-scada-automation.jpg"
+    },
+    {
+      "label": "IEC 61850",
+      "icon": "net",
+      "image": "assets/images/k-iec-61850.jpg"
+    },
+    {
+      "label": "Digital Substations",
+      "icon": "ai",
+      "image": "assets/images/k-digital-substations.jpg"
+    },
+    {
+      "label": "Engineering Calculations",
+      "icon": "calc",
+      "image": "assets/images/k-engineering-calculations.jpg"
+    }
+  ],
+  "toolkit": [
+    {
+      "label": "ChatGPT",
+      "sub": "General purpose AI",
+      "icon": "chat",
+      "href": "https://chatgpt.com/",
+      "external": true
+    },
+    {
+      "label": "Claude",
+      "sub": "Research and writing",
+      "icon": "chat",
+      "href": "https://claude.ai/",
+      "external": true
+    },
+    {
+      "label": "Gemini",
+      "sub": "Google AI",
+      "icon": "chat",
+      "href": "https://gemini.google.com/",
+      "external": true
+    },
+    {
+      "label": "Perplexity",
+      "sub": "Search with sources",
+      "icon": "search",
+      "href": "https://www.perplexity.ai/",
+      "external": true
+    },
+    {
+      "label": "GitHub",
+      "sub": "Code and development",
+      "icon": "code",
+      "href": "https://github.com/",
+      "external": true
+    },
+    {
+      "label": "AI Research",
+      "sub": "Check and verify",
+      "icon": "doc",
+      "href": "#/lesson/p4-l1"
+    },
+    {
+      "label": "AI Coding",
+      "sub": "Build and automate",
+      "icon": "code",
+      "href": "#/lessons/m4"
+    },
+    {
+      "label": "AI Automation",
+      "sub": "Workflows and agents",
+      "icon": "gear",
+      "href": "#/pathway"
+    },
+    {
+      "label": "AI Productivity",
+      "sub": "Focus and efficiency",
+      "icon": "bolt",
+      "href": "#/lesson/p3-l1"
+    }
+  ],
+  "projects": [
+    {
+      "id": "relay-testing-ai",
+      "title": "AI for Relay Testing",
+      "tags": "Testing · Protection",
+      "status": "Planned",
+      "image": "assets/images/proj-relay-testing-ai.jpg",
+      "module": "m2",
+      "desc": "An AI-assisted relay testing checklist and report template, using fictional data."
+    },
+    {
+      "id": "power-systems-ai",
+      "title": "AI for Power Systems",
+      "tags": "Power Flow · Stability",
+      "status": "Planned",
+      "image": "assets/images/proj-power-systems.jpg",
+      "module": "m6",
+      "desc": "Equipment maintenance dashboard and condition monitoring ideas, using synthetic data."
+    },
+    {
+      "id": "engineering-assistant",
+      "title": "AI Engineering Assistant",
+      "tags": "Documentation · Analysis",
+      "status": "Planned",
+      "image": "assets/images/proj-engineering-assistant.jpg",
+      "module": "m6",
+      "desc": "A knowledge assistant that answers from non-confidential sample documents."
+    },
+    {
+      "id": "iec61850-ai",
+      "title": "AI + IEC 61850",
+      "tags": "Communication · Substation",
+      "status": "Planned",
+      "image": "assets/images/proj-iec61850.jpg",
+      "module": "m6",
+      "desc": "A learning assistant for IEC 61850 concepts, GOOSE and substation automation."
+    },
+    {
+      "id": "career-assistant",
+      "title": "AI Career Assistant",
+      "tags": "Career · Skills · Roadmap",
+      "status": "Planned",
+      "image": "assets/images/proj-career-assistant.jpg",
+      "module": "m7",
+      "desc": "A helper that turns your progress into a study plan and career notes."
+    },
+    {
+      "id": "future-projects",
+      "title": "Future Engineering Projects",
+      "tags": "Next Gen · Innovation",
+      "status": "Ideas",
+      "image": "assets/images/proj-future.jpg",
+      "module": "m7",
+      "desc": "Space for new ideas as your skills grow."
+    }
+  ],
+  "roles": [
+    "Electrical Engineer",
+    "Testing Engineer",
+    "Protection Engineer",
+    "Commissioning Engineer",
+    "SCADA / Automation Engineer",
+    "AI-Assisted Electrical Engineer",
+    "AI + Power Systems Specialist"
+  ]
+}

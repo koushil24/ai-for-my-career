@@ -1,21 +1,39 @@
-/* app.js - starts the site: branding, menu, theme, and connects the pages. */
-import { BRAND, ROUTES, TABS, ICONS, BUILT } from './config.js';
+/* app.js - starts the site: header, menus, loading screen, theme, and connects the pages. */
+import { BRAND, ROUTES, TABS, TOPNAV, ICONS, BUILT } from './config.js';
 import { registerPage, startRouter } from './router.js';
-import { touchStreak, getStats } from './store.js';
+import { touchStreak } from './store.js';
 import { mountListenBar } from './listen.js';
-import { loadCurriculum, loadLessons } from './data.js';
 import { esc } from './util.js';
+import { icon } from './icons.js';
 import * as roadmap from './roadmap.js';
 import * as lessons from './lessons.js';
 import { renderPathway } from './pathway.js';
+import { renderHome } from './home.js';
+import { renderElectrical, renderProjects } from './hubs.js';
+import { renderSearch, runSearch } from './search.js';
 
 lessons.attachDeckControls();
 
+/* ---------- loading screen ---------- */
+function hideLoader() {
+  const el = document.getElementById('loader');
+  if (!el || el.dataset.gone) return;
+  el.dataset.gone = '1';
+  const picked = document.documentElement.getAttribute('data-loader');
+  try { sessionStorage.setItem('afmc.loaded', '1'); } catch (e) { /* ignore */ }
+  if (!picked || picked === '0') { el.remove(); return; }
+  const shown = performance.now() - (window.__t0 || 0);
+  setTimeout(() => { el.classList.add('done'); setTimeout(() => el.remove(), 700); }, Math.max(0, 2400 - shown));  // show the animation for at least 2.4 s
+}
+
 /* ---------- branding, theme, menu ---------- */
 function setupBranding() {
-  document.getElementById('brand-logo').src = BRAND.logo;
-  document.getElementById('brand-title').textContent = BRAND.title;
+  document.getElementById('brand-logo-dark').src = BRAND.logoDark;
+  document.getElementById('brand-logo-light').src = BRAND.logoLight;
+  document.getElementById('brand-title').textContent = BRAND.title.toUpperCase();
   document.getElementById('brand-sub').textContent = BRAND.subtitle;
+  document.querySelector('.search-link').innerHTML = icon('search', 22);
+  document.querySelector('.hdr-menu').innerHTML = ICONS.more;
 }
 
 function setupTheme() {
@@ -40,33 +58,45 @@ function setupMenu() {
     `<li><a href="#/${r.id === 'home' ? '' : r.id}" data-route="${r.id}">${esc(r.label)}${BUILT.has(r.id) ? '' : '<span class="soon" title="Coming in a later stage"></span>'}</a></li>`
   ).join('') + '</ul>';
 
-  const tabbar = document.getElementById('tabbar');
-  tabbar.innerHTML = TABS.map((t) => t.id === 'more'
-    ? `<button type="button" id="more-btn" aria-expanded="false" aria-controls="sidenav"><span aria-hidden="true">${t.icon}</span>${t.label}</button>`
+  document.getElementById('topnav').innerHTML = TOPNAV.map((t) =>
+    `<a href="#/${t.id === 'home' ? '' : t.id}" data-route="${t.id}">${esc(t.label)}</a>`).join('') +
+    '<button type="button" class="more-toggle" aria-expanded="false" aria-controls="sidenav">More</button>';
+
+  document.getElementById('tabbar').innerHTML = TABS.map((t) => t.id === 'more'
+    ? `<button type="button" class="more-toggle" aria-expanded="false" aria-controls="sidenav"><span aria-hidden="true">${t.icon}</span>${t.label}</button>`
     : `<a href="#/${t.id === 'home' ? '' : t.id}" data-route="${t.id}"><span aria-hidden="true">${t.icon}</span>${t.label}</a>`
   ).join('');
 
   const scrim = document.getElementById('scrim');
-  const moreBtn = document.getElementById('more-btn');
+  const toggles = [...document.querySelectorAll('.more-toggle')];
   const setOpen = (open) => {
     side.classList.toggle('open', open);
     scrim.hidden = !open;
-    moreBtn.setAttribute('aria-expanded', String(open));
+    toggles.forEach((b) => b.setAttribute('aria-expanded', String(open)));
   };
-  moreBtn.addEventListener('click', () => setOpen(!side.classList.contains('open')));
+  toggles.forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); setOpen(!side.classList.contains('open')); }));
   scrim.addEventListener('click', () => setOpen(false));
   side.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('click', (e) => { if (side.classList.contains('open') && !e.target.closest('#sidenav')) setOpen(false); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+
+  document.getElementById('topsearch').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const q = document.getElementById('q').value.trim();
+    location.hash = q ? `#/search/${encodeURIComponent(q)}` : '#/search';
+  });
 }
 
 function markActive(id) {
   const menuId = id === 'lesson' ? 'lessons' : id;   // a single lesson highlights "Lessons"
+  document.body.dataset.page = id;
   document.querySelectorAll('[data-route]').forEach((a) => {
     if (a.dataset.route === menuId) a.setAttribute('aria-current', 'page');
     else a.removeAttribute('aria-current');
   });
   const route = ROUTES.find((r) => r.id === menuId);
   document.title = route && id !== 'home' ? `${route.label} · ${BRAND.title}` : BRAND.title;
+  hideLoader();
 }
 
 /* ---------- buttons and filters inside pages (one listener for the whole site) ---------- */
@@ -85,6 +115,7 @@ document.addEventListener('change', (e) => {
 document.addEventListener('input', (e) => {
   if (e.target.matches('[data-filter]')) roadmap.filters.apply();
   if (e.target.matches('[data-lfilter]')) lessons.filters.apply();
+  if (e.target.id === 'page-search') runSearch();
 });
 
 /* ---------- 3D tilt for cards (mouse and pen only; phones get a press effect in CSS) ---------- */
@@ -93,8 +124,8 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.m
     const el = e.target.closest('[data-tilt]');
     if (!el) return;
     const r = el.getBoundingClientRect();
-    el.style.setProperty('--ry', `${(((e.clientX - r.left) / r.width - 0.5) * 10).toFixed(2)}deg`);
-    el.style.setProperty('--rx', `${(-((e.clientY - r.top) / r.height - 0.5) * 10).toFixed(2)}deg`);
+    el.style.setProperty('--ry', `${(((e.clientX - r.left) / r.width - 0.5) * 8).toFixed(2)}deg`);
+    el.style.setProperty('--rx', `${(-((e.clientY - r.top) / r.height - 0.5) * 8).toFixed(2)}deg`);
   });
   document.addEventListener('pointerout', (e) => {
     const el = e.target.closest && e.target.closest('[data-tilt]');
@@ -103,94 +134,11 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.m
 }
 
 /* ---------- pages ---------- */
-const LEVEL_NAMES = ['AI User', 'AI Power User', 'AI-Assisted Engineer', 'AI Builder', 'AI + Electrical Specialist'];
-
-registerPage('home', async () => {
-  const [c, all] = await Promise.all([loadCurriculum(), loadLessons()]);
-  const s = getStats(all.length);
-  const phase = c.phases[s.currentPhase] || c.phases[0];
-  const level = Math.max(0, c.levels.findIndex((l) => l.id === phase.level));
-  const cards = [
-    ['Current level', LEVEL_NAMES[level]],
-    ['Current phase', `${phase.number}. ${phase.title}`],
-    ['Overall progress', `${s.overallPercent}%`],
-    ['Lessons completed', s.lessonsDone],
-    ['Quizzes completed', s.quizzesDone],
-    ['Projects completed', s.projectsDone],
-    ['Skills learned', s.skillsLearned],
-    ['Learning streak', `${s.streak} day${s.streak === 1 ? '' : 's'}`],
-    ['This week', `${s.weekCount} of ${s.weeklyGoal} lessons`],
-  ];
-  const how = [
-    ['1', 'Learn in small cards', 'One idea at a time. Plain words first, technical words second. Tap a word to see what it means.'],
-    ['2', 'Check yourself', 'Every lesson has a quick check, so you know the idea has stuck before you move on.'],
-    ['3', 'Apply it to real work', 'Examples come from protection relays, testing and power systems. Safety rules come first.'],
-  ];
-  return `
-  <section class="hero">
-    <p class="eyebrow">Free learning platform</p>
-    <h1>Learn AI the simple way.</h1>
-    <p class="lead">From zero to advanced. Made for electrical engineers, open to everyone.</p>
-    <p class="muted">${esc(BRAND.tagline)}</p>
-    <div class="actions">
-      <a class="btn primary" href="#/lesson/p1-l1">Start learning</a>
-      ${s.lastLesson ? `<a class="btn" href="#/lesson/${esc(s.lastLesson)}">Continue learning</a>` : ''}
-      <a class="btn" href="#/roadmap">View roadmap</a>
-    </div>
-  </section>
-
-  <section class="path3d" aria-labelledby="h-path">
-    <h2 id="h-path">Your path</h2>
-    <div class="path-grid">
-      <div class="iso" aria-hidden="true"><div class="iso-inner">
-        ${LEVEL_NAMES.map((_, i) => `<span class="plate${i < level ? ' done' : ''}${i === level ? ' current' : ''}" style="--i:${i}"></span>`).join('')}
-      </div></div>
-      <ol class="ladder">
-        ${[...LEVEL_NAMES].map((n, i) => ({ n, i })).reverse().map(({ n, i }) => `<li${i === level ? ' aria-current="step"' : ''}>${esc(n)}</li>`).join('')}
-      </ol>
-    </div>
-    <p class="muted small">Level 1 is at the bottom. Each level builds on the one below it.</p>
-    <p><a class="btn" href="#/pathway">Open the learning pathway</a></p>
-  </section>
-
-  <section aria-labelledby="h-how">
-    <h2 id="h-how">How it works</h2>
-    <div class="how-grid">
-      ${how.map(([n, t, d]) => `<div class="how" data-tilt><span class="how-num">${n}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}
-    </div>
-  </section>
-
-  <section aria-labelledby="h-status">
-    <h2 id="h-status">Your progress</h2>
-    <p class="muted small">Saved privately on this device only.</p>
-    <div class="stat-grid">
-      ${cards.map(([k, v]) => `<div class="stat" data-tilt><span class="stat-label">${esc(k)}</span><strong>${esc(v)}</strong></div>`).join('')}
-    </div>
-  </section>
-
-  <section class="split">
-    <div class="card" data-tilt>
-      <h2>AI + Electrical Engineering</h2>
-      <p>Protection relays, relay testing, commissioning, SCADA and IEC 61850 are the core of this platform. Every phase connects back to them.</p>
-      <p class="note">Educational examples are not real engineering decisions. For protection settings and commissioning, always follow approved procedures, manufacturer documents and applicable standards.</p>
-      <a class="btn" href="#/electrical">Open AI + Electrical</a>
-    </div>
-    <div class="card" data-tilt>
-      <h2>Current AI trends</h2>
-      <p>AI changes fast. This section will list what changed, why it matters and how to learn it, using reliable sources and a clear update date.</p>
-      <a class="btn" href="#/trends">Open AI trends</a>
-    </div>
-  </section>
-
-  <footer class="site-foot">
-    <p>Created by K24 Electrical. Content is for learning only and is not engineering advice.</p>
-  </footer>`;
-});
-
+registerPage('home', () => renderHome());
 registerPage('roadmap', () => roadmap.renderRoadmap());
 registerPage('syllabus', async () => {
   const html = await roadmap.renderSyllabus();
-  setTimeout(() => roadmap.filters.apply(), 0);   // fill in the "x of 27 phases" line
+  setTimeout(() => roadmap.filters.apply(), 0);
   return html;
 });
 registerPage('lessons', (id, param) => {
@@ -198,15 +146,22 @@ registerPage('lessons', (id, param) => {
   html.then(() => setTimeout(() => lessons.filters.apply(), 0));
   return html;
 });
-registerPage('pathway', () => renderPathway());
 registerPage('lesson', (id, param) => lessons.renderLesson(id, param));
+registerPage('pathway', () => renderPathway());
+registerPage('electrical', () => renderElectrical());
+registerPage('projects', () => renderProjects());
+registerPage('search', async (id, param) => {
+  const html = await renderSearch(id, param);
+  setTimeout(() => runSearch(), 0);
+  return html;
+});
 
 /* Pages that are planned but not built yet */
 function comingSoon(id) {
   const r = ROUTES.find((x) => x.id === id);
   return `<h1>${esc(r.label)}</h1>
     <div class="card">
-      <p><strong>Coming in Stage ${r.stage}.</strong></p>
+      <p><strong>Coming soon.</strong></p>
       <p>${esc(r.blurb)}</p>
       <a class="btn" href="#/roadmap">Back to roadmap</a>
     </div>`;

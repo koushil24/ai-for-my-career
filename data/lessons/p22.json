@@ -1,0 +1,841 @@
+{
+  "phase": "p22",
+  "glossary": {
+    "cloud": {
+      "name": "Cloud",
+      "def": "Using computers, storage and services in a big data centre over the internet, and paying for what you use."
+    },
+    "data-centre": {
+      "name": "Data centre",
+      "def": "A building full of computers, storage and networking that cloud providers run."
+    },
+    "compute": {
+      "name": "Compute",
+      "def": "Computing power: machines or code that run your programs."
+    },
+    "storage": {
+      "name": "Storage",
+      "def": "Space to keep files and data, such as reports, logs and pictures."
+    },
+    "virtual-machine": {
+      "name": "Virtual machine",
+      "def": "A computer you rent in the cloud. It behaves like a real one but runs inside a bigger machine."
+    },
+    "container": {
+      "name": "Container",
+      "def": "A package that holds an app and what it needs, so it runs the same way anywhere."
+    },
+    "access-control": {
+      "name": "Access control",
+      "def": "Rules that decide who can see or change what."
+    },
+    "devops": {
+      "name": "DevOps",
+      "def": "Ways of working that help the people who build software and the people who run it release changes often and safely."
+    },
+    "ci-cd": {
+      "name": "CI/CD",
+      "def": "Continuous integration and delivery: automatic testing of each change and automatic release when the tests pass."
+    },
+    "version-control": {
+      "name": "Version control",
+      "def": "A system that records every change to your files so you can look back or undo."
+    },
+    "repository": {
+      "name": "Repository",
+      "def": "A project folder that also keeps the full history of changes."
+    },
+    "commit": {
+      "name": "Commit",
+      "def": "A saved snapshot of your changes with a short message that says what changed."
+    },
+    "deploy": {
+      "name": "Deploy",
+      "def": "To put a new version of software where people can use it."
+    }
+  },
+  "lessons": [
+    {
+      "id": "p22-l1",
+      "phase": "p22",
+      "number": 1,
+      "title": "What is the Cloud?",
+      "level": "Beginner",
+      "module": "m8",
+      "mode": "phone",
+      "minutes": 8,
+      "prereq": [],
+      "skills": [
+        "Cloud concepts",
+        "Cloud vocabulary"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "The cloud is someone else's computers",
+          "lines": [
+            "The cloud means using computers in a big data centre over the internet.",
+            "You rent what you need. You do not buy and look after the machines.",
+            "Examples: Gmail, Google Drive and WhatsApp backups."
+          ],
+          "terms": [
+            "cloud",
+            "data-centre"
+          ]
+        },
+        {
+          "kind": "analogy",
+          "title": "Like power from the grid",
+          "lines": [
+            "You do not build a power station for your house.",
+            "You plug in and pay for the units you use.",
+            "The cloud works the same way for computing."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Three things you can rent",
+          "lines": [
+            "Compute: machines that run programs.",
+            "Storage: space to keep files and data.",
+            "Services: ready-made tools such as databases and AI."
+          ],
+          "terms": [
+            "compute",
+            "storage"
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example: relay test reports",
+          "lines": [
+            "A team saves test reports to cloud storage.",
+            "Engineers at different sites open the same files.",
+            "A script can check each new report.",
+            "Only store data you are allowed to store there."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Why companies use it",
+          "lines": [
+            "Start small and grow when needed.",
+            "Pay for use, not for idle machines.",
+            "The provider handles backups and keeps the hardware running."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Limits to know",
+          "lines": [
+            "It needs an internet connection.",
+            "Costs can grow if you forget to switch things off.",
+            "You must control who can see your data.",
+            "Some sites cannot use public cloud because of rules."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Control systems are different",
+          "lines": [
+            "Protection and control systems must stay reliable and secure.",
+            "Never connect live substation equipment to the internet without an approved design.",
+            "Analysing a copy of data in the cloud is different from controlling equipment.",
+            "Follow your company's cyber-security and data rules."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: cloud or not?",
+          "lines": [
+            "List 3 apps you use every day that run in the cloud.",
+            "For each, say what is stored or run there.",
+            "Example: WhatsApp backup stores your chat history."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "The cloud is rented computing over the internet.",
+            "You rent compute, storage and services.",
+            "Control who sees data, and watch the cost."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the cloud?",
+          "options": [
+            "Weather data",
+            "Rented computers and services reached over the internet",
+            "A kind of relay",
+            "A spreadsheet"
+          ],
+          "answer": 1,
+          "why": "The cloud means using a provider's computers and services over the internet."
+        },
+        {
+          "q": "Which is the best electrical comparison?",
+          "options": [
+            "Building your own power station",
+            "Taking power from the grid and paying for use",
+            "A battery",
+            "A fuse"
+          ],
+          "answer": 1,
+          "why": "Cloud computing is rented and metered, like grid power."
+        },
+        {
+          "q": "Which is NOT one of the three things you can rent?",
+          "options": [
+            "Compute",
+            "Storage",
+            "Services",
+            "Steel"
+          ],
+          "answer": 3,
+          "why": "Cloud offers compute, storage and services."
+        },
+        {
+          "q": "A risk of cloud use is...",
+          "options": [
+            "It never costs anything",
+            "Costs can grow if resources are left running",
+            "It cannot store files",
+            "It works with no internet"
+          ],
+          "answer": 1,
+          "why": "Unused resources still cost money, so switch them off and set budget alerts."
+        },
+        {
+          "q": "Is it safe to connect live substation equipment to the internet?",
+          "options": [
+            "Yes, always",
+            "Only with an approved design and your company's rules",
+            "Yes, if the AI says so",
+            "Yes, on Sundays"
+          ],
+          "answer": 1,
+          "why": "Protection and control systems need approved, secure designs."
+        }
+      ],
+      "resources": [
+        {
+          "title": "AWS: What is cloud computing?",
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "type": "Article",
+          "free": true,
+          "verified": "linked"
+        },
+        {
+          "title": "AWS Cloud Essentials learning plan (free sign-up)",
+          "url": "https://aws.amazon.com/training/learn-about/cloud-practitioner/",
+          "type": "Courses",
+          "free": true,
+          "verified": "opened"
+        }
+      ],
+      "checked": "2026-10-13",
+      "career": "Most modern engineering tools, including AI tools, run in the cloud. Knowing the basics helps you talk with IT teams and use these tools safely.",
+      "next": "p22-l2"
+    },
+    {
+      "id": "p22-l2",
+      "phase": "p22",
+      "number": 2,
+      "title": "Cloud Building Blocks",
+      "level": "Beginner",
+      "module": "m8",
+      "mode": "phone",
+      "minutes": 9,
+      "prereq": [
+        "p22-l1"
+      ],
+      "skills": [
+        "Cloud services",
+        "Cloud security basics"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Four blocks make a cloud service",
+          "lines": [
+            "Compute, storage, database and network.",
+            "Security, monitoring and billing sit around all four.",
+            "Almost every cloud service is made from these."
+          ],
+          "diagram": "cloud-blocks"
+        },
+        {
+          "kind": "idea",
+          "title": "Compute",
+          "lines": [
+            "A virtual machine is a computer you rent.",
+            "A function runs a small piece of code only when needed.",
+            "A container packs an app so it runs the same everywhere."
+          ],
+          "terms": [
+            "virtual-machine",
+            "container"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Storage",
+          "lines": [
+            "Object storage keeps files such as PDFs and CSVs.",
+            "It is cheap and easy to share.",
+            "Good for reports and logs."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Databases",
+          "lines": [
+            "A database keeps data in organised tables.",
+            "You can search and filter it quickly.",
+            "Example: a table of relay test results."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Network and access",
+          "lines": [
+            "Rules decide who can reach what.",
+            "Keep private data private.",
+            "Use strong passwords and two-step login."
+          ],
+          "terms": [
+            "access-control"
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Mapping to your world",
+          "lines": [
+            "The table links each block to something you know."
+          ],
+          "table": {
+            "head": [
+              "Block",
+              "Plain meaning",
+              "Relay-world example"
+            ],
+            "rows": [
+              [
+                "Compute",
+                "Runs programs",
+                "A script that checks test reports"
+              ],
+              [
+                "Storage",
+                "Keeps files",
+                "Folder of PDF reports and CSV results"
+              ],
+              [
+                "Database",
+                "Organised, searchable data",
+                "Table of operating times by relay"
+              ],
+              [
+                "Network and access",
+                "Who can reach what",
+                "Only the test team can open reports"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "idea",
+          "title": "The big three providers",
+          "lines": [
+            "Amazon Web Services, Microsoft Azure and Google Cloud are the main ones.",
+            "They offer the same ideas with different names.",
+            "Learn the ideas first. Choose one provider later."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Keys, costs and cleanup",
+          "lines": [
+            "Never put passwords or keys in public code.",
+            "Set a budget alert before you try anything.",
+            "Delete what you do not use."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: draw the blocks",
+          "lines": [
+            "Draw four boxes and name them.",
+            "Write one relay-related example inside each."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Compute, storage, database, network.",
+            "Security and cost sit around them.",
+            "Learn the ideas, then choose a provider."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which block keeps files such as PDFs and CSVs?",
+          "options": [
+            "Compute",
+            "Storage",
+            "Network",
+            "Billing"
+          ],
+          "answer": 1,
+          "why": "Object storage holds files."
+        },
+        {
+          "q": "What is a virtual machine?",
+          "options": [
+            "A rented computer in the cloud",
+            "A type of relay",
+            "A chart",
+            "A password"
+          ],
+          "answer": 0,
+          "why": "It behaves like a real computer but runs inside a larger machine."
+        },
+        {
+          "q": "What does a container do?",
+          "options": [
+            "Packs an app so it runs the same everywhere",
+            "Cools the data centre",
+            "Stores passwords",
+            "Prints reports"
+          ],
+          "answer": 0,
+          "why": "Containers bundle an app with what it needs."
+        },
+        {
+          "q": "Where should passwords and keys NOT be placed?",
+          "options": [
+            "In a secure secret store",
+            "In public code",
+            "In a password manager",
+            "Nowhere"
+          ],
+          "answer": 1,
+          "why": "Never put secrets in public code."
+        },
+        {
+          "q": "What should you set up before experimenting?",
+          "options": [
+            "A budget alert",
+            "A new logo",
+            "A faster phone",
+            "Nothing"
+          ],
+          "answer": 0,
+          "why": "Budget alerts stop surprise bills."
+        }
+      ],
+      "resources": [
+        {
+          "title": "AWS Cloud Essentials learning plan (free sign-up)",
+          "url": "https://aws.amazon.com/training/learn-about/cloud-practitioner/",
+          "type": "Courses",
+          "free": true,
+          "verified": "opened"
+        },
+        {
+          "title": "AWS: What is cloud computing?",
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "type": "Article",
+          "free": true,
+          "verified": "linked"
+        }
+      ],
+      "checked": "2026-10-13",
+      "career": "These four blocks appear in every provider. Once you know them, any cloud course will make sense.",
+      "next": "p22-l3"
+    },
+    {
+      "id": "p22-l3",
+      "phase": "p22",
+      "number": 3,
+      "title": "What is DevOps?",
+      "level": "Beginner",
+      "module": "m8",
+      "mode": "phone",
+      "minutes": 9,
+      "prereq": [
+        "p22-l1"
+      ],
+      "skills": [
+        "DevOps concepts",
+        "Safe change habits"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "DevOps in one sentence",
+          "lines": [
+            "DevOps helps people who build software and people who run it work as one team.",
+            "The goal: release small changes often and safely."
+          ],
+          "terms": [
+            "devops"
+          ]
+        },
+        {
+          "kind": "analogy",
+          "title": "Commissioning, but for software",
+          "lines": [
+            "You test a relay before you energise it.",
+            "You check, record, then switch on.",
+            "DevOps tests and checks software before it goes live, again and again."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "The loop",
+          "lines": [
+            "Plan, code, test, release, monitor, learn.",
+            "Then plan the next small change.",
+            "Small steps are safer than one huge change."
+          ],
+          "diagram": "devops-loop"
+        },
+        {
+          "kind": "idea",
+          "title": "Four key habits",
+          "lines": [
+            "Version control: record every change.",
+            "Automated tests: check each change by machine.",
+            "CI/CD: test and release automatically.",
+            "Monitoring: watch the live system."
+          ],
+          "terms": [
+            "version-control",
+            "ci-cd"
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example: a report checker",
+          "lines": [
+            "You write a script that checks relay test reports.",
+            "Each change is saved in Git.",
+            "Tests confirm it still works.",
+            "Then it is published automatically."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Why it matters for AI apps",
+          "lines": [
+            "AI apps change often: prompts, data and models.",
+            "DevOps keeps each change tracked and reversible.",
+            "You can see what changed when something goes wrong."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "For engineering work",
+          "lines": [
+            "Software that touches protection or control needs strict approval.",
+            "Never push untested changes to live systems.",
+            "Follow your company's change-control process."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: match the loop",
+          "lines": [
+            "Write the six steps of the loop.",
+            "Next to each, write what you did when you built this website.",
+            "Example: release = uploaded files to GitHub."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "DevOps is teamwork for safe, small, frequent releases.",
+            "Record, test, release, monitor.",
+            "Live protection and control systems need approved change control."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main goal of DevOps?",
+          "options": [
+            "Release small changes often and safely",
+            "Avoid all testing",
+            "Write more code",
+            "Buy more servers"
+          ],
+          "answer": 0,
+          "why": "Small, safe, frequent releases are the goal."
+        },
+        {
+          "q": "Which is the best comparison?",
+          "options": [
+            "Commissioning a relay before energising",
+            "Painting a panel",
+            "Buying cable",
+            "Reading a drawing"
+          ],
+          "answer": 0,
+          "why": "Both check carefully before switching on."
+        },
+        {
+          "q": "What does version control do?",
+          "options": [
+            "Records every change so you can undo",
+            "Deletes old files",
+            "Makes files bigger",
+            "Stops all changes"
+          ],
+          "answer": 0,
+          "why": "It keeps a history of changes."
+        },
+        {
+          "q": "What does CI/CD do?",
+          "options": [
+            "Tests and releases changes automatically",
+            "Prints reports",
+            "Cools the room",
+            "Stores passwords"
+          ],
+          "answer": 0,
+          "why": "CI/CD automates testing and release."
+        },
+        {
+          "q": "Can you push untested changes to a live protection system?",
+          "options": [
+            "Yes",
+            "No, follow approved change control",
+            "Yes, if it is small",
+            "Only at night"
+          ],
+          "answer": 1,
+          "why": "Live protection and control systems need strict approval."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Microsoft Learn: DevOps resource center",
+          "url": "https://learn.microsoft.com/en-us/devops/overview",
+          "type": "Guides",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "AWS Cloud Essentials learning plan (free sign-up)",
+          "url": "https://aws.amazon.com/training/learn-about/cloud-practitioner/",
+          "type": "Courses",
+          "free": true,
+          "verified": "opened"
+        }
+      ],
+      "checked": "2026-10-13",
+      "career": "DevOps habits make you a safer builder, whether you create small scripts or full AI applications.",
+      "next": "p22-l4"
+    },
+    {
+      "id": "p22-l4",
+      "phase": "p22",
+      "number": 4,
+      "title": "Your Own DevOps: GitHub and GitHub Pages",
+      "level": "Beginner",
+      "module": "m8",
+      "mode": "phone",
+      "minutes": 8,
+      "prereq": [
+        "p22-l3"
+      ],
+      "skills": [
+        "Git basics",
+        "Deploying a static site"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "You already did DevOps",
+          "lines": [
+            "You created a repository.",
+            "You committed files.",
+            "GitHub Pages published your site.",
+            "That is version control plus automatic release."
+          ],
+          "terms": [
+            "version-control"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Repository and commit",
+          "lines": [
+            "A repository is a project folder with its full history.",
+            "A commit is a saved snapshot with a short message.",
+            "Each commit says what changed and when."
+          ],
+          "terms": [
+            "repository",
+            "commit"
+          ]
+        },
+        {
+          "kind": "analogy",
+          "title": "A logbook for your project",
+          "lines": [
+            "A commissioning log records each step and who did it.",
+            "Git does the same for your files.",
+            "You can look back and undo."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Deploy",
+          "lines": [
+            "To deploy is to put a new version online.",
+            "On GitHub Pages, a commit to the main branch publishes your site.",
+            "Wait one or two minutes, then refresh."
+          ],
+          "terms": [
+            "deploy"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "A safe update habit",
+          "lines": [
+            "Change one thing at a time.",
+            "Write a clear commit message.",
+            "Check the live site on your phone.",
+            "If it breaks, go back to the last good version."
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example: test scripts and settings backups",
+          "lines": [
+            "Teams keep test scripts in version control.",
+            "Each change shows who changed it, when and why.",
+            "Never keep confidential settings or customer data in a public repository."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Do not publish secrets",
+          "lines": [
+            "Do not upload passwords, API keys or company files to a public repository.",
+            "Public means anyone in the world can read it.",
+            "If you upload a secret by mistake, change it immediately."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: read your history",
+          "lines": [
+            "Open your repository on GitHub.",
+            "Find the list of commits.",
+            "Read the last three messages.",
+            "Write what each one changed."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Repository, commit, deploy: you already use all three.",
+            "Small changes, clear messages, check the live site.",
+            "Never publish secrets."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is a commit?",
+          "options": [
+            "A saved snapshot of changes with a message",
+            "A new website",
+            "A password",
+            "A cable"
+          ],
+          "answer": 0,
+          "why": "A commit records what changed."
+        },
+        {
+          "q": "What does deploying mean?",
+          "options": [
+            "Putting a new version online",
+            "Deleting files",
+            "Writing a quiz",
+            "Printing a page"
+          ],
+          "answer": 0,
+          "why": "Deploying makes the new version available to users."
+        },
+        {
+          "q": "Which is safe to put in a public repository?",
+          "options": [
+            "Your API key",
+            "Your company's confidential settings",
+            "A lesson about relays",
+            "A customer's data"
+          ],
+          "answer": 2,
+          "why": "Public repositories can be read by anyone. Keep secrets out."
+        },
+        {
+          "q": "What should you do when an update breaks your site?",
+          "options": [
+            "Go back to the last good version",
+            "Delete the repository",
+            "Ignore it",
+            "Publish a bigger change"
+          ],
+          "answer": 0,
+          "why": "Version control lets you go back."
+        },
+        {
+          "q": "Why write clear commit messages?",
+          "options": [
+            "They explain what changed and why",
+            "They make the file larger",
+            "GitHub requires poetry",
+            "They hide changes"
+          ],
+          "answer": 0,
+          "why": "Good messages make the history useful."
+        }
+      ],
+      "resources": [
+        {
+          "title": "GitHub Docs: What is GitHub Pages?",
+          "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages",
+          "type": "Docs",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "Microsoft Learn: DevOps resource center",
+          "url": "https://learn.microsoft.com/en-us/devops/overview",
+          "type": "Guides",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-10-13",
+      "career": "Version control and automatic deployment are used on almost every software team. You are already practising them.",
+      "next": null
+    }
+  ]
+}

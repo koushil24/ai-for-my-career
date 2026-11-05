@@ -1,0 +1,220 @@
+{
+  "phase": "p4",
+  "glossary": {},
+  "lessons": [
+    {
+      "id": "p4-l1",
+      "phase": "p4",
+      "number": 1,
+      "title": "Research and Fact-Checking with AI",
+      "level": "Beginner",
+      "module": "m2",
+      "mode": "phone",
+      "minutes": 9,
+      "prereq": [
+        "p3-l2"
+      ],
+      "skills": [
+        "Research",
+        "Fact-checking"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "AI is a starting point",
+          "lines": [
+            "Use AI to get an overview fast.",
+            "Then check with real sources.",
+            "Never stop at the AI's answer for important facts."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Good first sources",
+          "lines": [
+            "Manufacturer manuals and datasheets.",
+            "Standards from bodies such as IEC and IEEE. Many are paid.",
+            "Textbooks and university notes.",
+            "Official websites."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Ask for sources, then open them",
+          "lines": [
+            "Ask the AI to list its sources.",
+            "Open each one yourself.",
+            "Some listed sources may not exist.",
+            "If you cannot find it, do not use it."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Check three things",
+          "lines": [
+            "Is it from a trusted maker or body?",
+            "Is it recent? Firmware and standards change.",
+            "Do two independent sources agree?"
+          ]
+        },
+        {
+          "kind": "analogy",
+          "title": "A second opinion",
+          "lines": [
+            "It is like asking a second engineer to review your test sheet.",
+            "One source can be wrong.",
+            "Two independent sources agreeing is a better sign."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Quick fact-check guide",
+          "lines": [
+            "Match the claim to the right place to check."
+          ],
+          "table": {
+            "head": [
+              "Claim",
+              "Check against"
+            ],
+            "rows": [
+              [
+                "Setting range or function",
+                "Manufacturer manual"
+              ],
+              [
+                "Standard clause",
+                "The standard document itself"
+              ],
+              [
+                "Formula",
+                "A textbook"
+              ],
+              [
+                "Product feature",
+                "The datasheet"
+              ],
+              [
+                "News or events",
+                "A reliable news source"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "electrical",
+          "title": "Example: does this relay have that function?",
+          "lines": [
+            "The AI says a relay supports a function.",
+            "Open the datasheet and find the function list.",
+            "Write down the document name, version and date."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "When sources disagree",
+          "lines": [
+            "For protection work, approved procedures and manufacturer documents win.",
+            "If the AI and the manual disagree, the manual wins.",
+            "If the manual is unclear, ask the manufacturer or a senior engineer."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: confirm one fact",
+          "lines": [
+            "Ask an AI: What is IEC 61850, in simple words?",
+            "Find two trusted pages that confirm it.",
+            "Write their names and what matched."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Use AI for a quick overview.",
+            "Open the sources yourself.",
+            "Manuals and approved procedures settle disagreements."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the best way to use AI for research?",
+          "options": [
+            "As the final answer",
+            "As a starting point, then verify",
+            "Never",
+            "Only for jokes"
+          ],
+          "answer": 1,
+          "why": "Use AI for an overview, then check real sources."
+        },
+        {
+          "q": "Where should a relay setting range be checked?",
+          "options": [
+            "A friend's memory",
+            "The manufacturer manual",
+            "A random blog",
+            "The AI again"
+          ],
+          "answer": 1,
+          "why": "Manufacturer documents are the authority."
+        },
+        {
+          "q": "Why must you open the sources an AI lists?",
+          "options": [
+            "They never exist",
+            "Some may be invented or wrong",
+            "It is rude not to",
+            "They are always paid"
+          ],
+          "answer": 1,
+          "why": "AI can invent sources."
+        },
+        {
+          "q": "If the AI and the manual disagree, which wins?",
+          "options": [
+            "The AI",
+            "The manual",
+            "Whichever is longer",
+            "The newest chat"
+          ],
+          "answer": 1,
+          "why": "Manufacturer manuals and approved procedures win."
+        },
+        {
+          "q": "Which is a good sign that a fact is reliable?",
+          "options": [
+            "One unnamed source",
+            "Two independent trusted sources agree",
+            "It sounds confident",
+            "It is in bold"
+          ],
+          "answer": 1,
+          "why": "Independent agreement from trusted sources is stronger."
+        }
+      ],
+      "resources": [
+        {
+          "title": "AI capabilities and limitations (free course)",
+          "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+          "type": "Course",
+          "free": true,
+          "verified": "opened-listing"
+        },
+        {
+          "title": "Claude Academy (free courses from Anthropic)",
+          "url": "https://academy.claude.com/",
+          "type": "Courses",
+          "free": true,
+          "verified": "opened"
+        }
+      ],
+      "checked": "2026-11-04",
+      "career": "Fast, careful research is one of the most useful AI-assisted skills for a service or testing engineer.",
+      "next": null
+    }
+  ]
+}
