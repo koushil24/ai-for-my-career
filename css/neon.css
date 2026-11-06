@@ -241,3 +241,23 @@ body[data-page="home"] main { max-width: 1440px; }
 .btn.primary { background: linear-gradient(180deg, #4d95ff, var(--accent-strong)); box-shadow: 0 0 18px -4px var(--accent), 0 2px 0 rgba(0,0,0,.35); }
 .btn { border-color: var(--neon); }
 .btn svg { margin-left: .4rem; }
+
+/* ===== Hero fixes (round 2) ===== */
+/* Phone and small tablet: the picture becomes a banner on top and the text sits on a plain panel, so nothing is hard to read. */
+@media (max-width: 899px) {
+  .nx-hero { background: var(--surface); }
+  .nx-hero-art { position: relative; inset: auto; height: 190px; }
+  .nx-hero-art img { object-position: 62% 38%; }
+  .nx-hero-art::after { background: linear-gradient(180deg, transparent 30%, var(--surface) 100%); }
+  .nx-hero-copy { padding-top: 0; margin-top: -2.2rem; }
+  .nx-hero-logo { height: 62px; }
+}
+/* Large screens: the topic list gets its own soft panel so the words stay readable over the picture. */
+@media (min-width: 900px) {
+  .nx-topics { padding: .5rem; border: 1px solid var(--neon); border-radius: 12px; background: color-mix(in srgb, var(--bg) 66%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .nx-slogan { padding: .5rem .7rem; border-radius: 10px; background: color-mix(in srgb, var(--bg) 66%, transparent); color: var(--text); }
+  .nx-hero-art::after { background: linear-gradient(90deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 88%, transparent) 34%, color-mix(in srgb, var(--bg) 30%, transparent) 62%, transparent 85%); }
+}
+/* The Listen bar is smaller on Home so the hero stays near the top. */
+body[data-page="home"] .listen { padding-top: .35rem; padding-bottom: .35rem; }
+body[data-page="home"] .listen .btn, body[data-page="home"] .listen .speed select { min-height: 38px; }
