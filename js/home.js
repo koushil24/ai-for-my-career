@@ -84,8 +84,10 @@ export async function renderHome() {
         <a class="btn" href="#/roadmap">Explore Roadmap</a>
       </div>
     </div>
+    <div class="nx-hero-side">
     <ul class="nx-topics">${H.hero.topics.map((t) => `<li><a href="${esc(t.href)}">${icon(t.icon, 18)}<span>${esc(t.label)}</span></a></li>`).join('')}</ul>
     <p class="nx-slogan">${esc(H.hero.slogan)}</p>
+    </div>
   </section>
 
   <nav class="nx-quick" aria-label="Quick access">
