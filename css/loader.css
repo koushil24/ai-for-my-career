@@ -1,11 +1,11 @@
-/* loader.css - three 3D loading screens. One is picked at random per visit.
-   Add ?loader=1, ?loader=2 or ?loader=3 to the address to preview one.
-   Pure CSS: no libraries. Respects "reduce motion". */
+/* loader.css - the loading screen: gyroscope rings spinning in 3D around the K24 logo.
+   Pure CSS, no libraries. Shown once per browser session (add ?loader=1 to the address to see it again).
+   Respects "reduce motion". */
 
 #loader {
   position: fixed; inset: 0; z-index: 1000;
   display: grid; align-content: center; justify-items: center; gap: 1rem; padding: 1rem; text-align: center;
-  background: radial-gradient(900px 520px at 50% 38%, #0b2c6b 0%, #04122c 55%, #02070f 100%);
+  background: radial-gradient(900px 520px at 50% 40%, #0b2c6b 0%, #04122c 55%, #02070f 100%);
   color: #eaf2ff; transition: opacity .6s ease, visibility .6s;
 }
 #loader::before { /* fine blueprint grid */
@@ -16,10 +16,34 @@
 #loader.done { opacity: 0; visibility: hidden; }
 html:not([data-loader]) #loader, html[data-loader="0"] #loader { display: none; }
 
-.ld-stage { display: none; position: relative; width: 240px; height: 240px; perspective: 900px; place-items: center; }
-html[data-loader="1"] .ld-1, html[data-loader="2"] .ld-2, html[data-loader="3"] .ld-3 { display: grid; }
+.ld-stage { position: relative; display: grid; place-items: center; width: min(300px, 78vw); height: min(300px, 78vw); perspective: 900px; }
+.ld-stage > * { grid-area: 1 / 1; }
 
-.ld-title { position: relative; margin: .4rem 0 0; font: 800 1.5rem/1.1 system-ui, sans-serif; letter-spacing: .12em; color: #fff;
+.ld-glow { width: 62%; height: 62%; border-radius: 50%; background: radial-gradient(circle, rgba(61,139,255,.55), rgba(47,224,255,.12) 55%, transparent 70%); animation: ldglow 2.4s ease-in-out infinite; }
+@keyframes ldglow { 0%, 100% { transform: scale(.85); opacity: .7; } 50% { transform: scale(1.12); opacity: 1; } }
+
+.ld-flat { width: 96%; height: 96%; border-radius: 50%; border: 1px dashed rgba(109,178,255,.45); animation: ldspin 14s linear infinite reverse; }
+@keyframes ldspin { to { transform: rotate(360deg); } }
+
+/* three rings turning on different axes, each carrying a glowing spark */
+.g3d { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: ldsway 7s ease-in-out infinite alternate; }
+@keyframes ldsway { from { transform: rotateX(-16deg) rotateY(-18deg); } to { transform: rotateX(16deg) rotateY(18deg); } }
+.ring { position: absolute; border-radius: 50%; border: 3px solid transparent; border-top-color: #3d8bff; border-right-color: #2fe0ff;
+  box-shadow: 0 0 20px rgba(47,224,255,.35), inset 0 0 20px rgba(61,139,255,.25); }
+.ring::after { content: ""; position: absolute; top: -7px; left: calc(50% - 6px); width: 12px; height: 12px; border-radius: 50%; background: #ffb02e; box-shadow: 0 0 16px #ffb02e, 0 0 30px rgba(255,176,46,.6); }
+.ring.r1 { inset: 3%;  animation: g1 3.4s linear infinite; }
+.ring.r2 { inset: 15%; animation: g2 2.7s linear infinite; }
+.ring.r2::after { background: #2fe0ff; box-shadow: 0 0 16px #2fe0ff, 0 0 30px rgba(47,224,255,.6); }
+.ring.r3 { inset: 27%; animation: g3 4.2s linear infinite; }
+.ring.r3::after { background: #ffffff; box-shadow: 0 0 14px #fff; }
+@keyframes g1 { from { transform: rotateX(68deg) rotateZ(0); } to { transform: rotateX(68deg) rotateZ(360deg); } }
+@keyframes g2 { from { transform: rotateY(68deg) rotateZ(0); } to { transform: rotateY(68deg) rotateZ(-360deg); } }
+@keyframes g3 { from { transform: rotateX(40deg) rotateY(40deg) rotateZ(0); } to { transform: rotateX(40deg) rotateY(40deg) rotateZ(360deg); } }
+
+.ld-logo { position: relative; width: 52%; height: auto; filter: drop-shadow(0 0 16px rgba(61,139,255,.9)); animation: ldpulse 2.2s ease-in-out infinite; }
+@keyframes ldpulse { 0%, 100% { transform: scale(1); opacity: .92; } 50% { transform: scale(1.07); opacity: 1; } }
+
+.ld-title { position: relative; margin: .4rem 0 0; font: 800 1.5rem/1.1 system-ui, sans-serif; letter-spacing: .14em; color: #fff;
   background: linear-gradient(90deg, #fff 30%, #6cb2ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .ld-msg { position: relative; display: grid; height: 1.4rem; margin: 0; color: #9db5e0; font: 600 .9rem ui-monospace, Consolas, monospace; letter-spacing: .08em; }
 .ld-msg span { grid-area: 1 / 1; opacity: 0; animation: ldmsg 6s infinite; }
@@ -29,54 +53,6 @@ html[data-loader="1"] .ld-1, html[data-loader="2"] .ld-2, html[data-loader="3"] 
 .ld-bar { position: relative; width: min(260px, 70vw); height: 4px; border-radius: 4px; background: rgba(61,139,255,.2); overflow: hidden; }
 .ld-bar i { position: absolute; top: 0; bottom: 0; width: 40%; border-radius: 4px; background: linear-gradient(90deg, transparent, #2fe0ff, #3d8bff, transparent); animation: ldbar 1.4s ease-in-out infinite; }
 @keyframes ldbar { from { left: -45%; } to { left: 105%; } }
-
-/* ---- 1: gyroscope rings around the K24 logo ---- */
-.g3d { position: absolute; inset: 0; transform-style: preserve-3d; }
-.ring { position: absolute; border-radius: 50%; border: 3px solid transparent; border-top-color: #3d8bff; border-right-color: #2fe0ff;
-  box-shadow: 0 0 18px rgba(47,224,255,.35), inset 0 0 18px rgba(61,139,255,.25); }
-.ring.r1 { inset: 4%;  animation: g1 3.2s linear infinite; }
-.ring.r2 { inset: 14%; animation: g2 2.6s linear infinite; }
-.ring.r3 { inset: 24%; animation: g3 4s linear infinite; }
-@keyframes g1 { from { transform: rotateX(68deg) rotateZ(0); } to { transform: rotateX(68deg) rotateZ(360deg); } }
-@keyframes g2 { from { transform: rotateY(68deg) rotateZ(0); } to { transform: rotateY(68deg) rotateZ(-360deg); } }
-@keyframes g3 { from { transform: rotateX(40deg) rotateY(40deg) rotateZ(0); } to { transform: rotateX(40deg) rotateY(40deg) rotateZ(360deg); } }
-.ld-logo { position: relative; width: 130px; height: auto; filter: drop-shadow(0 0 14px rgba(61,139,255,.85)); animation: ldpulse 2.2s ease-in-out infinite; }
-@keyframes ldpulse { 0%, 100% { transform: scale(1); opacity: .9; } 50% { transform: scale(1.06); opacity: 1; } }
-
-/* ---- 2: spinning circuit cube with a glowing core ---- */
-.cube, .core { position: relative; transform-style: preserve-3d; }
-.cube { --z: 60px; width: 120px; height: 120px; animation: cubespin 9s linear infinite; }
-.core { --z: 22px; position: absolute; inset: 38px; animation: corespin 3.5s linear infinite; }
-@keyframes cubespin { from { transform: rotateX(-24deg) rotateY(0) rotateZ(8deg); } to { transform: rotateX(-24deg) rotateY(360deg) rotateZ(8deg); } }
-@keyframes corespin { from { transform: rotateX(0) rotateY(360deg); } to { transform: rotateX(360deg) rotateY(0); } }
-.f { position: absolute; inset: 0; border: 2px solid #3d8bff;
-  background: linear-gradient(135deg, rgba(61,139,255,.16), rgba(47,224,255,.05)),
-    repeating-linear-gradient(90deg, transparent 0 14px, rgba(61,139,255,.2) 14px 15px),
-    repeating-linear-gradient(0deg, transparent 0 14px, rgba(61,139,255,.2) 14px 15px);
-  box-shadow: inset 0 0 22px rgba(61,139,255,.5), 0 0 12px rgba(61,139,255,.25); }
-.core .f { border-color: #2fe0ff; background: rgba(47,224,255,.28); box-shadow: 0 0 18px #2fe0ff, inset 0 0 12px #2fe0ff; }
-.f.front  { transform: translateZ(var(--z)); }
-.f.back   { transform: rotateY(180deg) translateZ(var(--z)); }
-.f.right  { transform: rotateY(90deg) translateZ(var(--z)); }
-.f.left   { transform: rotateY(-90deg) translateZ(var(--z)); }
-.f.top    { transform: rotateX(90deg) translateZ(var(--z)); }
-.f.bottom { transform: rotateX(-90deg) translateZ(var(--z)); }
-.orbit { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateX(72deg); }
-.orbit i { position: absolute; inset: 0; animation: ldspin 2.8s linear infinite; }
-.orbit i::after { content: ""; position: absolute; top: -5px; left: calc(50% - 5px); width: 10px; height: 10px; border-radius: 50%; background: #ffb02e; box-shadow: 0 0 14px #ffb02e; }
-.orbit i:nth-child(2) { inset: 12%; animation-duration: 2s; animation-direction: reverse; }
-.orbit i:nth-child(2)::after { background: #2fe0ff; box-shadow: 0 0 14px #2fe0ff; }
-@keyframes ldspin { to { transform: rotateZ(360deg); } }
-
-/* ---- 3: five plates assembling into a stack (the five levels) ---- */
-.stack { position: relative; width: 130px; height: 130px; transform-style: preserve-3d; transform: rotateX(58deg) rotateZ(-38deg); animation: stackturn 7s ease-in-out infinite alternate; }
-.stack i { position: absolute; inset: 0; border-radius: 14px; border: 1px solid #3d8bff;
-  background: linear-gradient(135deg, rgba(61,139,255,.42), rgba(8,26,58,.85)); box-shadow: 0 0 14px rgba(61,139,255,.4);
-  animation: assemble 2.6s ease-in-out infinite; }
-.stack i:last-child { border-color: #ffb02e; background: linear-gradient(135deg, rgba(255,176,46,.6), rgba(8,26,58,.85)); box-shadow: 0 0 24px #ffb02e; }
-@keyframes assemble { 0%, 100% { transform: translateZ(calc(var(--i) * 16px)); } 50% { transform: translateZ(calc(var(--i) * 52px)); } }
-@keyframes stackturn { from { transform: rotateX(58deg) rotateZ(-50deg); } to { transform: rotateX(58deg) rotateZ(-26deg); } }
-.ld-bolt { position: absolute; width: 46px; height: 46px; color: #ffb02e; filter: drop-shadow(0 0 10px #ffb02e); animation: ldpulse 1.4s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
   #loader *, #loader *::after { animation: none !important; }

@@ -75,16 +75,24 @@
           "id": "p4-l1"
         },
         {
-          "title": "Reading manuals and datasheets with AI"
+          "title": "Reading manuals and datasheets with AI",
+          "id": "p4-l2"
         },
         {
-          "title": "Summarising a protection relay manual"
+          "title": "Summarising a protection relay manual",
+          "id": "p4-l3"
         },
         {
-          "title": "Checklists and report templates"
+          "title": "Checklists and report templates",
+          "id": "p4-l4"
         },
         {
-          "title": "Troubleshooting with AI safely"
+          "title": "Troubleshooting with AI safely",
+          "id": "p4-l5"
+        },
+        {
+          "title": "Project: AI-assisted relay test checklist and report template",
+          "id": "p4-l6"
         }
       ]
     },

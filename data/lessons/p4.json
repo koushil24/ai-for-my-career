@@ -214,6 +214,1084 @@
       ],
       "checked": "2026-11-04",
       "career": "Fast, careful research is one of the most useful AI-assisted skills for a service or testing engineer.",
+      "next": "p4-l2"
+    },
+    {
+      "id": "p4-l2",
+      "phase": "p4",
+      "number": 2,
+      "title": "Reading Manuals and Datasheets with AI",
+      "level": "Beginner",
+      "module": "m2",
+      "mode": "phone",
+      "minutes": 10,
+      "prereq": [
+        "p4-l1"
+      ],
+      "skills": [
+        "Reading technical documents",
+        "Asking AI good questions"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Manuals are long",
+          "lines": [
+            "A relay manual can run to hundreds of pages.",
+            "You rarely need all of it.",
+            "AI can help you find the part you need."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Datasheet or manual?",
+          "lines": [
+            "Names vary by maker, but the roles are similar."
+          ],
+          "table": {
+            "head": [
+              "Document",
+              "What it is for",
+              "Example question"
+            ],
+            "rows": [
+              [
+                "Datasheet",
+                "Short summary of features and ratings",
+                "Which functions does it have?"
+              ],
+              [
+                "Technical manual",
+                "Details of each function and setting",
+                "What does this setting mean?"
+              ],
+              [
+                "Quick start guide",
+                "Basic setup steps",
+                "How do I connect the supply?"
+              ],
+              [
+                "Testing guide",
+                "How the maker suggests testing",
+                "What should I check first?"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "safety",
+          "title": "Use only documents you may use",
+          "lines": [
+            "Public datasheets and manuals from the maker's website are usually fine to study.",
+            "Company-only or customer documents may not be allowed in public AI tools.",
+            "Check the rules before you upload anything."
+          ]
+        },
+        {
+          "kind": "analogy",
+          "title": "A guide, not the book",
+          "lines": [
+            "AI is like a guide who helps you find the right chapter.",
+            "You still read the chapter yourself."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Three safe ways to use AI with a manual",
+          "lines": [
+            "Ask AI to explain a term. Then check the manual.",
+            "Ask AI for a reading plan: what to look up.",
+            "If your tool is approved for the document, ask it to find a section and give the page."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Good questions",
+          "lines": [
+            "Where in this document is the CT ratio explained?",
+            "List the protection functions named in this datasheet.",
+            "Explain 'time multiplier' in simple words.",
+            "What topics should I read before testing this function?"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Questions to avoid",
+          "lines": [
+            "What setting should I use?",
+            "Is this safe to energise?",
+            "These need approved documents and a qualified engineer, not an AI guess."
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example reading plan",
+          "lines": [
+            "Ask: I will test an overcurrent function on a numerical relay. Make a reading plan for the manual.",
+            "A good plan lists topics such as: function description, setting ranges, wiring and inputs and outputs, test connection, tolerances, event records.",
+            "Then you open each topic in the manual."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Ask for the page, then open it",
+          "lines": [
+            "Ask for the section or page number.",
+            "Open it yourself.",
+            "If it is not there, do not use the answer."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: five terms",
+          "lines": [
+            "Download a public datasheet for any relay model from the maker's website.",
+            "Pick 5 terms you do not know.",
+            "Ask an AI to explain each in simple words.",
+            "Check each one in the datasheet and note the page."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "AI helps you find and understand. The document is the authority.",
+            "Ask for page numbers and check them.",
+            "Use only documents you are allowed to use."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is a good use of AI with a long manual?",
+          "options": [
+            "Replace reading it",
+            "Find which section to read and explain terms",
+            "Choose the setting for you",
+            "Skip safety steps"
+          ],
+          "answer": 1,
+          "why": "AI is a guide to the document, not a replacement for it."
+        },
+        {
+          "q": "Which document is a short summary of features and ratings?",
+          "options": [
+            "Datasheet",
+            "Drawing",
+            "Invoice",
+            "Permit"
+          ],
+          "answer": 0,
+          "why": "A datasheet summarises features and ratings."
+        },
+        {
+          "q": "Which question should you NOT rely on AI for?",
+          "options": [
+            "Explain a term",
+            "What setting should I use?",
+            "List topics to read",
+            "Where is the CT ratio explained?"
+          ],
+          "answer": 1,
+          "why": "Settings come from approved documents and engineers."
+        },
+        {
+          "q": "An AI says 'see page 42'. What do you do?",
+          "options": [
+            "Trust it",
+            "Open page 42 and check",
+            "Ignore all pages",
+            "Ask again without checking"
+          ],
+          "answer": 1,
+          "why": "Always open the page to confirm."
+        },
+        {
+          "q": "Which documents are usually fine to study with public AI tools?",
+          "options": [
+            "Customer-only reports",
+            "Public manuals from the maker's website",
+            "Internal drawings",
+            "Passwords"
+          ],
+          "answer": 1,
+          "why": "Public documents are safer. Confidential ones need permission."
+        }
+      ],
+      "resources": [
+        {
+          "title": "AI capabilities and limitations (free course)",
+          "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+          "type": "Course",
+          "free": true,
+          "verified": "opened-listing"
+        },
+        {
+          "title": "Claude Academy (free courses from Anthropic)",
+          "url": "https://academy.claude.com/",
+          "type": "Courses",
+          "free": true,
+          "verified": "opened"
+        }
+      ],
+      "checked": "2026-11-07",
+      "career": "Finding the right page quickly saves hours when you test or service many relay models.",
+      "next": "p4-l3"
+    },
+    {
+      "id": "p4-l3",
+      "phase": "p4",
+      "number": 3,
+      "title": "Summarising a Protection Relay Manual",
+      "level": "Beginner",
+      "module": "m2",
+      "mode": "phone",
+      "minutes": 10,
+      "prereq": [
+        "p4-l2"
+      ],
+      "skills": [
+        "Summarising technical text",
+        "Checking AI summaries"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "What a good summary has",
+          "lines": [
+            "The purpose of the function.",
+            "The main settings in plain words.",
+            "Inputs and outputs.",
+            "What is usually tested.",
+            "Warnings."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Summarise in small steps",
+          "lines": [
+            "Do not paste the whole manual at once.",
+            "Take one chapter at a time.",
+            "Ask for a short summary, then ask follow-up questions."
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Prompt example (public document)",
+          "lines": [
+            "Goal: Summarise this chapter about the overcurrent function in 10 bullet points.",
+            "Context: For a new technician. This is a public manual section.",
+            "Format: Bullets, then 5 terms with simple meanings.",
+            "Boundaries: Do not invent values. Write 'not stated' if the text does not say."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Add a check step",
+          "lines": [
+            "Ask the AI for the page or section behind each bullet.",
+            "Ask: What did you leave out?",
+            "Ask: Which parts are you unsure about?"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Check your summary",
+          "lines": [
+            "Match each part of the summary to where you check it."
+          ],
+          "table": {
+            "head": [
+              "Summary item",
+              "How to check"
+            ],
+            "rows": [
+              [
+                "Setting names",
+                "Compare with the settings list"
+              ],
+              [
+                "Numbers and units",
+                "Open the table and read it"
+              ],
+              [
+                "Warnings",
+                "Read the warning text itself"
+              ],
+              [
+                "Wiring",
+                "Compare with the wiring diagram"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "idea",
+          "title": "Keep your own notes",
+          "lines": [
+            "Rewrite the summary in your own words.",
+            "Write the page numbers.",
+            "Add 'ask a senior engineer' beside unclear parts."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "A summary is not the manual",
+          "lines": [
+            "Never test from a summary alone.",
+            "Use the manufacturer's manual and your approved procedure on site.",
+            "Summaries can miss warnings."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Privacy reminder",
+          "lines": [
+            "Use public documents or approved tools.",
+            "Remove customer names and site details."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: summarise and check",
+          "lines": [
+            "Take one public page about a relay function.",
+            "Ask an AI for a 10-bullet summary with page numbers.",
+            "Check three bullets against the page.",
+            "Write down anything that was wrong or missing."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Summarise one chapter at a time.",
+            "Ask for page numbers and check numbers and warnings yourself.",
+            "Never test from a summary."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "How should you give a long manual to an AI?",
+          "options": [
+            "All at once",
+            "One chapter at a time",
+            "Only the last page",
+            "Never"
+          ],
+          "answer": 1,
+          "why": "Small parts give better, easier-to-check summaries."
+        },
+        {
+          "q": "Which part of a summary needs the closest check?",
+          "options": [
+            "Numbers and units",
+            "The heading colour",
+            "The font",
+            "The title"
+          ],
+          "answer": 0,
+          "why": "Numbers and units matter most and are easy to get wrong."
+        },
+        {
+          "q": "What should you write in the boundaries of your prompt?",
+          "options": [
+            "Do not invent values; say 'not stated' if missing",
+            "Be creative",
+            "Guess",
+            "Skip warnings"
+          ],
+          "answer": 0,
+          "why": "This reduces made-up details."
+        },
+        {
+          "q": "Can you test a relay from an AI summary alone?",
+          "options": [
+            "Yes",
+            "No, use the manual and approved procedure",
+            "Yes if it is short",
+            "Only at night"
+          ],
+          "answer": 1,
+          "why": "Summaries can miss warnings and details."
+        },
+        {
+          "q": "Why ask 'What did you leave out?'",
+          "options": [
+            "To find missing points",
+            "To waste time",
+            "To change topic",
+            "To get a longer summary"
+          ],
+          "answer": 0,
+          "why": "It exposes gaps you can then check in the manual."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Claude Academy (free courses from Anthropic)",
+          "url": "https://academy.claude.com/",
+          "type": "Courses",
+          "free": true,
+          "verified": "opened"
+        },
+        {
+          "title": "AI capabilities and limitations (free course)",
+          "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+          "type": "Course",
+          "free": true,
+          "verified": "opened-listing"
+        }
+      ],
+      "checked": "2026-11-07",
+      "career": "Writing and checking your own summaries builds real understanding of each relay family you work on.",
+      "next": "p4-l4"
+    },
+    {
+      "id": "p4-l4",
+      "phase": "p4",
+      "number": 4,
+      "title": "Checklists and Report Templates",
+      "level": "Beginner",
+      "module": "m2",
+      "mode": "phone",
+      "minutes": 10,
+      "prereq": [
+        "p3-l3"
+      ],
+      "skills": [
+        "Drafting checklists",
+        "Report templates"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Why checklists help",
+          "lines": [
+            "They stop you forgetting steps.",
+            "They make work the same every time.",
+            "AI can draft one quickly."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "What a test checklist usually covers",
+          "lines": [
+            "These are common parts. Your company's procedure decides the real list.",
+            "Safety and permits.",
+            "Documents and settings received.",
+            "Visual checks.",
+            "Wiring and polarity checks.",
+            "Injection tests.",
+            "Contacts and indications.",
+            "Restoring and sign-off."
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Ask AI for a draft",
+          "lines": [
+            "Goal: Make a pre-test checklist for a general overcurrent relay.",
+            "Context: For a new technician. Fictional training example.",
+            "Format: A table with Step, What to check, Result and Tick.",
+            "Boundaries: Do not give setting values. Write 'check approved procedure' where a limit is needed."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "A report layout (fictional)",
+          "lines": [
+            "Use this as an idea for layout only."
+          ],
+          "table": {
+            "head": [
+              "Section",
+              "What goes in it"
+            ],
+            "rows": [
+              [
+                "Header",
+                "Site (fictional), relay model (fictional), date, tester"
+              ],
+              [
+                "Settings used",
+                "As per the approved settings document"
+              ],
+              [
+                "Test results",
+                "Test, expected (from approved criteria), measured, pass or fail"
+              ],
+              [
+                "Remarks",
+                "What you noticed"
+              ],
+              [
+                "Sign-off",
+                "Name, role, signature, date"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "idea",
+          "title": "Use fictional data only",
+          "lines": [
+            "Use made-up names like Site A and Relay R1.",
+            "Use made-up numbers only to practise the layout.",
+            "Never present them as real results."
+          ],
+          "terms": [
+            "synthetic-data"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Improve the template",
+          "lines": [
+            "Ask for fewer fields.",
+            "Add a column for units.",
+            "Ask what is missing, then decide yourself."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "A template from AI is a draft",
+          "lines": [
+            "Compare it with your company's format and approved procedures.",
+            "Only a qualified engineer signs a report.",
+            "Never publish a company template."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: one-page template",
+          "lines": [
+            "Ask an AI for a one-page relay test report template using fictional data.",
+            "Check units, the pass or fail logic and the signature fields.",
+            "Edit it by hand and write what you changed."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "AI drafts. You check and edit.",
+            "Use fictional data for practice.",
+            "Approved procedures and company formats come first."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main job of a checklist?",
+          "options": [
+            "To stop missed steps and keep work consistent",
+            "To decorate",
+            "To replace training",
+            "To hide mistakes"
+          ],
+          "answer": 0,
+          "why": "Checklists make work consistent and complete."
+        },
+        {
+          "q": "What data should you use when practising templates?",
+          "options": [
+            "Real customer results",
+            "Fictional data",
+            "Any real file",
+            "Passwords"
+          ],
+          "answer": 1,
+          "why": "Fictional data keeps real information safe."
+        },
+        {
+          "q": "What goes in the boundaries of the checklist prompt?",
+          "options": [
+            "Do not give setting values; say 'check approved procedure'",
+            "Add secret data",
+            "Invent limits",
+            "Guess pass criteria"
+          ],
+          "answer": 0,
+          "why": "Limits come from approved documents."
+        },
+        {
+          "q": "Who signs a real test report?",
+          "options": [
+            "The AI",
+            "A qualified engineer",
+            "Anyone",
+            "Nobody"
+          ],
+          "answer": 1,
+          "why": "Engineers sign real reports."
+        },
+        {
+          "q": "Why add a units column?",
+          "options": [
+            "Numbers without units can mislead",
+            "It looks nice",
+            "The AI needs it",
+            "It is a rule of Excel"
+          ],
+          "answer": 0,
+          "why": "Missing units cause mistakes."
+        }
+      ],
+      "resources": [
+        {
+          "title": "OpenAI: Prompt engineering guide",
+          "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+          "type": "Guide",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "Claude Academy (free courses from Anthropic)",
+          "url": "https://academy.claude.com/",
+          "type": "Courses",
+          "free": true,
+          "verified": "opened"
+        }
+      ],
+      "checked": "2026-11-07",
+      "career": "Clear checklists and templates are the backbone of consistent testing and commissioning work.",
+      "next": "p4-l5"
+    },
+    {
+      "id": "p4-l5",
+      "phase": "p4",
+      "number": 5,
+      "title": "Troubleshooting with AI Safely",
+      "level": "Beginner",
+      "module": "m2",
+      "mode": "phone",
+      "minutes": 10,
+      "prereq": [
+        "p3-l2"
+      ],
+      "skills": [
+        "Safe troubleshooting",
+        "Describing problems clearly"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "AI as a thinking partner",
+          "lines": [
+            "It helps you list possible causes.",
+            "It does not see your equipment.",
+            "You decide what to check."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Describe the problem clearly",
+          "lines": [
+            "What did you do?",
+            "What did you expect?",
+            "What happened instead?",
+            "What have you already checked?"
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example (fictional)",
+          "lines": [
+            "A trip output did not operate during a test on a training relay.",
+            "Expected: the contact closes.",
+            "Observed: no contact change.",
+            "Checked: the test set output is connected.",
+            "Ask: List possible causes, easiest to check first. Do not give settings."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Easy checks first",
+          "lines": [
+            "An AI might list ideas such as loose wiring, wrong terminals, a blocking signal, a disabled function or the wrong test setup.",
+            "Treat these as ideas only.",
+            "Confirm each one with the manual and drawings."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Safety comes first",
+          "lines": [
+            "Isolate and make safe before touching equipment.",
+            "Follow your permit and lock-out rules.",
+            "AI cannot tell if a circuit is live.",
+            "Never skip safe isolation because an AI said something."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "When to stop and ask",
+          "lines": [
+            "If you are not sure, stop.",
+            "Ask a senior engineer.",
+            "Record what happened."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Keep a log",
+          "lines": [
+            "Write what you tried and what you saw.",
+            "Paste only non-confidential text to an AI.",
+            "A log helps the next person too."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Good use and risky use",
+          "lines": [
+            "Use the table as a quick guide."
+          ],
+          "table": {
+            "head": [
+              "Use",
+              "OK?"
+            ],
+            "rows": [
+              [
+                "Brainstorm possible causes",
+                "Yes, then verify"
+              ],
+              [
+                "Explain an error message in general",
+                "Yes, then check the manual"
+              ],
+              [
+                "Decide if equipment is safe to energise",
+                "No"
+              ],
+              [
+                "Change a setting because the AI said so",
+                "No"
+              ],
+              [
+                "Share a customer's fault record",
+                "No, unless approved"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "try",
+          "title": "Practice: a fictional fault",
+          "lines": [
+            "Write a fictional fault in four lines: did, expected, happened, checked.",
+            "Ask an AI to list possible causes.",
+            "Mark each cause: check with manual, check with drawing, or ask a senior engineer."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "AI helps you think. You verify.",
+            "Safety and approved procedures come first.",
+            "If unsure, stop and ask."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is AI's best role when troubleshooting?",
+          "options": [
+            "Deciding if it is safe",
+            "Helping list possible causes",
+            "Replacing isolation",
+            "Changing settings"
+          ],
+          "answer": 1,
+          "why": "AI can brainstorm. You verify and decide."
+        },
+        {
+          "q": "What should you do before touching equipment?",
+          "options": [
+            "Ask the AI",
+            "Isolate and make it safe following your rules",
+            "Switch it on",
+            "Skip permits"
+          ],
+          "answer": 1,
+          "why": "Safety rules and permits always come first."
+        },
+        {
+          "q": "Which is a good problem description?",
+          "options": [
+            "It does not work",
+            "What I did, expected, saw and already checked",
+            "Fix it",
+            "Help"
+          ],
+          "answer": 1,
+          "why": "Clear details give useful answers."
+        },
+        {
+          "q": "Can AI decide if a circuit is safe to energise?",
+          "options": [
+            "Yes",
+            "No",
+            "Yes if it sounds sure",
+            "Only for small circuits"
+          ],
+          "answer": 1,
+          "why": "AI cannot see or judge your equipment."
+        },
+        {
+          "q": "When you are unsure, you should...",
+          "options": [
+            "Continue anyway",
+            "Stop and ask a senior engineer",
+            "Guess",
+            "Hide it"
+          ],
+          "answer": 1,
+          "why": "Stopping and asking is the safe choice."
+        }
+      ],
+      "resources": [
+        {
+          "title": "AI capabilities and limitations (free course)",
+          "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+          "type": "Course",
+          "free": true,
+          "verified": "opened-listing"
+        },
+        {
+          "title": "AI Fluency: Framework and Foundations (free, about 4 hours)",
+          "url": "https://academy.claude.com/courses/ai-fluency-framework-foundations",
+          "type": "Course",
+          "free": true,
+          "verified": "opened-listing"
+        }
+      ],
+      "checked": "2026-11-07",
+      "career": "Calm, safe troubleshooting habits earn trust. AI can speed up thinking, but never replaces safe working.",
+      "next": "p4-l6"
+    },
+    {
+      "id": "p4-l6",
+      "phase": "p4",
+      "number": 6,
+      "title": "Project: AI-Assisted Relay Test Checklist and Report Template",
+      "level": "Beginner",
+      "module": "m2",
+      "mode": "phone",
+      "minutes": 25,
+      "prereq": [
+        "p4-l4"
+      ],
+      "skills": [
+        "Applying AI to documentation",
+        "Checking AI output"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Your project",
+          "lines": [
+            "Make a one-page checklist and a one-page report template for testing a relay.",
+            "Use fictional data only.",
+            "Use AI to draft. You check and edit."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "What you will make",
+          "lines": [
+            "A checklist (table).",
+            "A report template (one page).",
+            "A short note: what you changed and why."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Step 1: Plan",
+          "lines": [
+            "Write the goal and who it is for.",
+            "Pick one general function, for example overcurrent.",
+            "Decide the format: a table."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Step 2: Draft with AI",
+          "lines": [
+            "Use the four-part prompt: goal, context, format, boundaries.",
+            "Ask for the checklist first, then the report template."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Step 3: Check against documents",
+          "lines": [
+            "Compare with the testing section of a public manual or with training notes.",
+            "List steps that are missing or wrong.",
+            "Never trust the draft as it is."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Step 4: Edit",
+          "lines": [
+            "Add units, remove unclear steps and add a sign-off.",
+            "Keep a list of your changes."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Step 5: Try it with fictional data",
+          "lines": [
+            "Fill the template with made-up results for three tests.",
+            "Check that the pass or fail column makes sense."
+          ],
+          "terms": [
+            "synthetic-data"
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Educational only",
+          "lines": [
+            "This is not an approved procedure.",
+            "Real tests follow your company's approved procedure and the manufacturer's documents.",
+            "Never publish a confidential template."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "How to judge your work",
+          "lines": [
+            "Ask these four questions."
+          ],
+          "table": {
+            "head": [
+              "Check",
+              "Question"
+            ],
+            "rows": [
+              [
+                "Clear",
+                "Can a new technician follow it?"
+              ],
+              [
+                "Accurate",
+                "Does it match public documents?"
+              ],
+              [
+                "Safe",
+                "Does it include safety and sign-off?"
+              ],
+              [
+                "Honest",
+                "Is all data labelled fictional?"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "try",
+          "title": "Practice: your portfolio note",
+          "lines": [
+            "Write 3 lines: what you made, how AI helped, and how you checked it.",
+            "Example: I made a checklist and report template with fictional data. AI drafted both. I checked them against a public manual and edited them."
+          ],
+          "badge": "Phone friendly"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "You used AI to draft documents, then checked and improved them.",
+            "Fictional data and approved procedures kept it safe.",
+            "Keep your note for your portfolio."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who is responsible for the final checklist?",
+          "options": [
+            "The AI",
+            "You",
+            "The manual",
+            "Nobody"
+          ],
+          "answer": 1,
+          "why": "AI drafts. You check and own the result."
+        },
+        {
+          "q": "What data does this project use?",
+          "options": [
+            "Real customer data",
+            "Fictional data",
+            "Company files",
+            "Passwords"
+          ],
+          "answer": 1,
+          "why": "Only fictional data is used."
+        },
+        {
+          "q": "Which step compares the draft with real documents?",
+          "options": [
+            "Step 3: check against documents",
+            "Step 1",
+            "Step 5",
+            "None"
+          ],
+          "answer": 0,
+          "why": "Checking against documents finds missing or wrong steps."
+        },
+        {
+          "q": "Is this checklist an approved procedure?",
+          "options": [
+            "Yes",
+            "No, it is educational only",
+            "Yes if the AI wrote it",
+            "Only for relays"
+          ],
+          "answer": 1,
+          "why": "Real work uses approved procedures."
+        },
+        {
+          "q": "What goes in your portfolio note?",
+          "options": [
+            "What you made, how AI helped, how you checked",
+            "Only the title",
+            "Passwords",
+            "Nothing"
+          ],
+          "answer": 0,
+          "why": "A short honest note shows your process."
+        }
+      ],
+      "resources": [
+        {
+          "title": "OpenAI: Prompt engineering guide",
+          "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+          "type": "Guide",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "Claude Academy (free courses from Anthropic)",
+          "url": "https://academy.claude.com/",
+          "type": "Courses",
+          "free": true,
+          "verified": "opened"
+        }
+      ],
+      "checked": "2026-11-07",
+      "career": "This small project shows an employer that you can use AI to draft documents safely and check them like an engineer.",
       "next": null
     }
   ]
