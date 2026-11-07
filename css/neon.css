@@ -261,3 +261,28 @@ body[data-page="home"] main { max-width: 1440px; }
 /* The Listen bar is smaller on Home so the hero stays near the top. */
 body[data-page="home"] .listen { padding-top: .35rem; padding-bottom: .35rem; }
 body[data-page="home"] .listen .btn, body[data-page="home"] .listen .speed select { min-height: 38px; }
+
+/* ===== Round 3: header icon alignment and background bands ===== */
+/* base.css spread the header items evenly across the width (space-between). Now: logo on the left, icons grouped on the right. */
+.topbar { justify-content: flex-start; gap: .6rem; }
+.brand { margin-right: auto; }
+@media (min-width: 1180px) {
+  .brand { margin-right: 0; }
+  .topnav { margin: 0 auto; }
+}
+.topbar .icon-btn, .topbar .avatar { flex: none; width: 44px; height: 44px; }
+.search-link, .topbar .icon-btn { display: inline-flex; align-items: center; justify-content: center; padding: 0; }
+.hdr-menu { display: none; }
+@media (min-width: 900px) and (max-width: 1179px) { .hdr-menu { display: inline-flex; } }
+@media (min-width: 1180px) { .search-link { display: none; } }
+
+/* The glow behind the page was repeating down tall screens and made blue bands. Now it is drawn once at the top. */
+body {
+  min-height: 100vh;
+  background-image:
+    radial-gradient(900px 420px at 75% 0, var(--glow), transparent 65%),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 100% 520px, 36px 36px, 36px 36px;
+  background-repeat: no-repeat, repeat, repeat;
+}
