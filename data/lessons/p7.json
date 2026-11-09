@@ -1,0 +1,1127 @@
+{
+  "phase": "p7",
+  "glossary": {
+    "formula": {
+      "name": "Formula",
+      "def": "A calculation typed into a cell. It starts with the = sign."
+    },
+    "cell-reference": {
+      "name": "Cell reference",
+      "def": "The address of a cell, such as B2 (column B, row 2)."
+    },
+    "range": {
+      "name": "Range",
+      "def": "A block of cells, written like B2:B6 (from B2 down to B6)."
+    },
+    "mean": {
+      "name": "Mean (average)",
+      "def": "Add all the values, then divide by how many there are."
+    },
+    "median": {
+      "name": "Median",
+      "def": "The middle value when the numbers are put in order."
+    },
+    "outlier": {
+      "name": "Outlier",
+      "def": "A value far away from the others. It may be a real event or a mistake."
+    },
+    "tolerance": {
+      "name": "Tolerance",
+      "def": "The allowed difference from the expected value. Real tolerances come from approved documents."
+    },
+    "data-validation": {
+      "name": "Data validation",
+      "def": "A rule that only allows certain entries in a cell, such as a list or a number range."
+    },
+    "conditional-formatting": {
+      "name": "Conditional formatting",
+      "def": "Automatic colours that change when a cell meets a rule, such as Fail turning red."
+    }
+  },
+  "lessons": [
+    {
+      "id": "p7-l1",
+      "phase": "p7",
+      "number": 1,
+      "title": "Spreadsheet Basics and Formulas",
+      "level": "Beginner",
+      "module": "m3",
+      "mode": "mixed",
+      "minutes": 12,
+      "prereq": [
+        "p1-l4"
+      ],
+      "skills": [
+        "Spreadsheets",
+        "Formulas"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Why spreadsheets first",
+          "lines": [
+            "Your work already makes numbers: readings, test results and logs.",
+            "A spreadsheet can add, compare and chart them.",
+            "It is free to start: Excel on the web or Google Sheets."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "The grid",
+          "lines": [
+            "A spreadsheet is a grid of cells.",
+            "Columns have letters. Rows have numbers.",
+            "Cell B2 is column B, row 2."
+          ],
+          "terms": [
+            "cell-reference"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "One idea per cell, one table per sheet",
+          "lines": [
+            "Put one value in each cell.",
+            "Put the column name in the top row, with the unit: Time (s), Current (A).",
+            "Do not merge cells in a data table."
+          ]
+        },
+        {
+          "kind": "analogy",
+          "title": "A test sheet with a calculator inside",
+          "lines": [
+            "A paper test sheet has boxes and columns.",
+            "A spreadsheet is the same, but it can do the sums for you.",
+            "Change one number and every result updates."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Formulas start with =",
+          "lines": [
+            "Type = and then the calculation.",
+            "Example: =2+3 gives 5.",
+            "Example: =B2*10 multiplies the value in B2 by 10."
+          ],
+          "terms": [
+            "formula"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Five formulas to learn first",
+          "lines": [
+            "They work the same in Excel and Google Sheets."
+          ],
+          "table": {
+            "head": [
+              "Formula",
+              "What it does",
+              "Example"
+            ],
+            "rows": [
+              [
+                "SUM",
+                "Adds numbers",
+                "=SUM(B2:B6)"
+              ],
+              [
+                "AVERAGE",
+                "Mean of numbers",
+                "=AVERAGE(B2:B6)"
+              ],
+              [
+                "MIN",
+                "Smallest value",
+                "=MIN(B2:B6)"
+              ],
+              [
+                "MAX",
+                "Largest value",
+                "=MAX(B2:B6)"
+              ],
+              [
+                "COUNT",
+                "How many numbers",
+                "=COUNT(B2:B6)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "idea",
+          "title": "A range",
+          "lines": [
+            "B2:B6 means all cells from B2 down to B6.",
+            "Using a range lets one formula work on a whole column."
+          ],
+          "terms": [
+            "range"
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example (fictional data)",
+          "lines": [
+            "Column A: Test number 1 to 5.",
+            "Column B: Operating time (s): 0.48, 0.50, 0.49, 0.51, 0.52.",
+            "=AVERAGE(B2:B6) gives 0.50. =MIN(B2:B6) gives 0.48. =MAX(B2:B6) gives 0.52.",
+            "These numbers are made up for practice."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Fictional numbers only",
+          "lines": [
+            "Practise with made-up numbers.",
+            "Real acceptance limits come from the manufacturer's documents and your approved procedure.",
+            "Never change a real measured value to make a sum look better."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: your first sums",
+          "lines": [
+            "Open Google Sheets or Excel on the web (a computer is easier, the phone app also works).",
+            "Type the five fictional operating times in one column.",
+            "Use AVERAGE, MIN, MAX and COUNT.",
+            "Check the answers by hand."
+          ],
+          "badge": "Computer recommended"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Cells, rows, columns. One value per cell.",
+            "Formulas start with =.",
+            "SUM, AVERAGE, MIN, MAX and COUNT cover most first tasks."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does every formula start with?",
+          "options": [
+            "#",
+            "=",
+            "@",
+            "/"
+          ],
+          "answer": 1,
+          "why": "Typing = tells the spreadsheet a calculation follows."
+        },
+        {
+          "q": "What does B2:B6 mean?",
+          "options": [
+            "Only cell B2",
+            "All cells from B2 down to B6",
+            "Row 2 and row 6",
+            "Column B and column 2"
+          ],
+          "answer": 1,
+          "why": "A range covers a block of cells."
+        },
+        {
+          "q": "Which formula gives the mean of B2:B6?",
+          "options": [
+            "=SUM(B2:B6)",
+            "=AVERAGE(B2:B6)",
+            "=MAX(B2:B6)",
+            "=COUNT(B2:B6)"
+          ],
+          "answer": 1,
+          "why": "AVERAGE adds the values and divides by how many there are."
+        },
+        {
+          "q": "Why put units in the column names?",
+          "options": [
+            "It looks neat",
+            "Numbers without units can mislead",
+            "The spreadsheet needs it",
+            "It speeds up formulas"
+          ],
+          "answer": 1,
+          "why": "Units prevent mistakes such as mixing seconds and milliseconds."
+        },
+        {
+          "q": "A measured value looks bad. What should you do?",
+          "options": [
+            "Change it so the result passes",
+            "Keep it and find out why",
+            "Delete the row",
+            "Round it"
+          ],
+          "answer": 1,
+          "why": "Never change real measurements to improve results."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Google Sheets training and help (official, free)",
+          "url": "https://support.google.com/a/users/answer/9282959",
+          "type": "Guides",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "Microsoft Excel video training (official, free)",
+          "url": "https://support.microsoft.com/en-gb/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb",
+          "type": "Videos",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-11-08",
+      "career": "Spreadsheets are the everyday tool of testing and service work. These five formulas already save hours.",
+      "next": "p7-l2"
+    },
+    {
+      "id": "p7-l2",
+      "phase": "p7",
+      "number": 2,
+      "title": "Tables, Filters and Sorting",
+      "level": "Beginner",
+      "module": "m3",
+      "mode": "mixed",
+      "minutes": 10,
+      "prereq": [
+        "p7-l1"
+      ],
+      "skills": [
+        "Tables",
+        "Filtering",
+        "Sorting"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Make the table tidy first",
+          "lines": [
+            "One header row at the top.",
+            "One record per row.",
+            "One kind of data per column.",
+            "No empty rows or columns inside the table."
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "A tidy fictional test table",
+          "lines": [
+            "Columns: Relay ID, Test, Expected (A), Measured (A), Operating time (s), Result.",
+            "Rows: one per test.",
+            "Every number has its unit in the column name.",
+            "All the data is fictional."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Sorting",
+          "lines": [
+            "Sorting puts rows in order: smallest to largest, or A to Z.",
+            "Use it to find the slowest operating time quickly.",
+            "Select the whole table before sorting, so rows stay together."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Filtering",
+          "lines": [
+            "A filter hides rows you do not need.",
+            "Show only the rows where Result is Fail.",
+            "Show only Relay R2.",
+            "Turn the filter off to see everything again."
+          ]
+        },
+        {
+          "kind": "analogy",
+          "title": "A pile of paper test sheets",
+          "lines": [
+            "Sorting is putting the sheets in order.",
+            "Filtering is taking out only the sheets you want to read.",
+            "The other sheets are not thrown away, only hidden."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Where to find them",
+          "lines": [
+            "Menu names differ a little between tools.",
+            "In Google Sheets: Data, then Create a filter.",
+            "In Excel on the web: Data, then Filter or Sort."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Freeze the header",
+          "lines": [
+            "Freeze the top row so the column names stay visible when you scroll.",
+            "This stops you reading the wrong column."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Keep the raw data safe",
+          "lines": [
+            "Before sorting or filtering, make a copy of the original sheet.",
+            "Sorting only part of a table can mix up rows and ruin the data.",
+            "Keep the original records unchanged."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: sort and filter",
+          "lines": [
+            "Make a fictional table with 10 rows and the six columns above.",
+            "Sort by operating time, largest first.",
+            "Filter to show only Fail.",
+            "Clear the filter."
+          ],
+          "badge": "Computer recommended"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Tidy table: one header, one record per row.",
+            "Sort puts rows in order. Filter hides what you do not need.",
+            "Always keep a copy of the raw data."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "How many records should be in one row?",
+          "options": [
+            "One",
+            "Two",
+            "Ten",
+            "All of them"
+          ],
+          "answer": 0,
+          "why": "One record per row keeps tables clean."
+        },
+        {
+          "q": "What does a filter do?",
+          "options": [
+            "Deletes rows",
+            "Hides rows that do not match",
+            "Adds rows",
+            "Changes values"
+          ],
+          "answer": 1,
+          "why": "Filtered-out rows are only hidden."
+        },
+        {
+          "q": "Why select the whole table before sorting?",
+          "options": [
+            "It looks better",
+            "So rows stay together",
+            "The tool requires it for colour",
+            "To make it faster"
+          ],
+          "answer": 1,
+          "why": "Sorting part of a table can mix up rows."
+        },
+        {
+          "q": "What is a good first step before sorting real data?",
+          "options": [
+            "Delete the header",
+            "Make a copy of the original",
+            "Merge cells",
+            "Remove units"
+          ],
+          "answer": 1,
+          "why": "A copy protects the original records."
+        },
+        {
+          "q": "Why freeze the header row?",
+          "options": [
+            "To keep column names visible when scrolling",
+            "To lock all data",
+            "To hide it",
+            "To change colours"
+          ],
+          "answer": 0,
+          "why": "You always see which column you are reading."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Google Sheets training and help (official, free)",
+          "url": "https://support.google.com/a/users/answer/9282959",
+          "type": "Guides",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "Microsoft Excel video training (official, free)",
+          "url": "https://support.microsoft.com/en-gb/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb",
+          "type": "Videos",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-11-08",
+      "career": "Finding the slow or failing tests in a long table in seconds is a daily time-saver.",
+      "next": "p7-l3"
+    },
+    {
+      "id": "p7-l3",
+      "phase": "p7",
+      "number": 3,
+      "title": "Mean, Median, Percentage and Variation",
+      "level": "Beginner",
+      "module": "m3",
+      "mode": "mixed",
+      "minutes": 12,
+      "prereq": [
+        "p7-l1"
+      ],
+      "skills": [
+        "Basic statistics",
+        "Percentage error"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Why summary numbers help",
+          "lines": [
+            "A table of 50 numbers is hard to read.",
+            "A few summary numbers tell the story.",
+            "We use mean, median, smallest, largest and percentage difference."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Mean and median",
+          "lines": [
+            "Mean: add all values, divide by how many.",
+            "Median: the middle value when sorted.",
+            "Use =AVERAGE(...) and =MEDIAN(...)."
+          ],
+          "terms": [
+            "mean",
+            "median"
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example (fictional)",
+          "lines": [
+            "Operating times (s): 0.48, 0.49, 0.50, 0.51, 0.52. Mean 0.50. Median 0.50.",
+            "Now change the last value to 0.90.",
+            "Mean becomes 0.576. Median stays 0.50.",
+            "One odd value moves the mean, but hardly moves the median."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Outliers",
+          "lines": [
+            "An outlier is a value far from the others.",
+            "It may be a real event or a mistake.",
+            "Do not delete it. Find out why it happened."
+          ],
+          "terms": [
+            "outlier"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Percentage difference",
+          "lines": [
+            "Percentage error = (measured minus expected) divided by expected, times 100.",
+            "Expected 1.000 A, measured 1.032 A: (1.032 − 1.000) / 1.000 × 100 = 3.2 percent.",
+            "Expected 0.500 s, measured 0.485 s: (0.485 − 0.500) / 0.500 × 100 = −3.0 percent.",
+            "The minus sign means measured is lower than expected."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "In a spreadsheet",
+          "lines": [
+            "If Expected is in C2 and Measured is in D2:",
+            "=(D2-C2)/C2*100",
+            "Format the cell with 1 decimal place."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Variation: how spread out",
+          "lines": [
+            "MIN and MAX show the range.",
+            "Range = MAX minus MIN.",
+            "A small range means repeatable results.",
+            "Standard deviation is a more exact measure. We learn it later."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Tolerance",
+          "lines": [
+            "Tolerance is the allowed difference from the expected value.",
+            "The real tolerance comes from approved documents.",
+            "In practice tasks we use a fictional limit, such as plus or minus 5 percent."
+          ],
+          "terms": [
+            "tolerance"
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Maths does not decide pass or fail",
+          "lines": [
+            "A formula only compares numbers.",
+            "Pass or fail uses the acceptance limits in approved documents.",
+            "If a result is close to the limit, ask a senior engineer."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: three checks",
+          "lines": [
+            "Use the fictional times above.",
+            "Calculate mean, median and range.",
+            "Calculate the percentage error for expected 1.000 A and measured 1.032 A.",
+            "Check that you get 3.2 percent."
+          ],
+          "badge": "Computer recommended"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Mean and median summarise a column. Median resists odd values.",
+            "Percentage error = (measured − expected) / expected × 100.",
+            "Tolerances come from approved documents."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the median of 0.48, 0.49, 0.50, 0.51, 0.52?",
+          "options": [
+            "0.48",
+            "0.50",
+            "0.52",
+            "0.55"
+          ],
+          "answer": 1,
+          "why": "The middle value in the ordered list is 0.50."
+        },
+        {
+          "q": "Expected 0.500 s, measured 0.485 s. What is the percentage error?",
+          "options": [
+            "+3.0 percent",
+            "−3.0 percent",
+            "−0.3 percent",
+            "+0.3 percent"
+          ],
+          "answer": 1,
+          "why": "(0.485 − 0.500) / 0.500 × 100 = −3.0 percent."
+        },
+        {
+          "q": "Which is less affected by one very odd value?",
+          "options": [
+            "Mean",
+            "Median",
+            "Both equally",
+            "Neither"
+          ],
+          "answer": 1,
+          "why": "The median hardly moves when one value is extreme."
+        },
+        {
+          "q": "What should you do with an outlier?",
+          "options": [
+            "Delete it",
+            "Find out why it happened",
+            "Hide it",
+            "Round it"
+          ],
+          "answer": 1,
+          "why": "An outlier may be a real event or an error. Investigate."
+        },
+        {
+          "q": "Where do real tolerances come from?",
+          "options": [
+            "The spreadsheet",
+            "Approved documents and procedures",
+            "A guess",
+            "The AI"
+          ],
+          "answer": 1,
+          "why": "Real tolerances come from approved documents."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Google Sheets training and help (official, free)",
+          "url": "https://support.google.com/a/users/answer/9282959",
+          "type": "Guides",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "Kaggle Learn (short free courses)",
+          "url": "https://www.kaggle.com/learn",
+          "type": "Courses",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-11-08",
+      "career": "Percentage error and simple summaries are the first tools for reading relay test results.",
+      "next": "p7-l4"
+    },
+    {
+      "id": "p7-l4",
+      "phase": "p7",
+      "number": 4,
+      "title": "Data Cleaning and Validation",
+      "level": "Beginner",
+      "module": "m3",
+      "mode": "mixed",
+      "minutes": 11,
+      "prereq": [
+        "p7-l2"
+      ],
+      "skills": [
+        "Data cleaning",
+        "Data validation"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Messy data gives wrong answers",
+          "lines": [
+            "Mixed units, typing mistakes and blank cells are common.",
+            "Clean the format before you analyse.",
+            "Clean first. Analyse second."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Common problems",
+          "lines": [
+            "Look at the table for the usual problems."
+          ],
+          "table": {
+            "head": [
+              "Problem",
+              "Example",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "Mixed units",
+                "520 and 0.52 in one column",
+                "Convert to one unit and say it in the header"
+              ],
+              [
+                "Numbers stored as text",
+                "Left-aligned numbers",
+                "Convert to numbers"
+              ],
+              [
+                "Extra spaces",
+                "'R1 ' and 'R1'",
+                "Use TRIM or Find and Replace"
+              ],
+              [
+                "Different spellings",
+                "Pass, pass, PASS, P",
+                "Pick one standard word"
+              ],
+              [
+                "Duplicate rows",
+                "The same test twice",
+                "Check, then remove one"
+              ],
+              [
+                "Blank cells",
+                "Missing measured value",
+                "Find the record; do not guess"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "electrical",
+          "title": "Example (fictional)",
+          "lines": [
+            "One tester typed 520 for operating time. Another typed 0.52.",
+            "The first is in milliseconds. The second is in seconds.",
+            "Mean of the column is meaningless until the units match.",
+            "Fix the format and write the unit in the header."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Format fixes, not value fixes",
+          "lines": [
+            "Changing a format (ms to s) is cleaning.",
+            "Changing a measured value to make it pass is falsifying data.",
+            "Never do it."
+          ],
+          "terms": [
+            "tolerance"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Data validation: stop mistakes early",
+          "lines": [
+            "Add a rule so a cell accepts only certain entries.",
+            "A drop-down list for Result: Pass or Fail.",
+            "A number range for Operating time: more than 0.",
+            "The tool shows a warning if the entry breaks the rule."
+          ],
+          "terms": [
+            "data-validation"
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Where to find it",
+          "lines": [
+            "Google Sheets: Data, then Data validation.",
+            "Excel on the web: Data, then Data Validation.",
+            "Menu names vary slightly."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Keep a record of changes",
+          "lines": [
+            "Keep the original sheet unchanged.",
+            "Work on a copy.",
+            "Write a short note of what you changed and why."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Honest data",
+          "lines": [
+            "Real test records must stay true to the measurement.",
+            "If a value looks wrong, check the test and ask a senior engineer.",
+            "Never edit original records to hide a problem."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: clean a fictional table",
+          "lines": [
+            "Make a small table with mixed ms and s, extra spaces and mixed spellings of Pass.",
+            "Fix each problem on a copy.",
+            "Add a drop-down for Result.",
+            "Write your list of changes."
+          ],
+          "badge": "Computer recommended"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Clean the format. Never change the measurement.",
+            "Use validation to stop errors at entry.",
+            "Work on a copy and keep notes."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "520 and 0.52 appear in one operating-time column. What is likely wrong?",
+          "options": [
+            "Mixed units (ms and s)",
+            "Nothing",
+            "A formula error",
+            "Too many rows"
+          ],
+          "answer": 0,
+          "why": "One is likely milliseconds and one seconds."
+        },
+        {
+          "q": "Which is acceptable cleaning?",
+          "options": [
+            "Converting ms to s and writing the unit",
+            "Changing a failing value so it passes",
+            "Deleting a failing row",
+            "Guessing a blank value"
+          ],
+          "answer": 0,
+          "why": "Format fixes are cleaning. Changing measurements is not."
+        },
+        {
+          "q": "What does data validation do?",
+          "options": [
+            "Only allows certain entries in a cell",
+            "Colours cells",
+            "Deletes duplicates",
+            "Adds formulas"
+          ],
+          "answer": 0,
+          "why": "Validation rules prevent bad entries."
+        },
+        {
+          "q": "What should you do before cleaning real data?",
+          "options": [
+            "Work on a copy",
+            "Delete the original",
+            "Share it publicly",
+            "Sort part of it"
+          ],
+          "answer": 0,
+          "why": "A copy keeps the original safe."
+        },
+        {
+          "q": "A value looks wrong. What is the right step?",
+          "options": [
+            "Edit it to look right",
+            "Check the test and ask a senior engineer",
+            "Hide it",
+            "Ignore it"
+          ],
+          "answer": 1,
+          "why": "Investigate and escalate. Do not edit records."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Google Sheets training and help (official, free)",
+          "url": "https://support.google.com/a/users/answer/9282959",
+          "type": "Guides",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "Microsoft Excel video training (official, free)",
+          "url": "https://support.microsoft.com/en-gb/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb",
+          "type": "Videos",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-11-08",
+      "career": "Clean, honest data is the base of every good report and every later analysis or model.",
+      "next": "p7-l5"
+    },
+    {
+      "id": "p7-l5",
+      "phase": "p7",
+      "number": 5,
+      "title": "Conditional Formatting and Charts",
+      "level": "Beginner",
+      "module": "m3",
+      "mode": "mixed",
+      "minutes": 12,
+      "prereq": [
+        "p7-l3"
+      ],
+      "skills": [
+        "Conditional formatting",
+        "Charts"
+      ],
+      "cards": [
+        {
+          "kind": "idea",
+          "title": "Let colour help you read",
+          "lines": [
+            "Colours make important cells easy to see.",
+            "Conditional formatting changes colour by itself when a rule is met.",
+            "Example: the word Fail turns red."
+          ],
+          "terms": [
+            "conditional-formatting"
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example (fictional)",
+          "lines": [
+            "Rule 1: if Result equals Fail, colour the cell red.",
+            "Rule 2: if percentage error is more than 5 or less than −5, colour it amber.",
+            "The 5 percent is a fictional practice limit.",
+            "Real limits come from approved documents."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Where to find it",
+          "lines": [
+            "Google Sheets: Format, then Conditional formatting.",
+            "Excel on the web: Home, then Conditional Formatting.",
+            "Menu names vary slightly."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Choosing a chart",
+          "lines": [
+            "Pick the chart that answers your question."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "Chart"
+            ],
+            "rows": [
+              [
+                "How does a value change over tests or time?",
+                "Line chart"
+              ],
+              [
+                "How do relays compare?",
+                "Column chart"
+              ],
+              [
+                "Is one value related to another?",
+                "Scatter chart"
+              ],
+              [
+                "How are values spread?",
+                "Histogram"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "idea",
+          "title": "A good chart",
+          "lines": [
+            "A clear title.",
+            "Axis names with units.",
+            "A readable scale.",
+            "One message per chart.",
+            "Avoid 3D effects and busy colours."
+          ]
+        },
+        {
+          "kind": "electrical",
+          "title": "Example chart",
+          "lines": [
+            "Column chart: operating time (s) for relays R1 to R5, fictional.",
+            "Add a line for the fictional upper limit.",
+            "Now anyone can see which relays are close to the limit."
+          ]
+        },
+        {
+          "kind": "safety",
+          "title": "Do not mislead",
+          "lines": [
+            "Start the vertical axis at a sensible value and show it clearly.",
+            "Do not cut the axis to make a small difference look big.",
+            "Label fictional data as fictional."
+          ]
+        },
+        {
+          "kind": "idea",
+          "title": "Insert a chart",
+          "lines": [
+            "Select the data, including the header row.",
+            "Google Sheets: Insert, then Chart.",
+            "Excel on the web: Insert, then Chart.",
+            "Then edit the title and axis names."
+          ]
+        },
+        {
+          "kind": "try",
+          "title": "Practice: colour and chart",
+          "lines": [
+            "Use your fictional table.",
+            "Make Fail turn red.",
+            "Make a column chart of operating time for five relays.",
+            "Add titles and units."
+          ],
+          "badge": "Computer recommended"
+        },
+        {
+          "kind": "finish",
+          "title": "Recap",
+          "lines": [
+            "Conditional formatting colours cells by rule.",
+            "Choose the chart for the question. Add titles and units.",
+            "Charts must be honest."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does conditional formatting do?",
+          "options": [
+            "Changes colours when a rule is met",
+            "Deletes data",
+            "Sorts rows",
+            "Adds units"
+          ],
+          "answer": 0,
+          "why": "It colours cells automatically by rule."
+        },
+        {
+          "q": "Which chart compares five relays?",
+          "options": [
+            "Column chart",
+            "Scatter chart",
+            "None",
+            "Line chart over years"
+          ],
+          "answer": 0,
+          "why": "Column charts compare groups."
+        },
+        {
+          "q": "What must a good chart have?",
+          "options": [
+            "A title and axis names with units",
+            "3D effects",
+            "No labels",
+            "Many colours"
+          ],
+          "answer": 0,
+          "why": "Titles and units make a chart clear."
+        },
+        {
+          "q": "Why not cut the vertical axis to exaggerate a difference?",
+          "options": [
+            "It can mislead the reader",
+            "It uses more ink",
+            "It is slower",
+            "It is not allowed in Excel"
+          ],
+          "answer": 0,
+          "why": "Honest charts do not exaggerate."
+        },
+        {
+          "q": "Where do real pass or fail limits come from?",
+          "options": [
+            "Approved documents and procedures",
+            "The chart colours",
+            "The AI",
+            "The spreadsheet"
+          ],
+          "answer": 0,
+          "why": "Colour rules only display the limits you give them."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Google Sheets training and help (official, free)",
+          "url": "https://support.google.com/a/users/answer/9282959",
+          "type": "Guides",
+          "free": true,
+          "verified": "search"
+        },
+        {
+          "title": "Microsoft Excel video training (official, free)",
+          "url": "https://support.microsoft.com/en-gb/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb",
+          "type": "Videos",
+          "free": true,
+          "verified": "search"
+        }
+      ],
+      "checked": "2026-11-08",
+      "career": "A clear chart and a few colour rules can turn a table of test results into a one-glance report.",
+      "next": null
+    }
+  ]
+}

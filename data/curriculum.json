@@ -237,29 +237,36 @@
     {
       "id": "p7",
       "number": 7,
-      "title": "Python for Data",
-      "description": "NumPy, Pandas and charts using electrical datasets.",
+      "title": "Data Analysis",
+      "description": "Spreadsheets, statistics, cleaning and charts first. Then Python, NumPy and Pandas.",
       "level": "power",
-      "needsLaptop": true,
+      "needsLaptop": false,
       "topics": [
+        "Spreadsheet basics and formulas",
+        "Tables, filters and sorting",
+        "Conditional formatting and charts",
+        "Mean, median, percentage and variation",
+        "Data cleaning and validation",
+        "Pivot tables",
+        "Power BI basics and dashboards",
+        "CSV, Excel and JSON files",
         "NumPy",
         "Pandas",
         "Matplotlib",
-        "CSV, Excel and JSON",
-        "Data cleaning",
-        "Data transformation",
-        "Data visualization",
-        "Statistics"
+        "Statistics with Python"
       ],
       "skills": [
-        "Data handling",
-        "Charts"
+        "Spreadsheets",
+        "Data cleaning",
+        "Charts",
+        "Basic statistics"
       ],
       "projects": [
-        "Analyze simulated trip-time data"
+        "Relay test-results analysis dashboard (synthetic data)",
+        "Analyze simulated trip-time data with Python (later)"
       ],
       "prerequisites": [
-        "p6"
+        "p1"
       ]
     },
     {

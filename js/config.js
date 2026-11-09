@@ -14,9 +14,8 @@ export const BRAND = {
 export const ROUTES = [
   { id: 'home',       label: 'Home',          stage: 1,  blurb: '' },
   { id: 'dashboard',  label: 'Dashboard',     stage: 6,  blurb: 'Your overall progress, quiz scores, streak and the next lesson to study.' },
-  { id: 'roadmap',    label: 'AI Roadmap',    stage: 1,  blurb: '' },
+  { id: 'roadmap',    label: 'Roadmap',       stage: 1,  blurb: '' },
   { id: 'pathway',    label: 'Learning Pathway', stage: 1, blurb: '' },
-  { id: 'syllabus',   label: 'Syllabus',      stage: 3,  blurb: 'Every phase broken into modules, topics, objectives, exercises and quizzes.' },
   { id: 'courses',    label: 'Courses',       stage: 4,  blurb: 'Phases grouped as courses you can open and study in order.' },
   { id: 'lessons',    label: 'Lessons',       stage: 4,  blurb: 'Short lessons: simple explanation, technical explanation, electrical example, exercise and quiz.' },
   { id: 'practice',   label: 'Practice',      stage: 9,  blurb: 'Exercises by category and level: Beginner, Intermediate, Advanced.' },
@@ -39,12 +38,12 @@ export const ROUTES = [
 ];
 
 /* Pages that are already built. Everything else shows a "coming soon" card. */
-export const BUILT = new Set(['home', 'roadmap', 'pathway', 'syllabus', 'lessons', 'electrical', 'projects']);
+export const BUILT = new Set(['home', 'roadmap', 'pathway', 'lessons', 'electrical', 'projects', 'progress']);
 
 /* The links in the top bar on a large screen. */
 export const TOPNAV = [
   { id: 'home', label: 'Home' },
-  { id: 'roadmap', label: 'Learning Roadmap' },
+  { id: 'roadmap', label: 'Roadmap' },
   { id: 'pathway', label: 'AI Skills' },
   { id: 'electrical', label: 'Electrical Engineering' },
   { id: 'projects', label: 'Projects' },

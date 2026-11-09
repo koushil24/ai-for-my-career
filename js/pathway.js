@@ -18,7 +18,7 @@ export async function renderPathway() {
     const planned = m.lessons.length;
     const ready = m.lessons.filter((l) => l.id && byId.has(l.id));
     const done = ready.filter((l) => state.completedLessons.includes(l.id)).length;
-    const pct = planned ? Math.round((done / planned) * 100) : 0;
+    const pct = ready.length ? Math.round((done / ready.length) * 100) : 0;
     const after = m.after.length ? m.after.map((id) => title(id)).join(' and ') : 'nothing';
     const rows = m.lessons.map((l) => (l.id && byId.has(l.id)
       ? `<li class="ready"><a href="#/lesson/${esc(l.id)}">${esc(l.title)}</a>${state.completedLessons.includes(l.id) ? ' <span class="tag phone">Done</span>' : ''}</li>`
@@ -31,8 +31,8 @@ export async function renderPathway() {
       <div class="phase-body">
         <p>${esc(m.summary)}</p>
         <p class="tags"><span class="tag ${m.mode === 'phone' ? 'phone' : 'laptop'}">${MODE_LABEL[m.mode]}</span><span class="tag">${ready.length} of ${planned} lessons ready</span></p>
-        <div class="bar" role="img" aria-label="${pct}% of planned lessons completed"><span style="width:${pct}%"></span></div>
-        <p class="muted small">${done} of ${planned} planned lessons completed</p>
+        <div class="bar" role="img" aria-label="${pct}% of ready lessons completed"><span style="width:${pct}%"></span></div>
+        <p class="muted small">${done} of ${ready.length} ready lessons completed (${planned} planned in total)</p>
         <h5>Suggested before</h5><p>${esc(after === 'nothing' ? 'Nothing. You can start here.' : after)}. This is a suggestion, not a lock.</p>
         ${m.phases.length ? `<h5>Roadmap phases covered</h5><p>${m.phases.map((id) => `<a class="tag" href="#/roadmap">Phase ${id.replace('p', '')}</a>`).join(' ')}</p>` : '<h5>Roadmap phases covered</h5><p class="muted">This module adds new content. A new roadmap phase will be added for it.</p>'}
         <h5>Lessons</h5><ol class="plain module-lessons">${rows}</ol>

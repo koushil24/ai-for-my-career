@@ -75,3 +75,19 @@ export function getStats(totalLessons = 0) {
     lastLesson: s.lastLesson,
   };
 }
+
+/* Backup and restore (progress lives only in this browser, so a backup file is a good idea). */
+export function exportState() { return JSON.stringify(read(), null, 2); }
+
+export function importState(text) {
+  const data = JSON.parse(text);
+  if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('Not a backup file');
+  const clean = { ...DEFAULTS };
+  const same = (def, val) => (def === null ? (val === null || typeof val === 'string')
+    : Array.isArray(def) ? Array.isArray(val) : typeof def === 'object' ? (val && typeof val === 'object' && !Array.isArray(val)) : typeof val === typeof def);
+  Object.keys(DEFAULTS).forEach((k) => { if (k in data && same(DEFAULTS[k], data[k])) clean[k] = data[k]; });
+  write(clean);
+  return clean;
+}
+
+export function resetState() { write({ ...DEFAULTS }); }

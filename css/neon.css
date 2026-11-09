@@ -286,3 +286,10 @@ body {
   background-size: 100% 520px, 36px 36px, 36px 36px;
   background-repeat: no-repeat, repeat, repeat;
 }
+
+/* Progress icon in the header (large screens only; phones use the Progress tile on Home) */
+.progress-link { display: none; }
+@media (min-width: 900px) { .progress-link { display: inline-flex; } }
+.progress-mods { margin-top: .5rem; max-width: 40rem; }
+.progress-mods li { padding: .15rem 0; }
+label.btn { cursor: pointer; }

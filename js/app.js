@@ -11,6 +11,7 @@ import { renderPathway } from './pathway.js';
 import { renderHome } from './home.js';
 import { renderElectrical, renderProjects } from './hubs.js';
 import { renderSearch, runSearch } from './search.js';
+import * as progress from './progress.js';
 
 lessons.attachDeckControls();
 
@@ -34,6 +35,7 @@ function setupBranding() {
   document.getElementById('brand-sub').textContent = BRAND.subtitle;
   document.querySelector('.search-link').innerHTML = icon('search', 22);
   document.querySelector('.hdr-menu').innerHTML = ICONS.more;
+  document.querySelector('.progress-link').innerHTML = icon('growth', 22);
 }
 
 function setupTheme() {
@@ -54,11 +56,11 @@ function setupTheme() {
 
 function setupMenu() {
   const side = document.getElementById('sidenav');
-  side.innerHTML = '<ul>' + ROUTES.map((r) =>
+  side.innerHTML = '<ul>' + ROUTES.filter((r) => BUILT.has(r.id)).map((r) =>
     `<li><a href="#/${r.id === 'home' ? '' : r.id}" data-route="${r.id}">${esc(r.label)}${BUILT.has(r.id) ? '' : '<span class="soon" title="Coming in a later stage"></span>'}</a></li>`
   ).join('') + '</ul>';
 
-  document.getElementById('topnav').innerHTML = TOPNAV.map((t) =>
+  document.getElementById('topnav').innerHTML = TOPNAV.filter((t) => BUILT.has(t.id)).map((t) =>
     `<a href="#/${t.id === 'home' ? '' : t.id}" data-route="${t.id}">${esc(t.label)}</a>`).join('') +
     '<button type="button" class="more-toggle" aria-expanded="false" aria-controls="sidenav">More</button>';
 
@@ -100,15 +102,15 @@ function markActive(id) {
 }
 
 /* ---------- buttons and filters inside pages (one listener for the whole site) ---------- */
-const ACTIONS = { ...roadmap.actions, ...lessons.actions };
+const ACTIONS = { ...roadmap.actions, ...lessons.actions, ...progress.actions };
 
 document.addEventListener('click', (e) => {
   const el = e.target.closest('[data-action]');
-  if (el && el.tagName !== 'SELECT' && ACTIONS[el.dataset.action]) ACTIONS[el.dataset.action](el);
+  if (el && el.tagName !== 'SELECT' && el.type !== 'file' && ACTIONS[el.dataset.action]) ACTIONS[el.dataset.action](el);
 });
 document.addEventListener('change', (e) => {
   const el = e.target;
-  if (el.matches('select[data-action]') && ACTIONS[el.dataset.action]) ACTIONS[el.dataset.action](el);
+  if (el.matches('select[data-action], input[type="file"][data-action]') && ACTIONS[el.dataset.action]) ACTIONS[el.dataset.action](el);
   if (el.matches('[data-filter]')) roadmap.filters.apply();
   if (el.matches('[data-lfilter]')) lessons.filters.apply();
 });
@@ -135,12 +137,14 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.m
 
 /* ---------- pages ---------- */
 registerPage('home', () => renderHome());
-registerPage('roadmap', () => roadmap.renderRoadmap());
-registerPage('syllabus', async () => {
-  const html = await roadmap.renderSyllabus();
-  setTimeout(() => roadmap.filters.apply(), 0);
+const roadmapPage = async () => {
+  const html = await roadmap.renderRoadmap();
+  setTimeout(() => roadmap.filters.apply(), 0);   // fill in the "x of 27 phases shown" line
   return html;
-});
+};
+registerPage('roadmap', roadmapPage);
+registerPage('syllabus', roadmapPage);   // old address still works: the Syllabus is now part of the Roadmap
+registerPage('progress', () => progress.renderProgress());
 registerPage('lessons', (id, param) => {
   const html = lessons.renderLessonList(id, param);
   html.then(() => setTimeout(() => lessons.filters.apply(), 0));

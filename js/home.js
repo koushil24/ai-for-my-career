@@ -24,13 +24,15 @@ export function tile(item, href, extra = '') {
     <span class="nx-tile-label">${esc(item.label)}</span></a>`;
 }
 
-function modulesProgress(pathway, completed, ids) {
-  let planned = 0; let done = 0;
+/* Progress is measured against lessons that EXIST (available), so the bars can really move.
+   "planned" is the longer list we still intend to write. */
+function modulesProgress(pathway, completed, ids, availableIds) {
+  let planned = 0; let available = 0; let done = 0;
   pathway.modules.filter((m) => ids.includes(m.id)).forEach((m) => {
     planned += m.lessons.length;
-    done += m.lessons.filter((l) => l.id && completed.includes(l.id)).length;
+    m.lessons.filter((l) => l.id && availableIds.has(l.id)).forEach((l) => { available += 1; if (completed.includes(l.id)) done += 1; });
   });
-  return { planned, done, percent: planned ? Math.round((done / planned) * 100) : 0 };
+  return { planned, available, done, percent: available ? Math.round((done / available) * 100) : 0 };
 }
 
 function donut(percent) {
@@ -53,20 +55,21 @@ export async function renderHome() {
   const state = getState();
   const completed = state.completedLessons;
   const allIds = pathway.modules.map((m) => m.id);
-  const overall = modulesProgress(pathway, completed, allIds);
-  const aiSkills = modulesProgress(pathway, completed, ['m1', 'm2']);
-  const elec = modulesProgress(pathway, completed, ['m6']);
-  const stats = getStats(overall.planned);
+  const availableIds = new Set(lessons.map((l) => l.id));
+  const overall = modulesProgress(pathway, completed, allIds, availableIds);
+  const aiSkills = modulesProgress(pathway, completed, ['m1', 'm2'], availableIds);
+  const elec = modulesProgress(pathway, completed, ['m6'], availableIds);
+  const stats = getStats(overall.available);
   const scores = Object.values(state.quizScores);
   const quizAvg = scores.length ? Math.round((scores.reduce((a, s) => a + s.best / s.total, 0) / scores.length) * 100) : null;
   const lastLesson = state.lastLesson && lessons.find((l) => l.id === state.lastLesson);
 
   const levels = H.levels.map((lv, i) => {
-    const p = modulesProgress(pathway, completed, lv.modules);
+    const p = modulesProgress(pathway, completed, lv.modules, availableIds);
     return `<li class="nx-level" data-tilt>
       <span class="nx-level-icon">${icon(lv.icon, 26)}</span>
       <div><p class="nx-level-num">${esc(lv.num)}</p><h3>${esc(lv.name)}</h3><p>${esc(lv.text)}</p></div>
-      <div class="nx-meter"><span class="nx-meter-pct">${p.percent}%</span><span class="nx-meter-bar"><i style="width:${p.percent}%"></i></span></div>
+      <div class="nx-meter"><span class="nx-meter-pct">${p.available ? `${p.percent}%` : 'Soon'}</span><span class="nx-meter-bar"><i style="width:${p.percent}%"></i></span></div>
       ${i < H.levels.length - 1 ? `<span class="nx-link" aria-hidden="true">${icon('arrow', 18)}</span>` : ''}</li>`;
   }).join('');
 
@@ -91,13 +94,13 @@ export async function renderHome() {
   </section>
 
   <nav class="nx-quick" aria-label="Quick access">
-    ${[['Roadmap', 'roadmap', '#/roadmap'], ['AI Skills', 'ai', '#/pathway'], ['Lessons', 'book', '#/lessons'], ['Projects', 'doc', '#/projects'], ['Career', 'growth', '#/career'], ['Progress', 'user', '#/progress']]
+    ${[['Roadmap', 'roadmap', '#/roadmap'], ['AI Skills', 'ai', '#/pathway'], ['Lessons', 'book', '#/lessons'], ['Projects', 'doc', '#/projects'], ['Search', 'search', '#/search'], ['Progress', 'growth', '#/progress']]
       .map(([l, i, h]) => `<a href="${h}">${icon(i, 24)}<span>${l}</span></a>`).join('')}
   </nav>
 
   <section class="nx-section" aria-labelledby="h-roadmap">
     <h2 id="h-roadmap" class="nx-h">AI CAREER ROADMAP</h2>
-    <p class="muted">Your step-by-step journey to become an AI + Electrical Engineering expert. Percentages show your real lessons completed.</p>
+    <p class="muted">Your step-by-step journey to become an AI + Electrical Engineering expert. Percentages show your real lessons completed. "Soon" means lessons are still being written.</p>
     <ol class="nx-levels">${levels}</ol>
   </section>
 
@@ -128,7 +131,7 @@ export async function renderHome() {
       </div>
       <div class="nx-mini">
         <div class="nx-stat">${icon('flame', 22)}<div><small>Learning Streak</small><strong>${stats.streak} day${stats.streak === 1 ? '' : 's'}</strong></div></div>
-        <div class="nx-stat">${icon('check', 22)}<div><small>Lessons Completed</small><strong>${stats.lessonsDone} <span>/ ${overall.planned} planned</span></strong></div></div>
+        <div class="nx-stat">${icon('check', 22)}<div><small>Lessons Completed</small><strong>${stats.lessonsDone} <span>of ${overall.available} available (${overall.planned} planned)</span></strong></div></div>
         <div class="nx-stat nx-week"><small>Last 7 days</small>${weekBars(state)}</div>
       </div>
       <p class="muted small">This week: ${stats.weekCount} of ${stats.weeklyGoal} lessons. Saved privately on this device.</p>

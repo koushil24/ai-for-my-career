@@ -103,7 +103,9 @@
       "level": "Beginner",
       "mode": "mixed",
       "summary": "Excel or Google Sheets, statistics, data cleaning and dashboards using relay test data.",
-      "phases": [],
+      "phases": [
+        "p7"
+      ],
       "after": [
         "m1"
       ],
@@ -112,25 +114,30 @@
       ],
       "lessons": [
         {
-          "title": "Spreadsheet basics and formulas"
+          "title": "Spreadsheet basics and formulas",
+          "id": "p7-l1"
         },
         {
-          "title": "Tables, filters and sorting"
+          "title": "Tables, filters and sorting",
+          "id": "p7-l2"
         },
         {
-          "title": "Conditional formatting and charts"
+          "title": "Mean, median, percentage and variation",
+          "id": "p7-l3"
+        },
+        {
+          "title": "Data cleaning and validation",
+          "id": "p7-l4"
+        },
+        {
+          "title": "Conditional formatting and charts",
+          "id": "p7-l5"
         },
         {
           "title": "Pivot tables"
         },
         {
-          "title": "Mean, median, percentage and variation"
-        },
-        {
           "title": "Standard deviation and basic statistics"
-        },
-        {
-          "title": "Data cleaning and validation"
         },
         {
           "title": "Power BI basics and dashboards"
